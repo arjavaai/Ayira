@@ -175,10 +175,10 @@ export function Header() {
                         </a>
                         
                       <a
-                        href="/#dashboard"
+                        href="/products/vacation-rentals"
                           className="group flex items-start gap-3 p-3 rounded-lg hover:bg-blue-50 transition-colors"
                         >
-                          <div className="w-10 h-10 bg-blue-500 rounded-lg flex items-center justify-center flex-shrink-0">
+                          <div className="w-10 h-10 bg-green-500 rounded-lg flex items-center justify-center flex-shrink-0">
                             <Home className="w-5 h-5 text-white" />
                           </div>
                           <div className="flex-1 min-w-0">
@@ -187,12 +187,12 @@ export function Header() {
                           </div>
                           <ArrowRight className="w-4 h-4 text-gray-400 group-hover:text-blue-500 transition-colors flex-shrink-0" />
                         </a>
-                        
+
                       <a
-                        href="/#dashboard"
+                        href="/products/hotel-chains"
                           className="group flex items-start gap-3 p-3 rounded-lg hover:bg-blue-50 transition-colors"
                         >
-                          <div className="w-10 h-10 bg-blue-500 rounded-lg flex items-center justify-center flex-shrink-0">
+                          <div className="w-10 h-10 bg-indigo-500 rounded-lg flex items-center justify-center flex-shrink-0">
                             <Building className="w-5 h-5 text-white" />
                           </div>
                           <div className="flex-1 min-w-0">
@@ -201,12 +201,12 @@ export function Header() {
                           </div>
                           <ArrowRight className="w-4 h-4 text-gray-400 group-hover:text-blue-500 transition-colors flex-shrink-0" />
                         </a>
-                        
+
                       <a
-                        href="/#dashboard"
+                        href="/products/hostels"
                           className="group flex items-start gap-3 p-3 rounded-lg hover:bg-blue-50 transition-colors"
                         >
-                          <div className="w-10 h-10 bg-blue-500 rounded-lg flex items-center justify-center flex-shrink-0">
+                          <div className="w-10 h-10 bg-orange-500 rounded-lg flex items-center justify-center flex-shrink-0">
                             <Users2 className="w-5 h-5 text-white" />
                           </div>
                           <div className="flex-1 min-w-0">
@@ -215,12 +215,12 @@ export function Header() {
                           </div>
                           <ArrowRight className="w-4 h-4 text-gray-400 group-hover:text-blue-500 transition-colors flex-shrink-0" />
                         </a>
-                        
+
                       <a
-                        href="/#dashboard"
+                        href="/products/apartments"
                           className="group flex items-start gap-3 p-3 rounded-lg hover:bg-blue-50 transition-colors"
                         >
-                          <div className="w-10 h-10 bg-blue-500 rounded-lg flex items-center justify-center flex-shrink-0">
+                          <div className="w-10 h-10 bg-teal-500 rounded-lg flex items-center justify-center flex-shrink-0">
                             <MapPin className="w-5 h-5 text-white" />
                           </div>
                           <div className="flex-1 min-w-0">
@@ -370,7 +370,7 @@ export function Header() {
                             Independent Hotels
                           </a>
                           <a
-                            href="/#dashboard"
+                            href="/products/hotel-chains"
                             className="block py-2 px-4 text-neutral-600 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors text-sm"
                             onClick={() => setIsMobileMenuOpen(false)}
                           >
@@ -384,21 +384,21 @@ export function Header() {
                             Resorts & Luxury Properties
                           </a>
                           <a
-                            href="/#dashboard"
+                            href="/products/hostels"
                             className="block py-2 px-4 text-neutral-600 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors text-sm"
                             onClick={() => setIsMobileMenuOpen(false)}
                           >
                             Hostels
                           </a>
                           <a
-                            href="/#dashboard"
+                            href="/products/vacation-rentals"
                             className="block py-2 px-4 text-neutral-600 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors text-sm"
                             onClick={() => setIsMobileMenuOpen(false)}
                           >
                             Airbnb & Vacation Rentals
                           </a>
                           <a
-                            href="/#dashboard"
+                            href="/products/apartments"
                             className="block py-2 px-4 text-neutral-600 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors text-sm"
                             onClick={() => setIsMobileMenuOpen(false)}
                           >
