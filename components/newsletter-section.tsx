@@ -35,20 +35,20 @@ export function NewsletterSection() {
 
       <div className="relative z-10 container-custom">
         <Reveal>
-          <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-4xl lg:text-6xl font-bold text-white mb-6">
+          <div className="max-w-3xl mx-auto text-center px-4 sm:px-0">
+            <h2 className="text-3xl sm:text-4xl lg:text-6xl font-bold text-white mb-4 sm:mb-6">
               Ready to Transform <span className="italic font-light">Your Business?</span>
             </h2>
-            <p className="text-xl text-white/90 mb-4">Ready to Meet Aiyra?</p>
-            <p className="text-lg text-white/80 mb-12 leading-relaxed">
+            <p className="text-lg sm:text-xl text-white/90 mb-3 sm:mb-4">Ready to Meet Aiyra?</p>
+            <p className="text-base sm:text-lg text-white/80 mb-8 sm:mb-12 leading-relaxed">
               Join the revolution in hotel management. See how Aiyra can help your business achieve unprecedented levels
               of efficiency, profitability, and guest satisfaction.
             </p>
 
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8">
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 mb-6 sm:mb-8">
               <motion.a
                 href="#experience"
-                className="px-8 py-4 bg-blue-600 text-white rounded-full font-medium hover:bg-blue-700 transition-colors text-lg"
+                className="w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-4 bg-blue-600 text-white rounded-full font-medium hover:bg-blue-700 transition-colors text-base sm:text-lg text-center"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
@@ -56,7 +56,7 @@ export function NewsletterSection() {
               </motion.a>
               <motion.a
                 href="#contact"
-                className="px-8 py-4 bg-white/10 backdrop-blur-sm text-white rounded-full font-medium border border-white/30 hover:bg-white/20 transition-colors text-lg"
+                className="w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-4 bg-white/10 backdrop-blur-sm text-white rounded-full font-medium border border-white/30 hover:bg-white/20 transition-colors text-base sm:text-lg text-center"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
@@ -64,7 +64,7 @@ export function NewsletterSection() {
               </motion.a>
             </div>
 
-            <p className="text-sm text-white/70">
+            <p className="text-xs sm:text-sm text-white/70">
               Trusted by luxury hotels worldwide • Enterprise-grade security • 24/7 expert support
             </p>
           </div>

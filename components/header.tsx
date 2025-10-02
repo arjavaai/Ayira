@@ -3,11 +3,12 @@
 import { useState, useEffect } from "react"
 import { motion } from "framer-motion"
 import { cn } from "@/lib/utils"
-import { ChevronDown } from "lucide-react"
+import { ChevronDown, Menu, X } from "lucide-react"
 
 export function Header() {
   const [isScrolled, setIsScrolled] = useState(false)
   const [isProductsOpen, setIsProductsOpen] = useState(false)
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
 
   useEffect(() => {
     const handleScroll = () => {
@@ -133,10 +134,23 @@ export function Header() {
             </a>
           </nav>
 
-          {/* CTA Button */}
+          {/* Mobile Menu Button */}
+          <button
+            className="md:hidden p-2 rounded-lg transition-colors"
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            aria-label="Toggle mobile menu"
+          >
+            {isMobileMenuOpen ? (
+              <X className="w-6 h-6 text-neutral-700" />
+            ) : (
+              <Menu className="w-6 h-6 text-neutral-700" />
+            )}
+          </button>
+
+          {/* CTA Button - Hidden on mobile */}
           <motion.a
             href="#experience"
-            className="bg-blue-600 text-white px-6 py-2.5 rounded-full font-medium hover:bg-blue-700 transition-colors"
+            className="hidden md:block bg-blue-600 text-white px-6 py-2.5 rounded-full font-medium hover:bg-blue-700 transition-colors"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
@@ -144,6 +158,89 @@ export function Header() {
           </motion.a>
         </div>
       </div>
+
+      {/* Mobile Menu Overlay */}
+      {isMobileMenuOpen && (
+        <motion.div
+          className="fixed inset-0 z-40 md:hidden"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 0.2 }}
+        >
+          <div className="absolute inset-0 bg-black/50 backdrop-blur-sm" onClick={() => setIsMobileMenuOpen(false)} />
+          <motion.div
+            className="absolute top-0 right-0 w-80 max-w-[85vw] h-full bg-white shadow-2xl"
+            initial={{ x: "100%" }}
+            animate={{ x: 0 }}
+            exit={{ x: "100%" }}
+            transition={{ type: "spring", damping: 25, stiffness: 200 }}
+          >
+            <div className="p-6">
+              <div className="flex items-center justify-between mb-8">
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 rounded-full border-2 border-transparent bg-gradient-to-r from-blue-400 via-blue-500 to-teal-500 p-0.5 flex items-center justify-center">
+                    <div className="w-full h-full rounded-full bg-white flex items-center justify-center">
+                      <span className="text-lg font-bold text-blue-600">LA</span>
+                    </div>
+                  </div>
+                  <div className="flex flex-col">
+                    <span className="text-xs uppercase tracking-wider font-medium text-neutral-500">LUVERA</span>
+                    <span className="text-xl font-bold tracking-tight text-transparent bg-gradient-to-r from-blue-600 to-teal-600 bg-clip-text">Aiyra</span>
+                  </div>
+                </div>
+                <button
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className="p-2 rounded-lg hover:bg-gray-100 transition-colors"
+                >
+                  <X className="w-6 h-6 text-neutral-700" />
+                </button>
+              </div>
+
+              <nav className="space-y-4">
+                <a
+                  href="#features"
+                  className="block py-3 px-4 text-neutral-700 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  Features
+                </a>
+                <a
+                  href="#pricing"
+                  className="block py-3 px-4 text-neutral-700 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  Pricing
+                </a>
+                <a
+                  href="#resources"
+                  className="block py-3 px-4 text-neutral-700 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  Resources
+                </a>
+                <a
+                  href="#contact"
+                  className="block py-3 px-4 text-neutral-700 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  Contact
+                </a>
+                <div className="pt-4 border-t border-gray-200">
+                  <motion.a
+                    href="#experience"
+                    className="block w-full bg-blue-600 text-white px-6 py-3 rounded-full font-medium text-center hover:bg-blue-700 transition-colors"
+                    whileTap={{ scale: 0.95 }}
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
+                    Experience Aiyra
+                  </motion.a>
+                </div>
+              </nav>
+            </div>
+          </motion.div>
+        </motion.div>
+      )}
     </motion.header>
   )
 }

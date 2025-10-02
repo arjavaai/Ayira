@@ -4,6 +4,11 @@ import { useRef } from "react"
 import { motion } from "framer-motion"
 import { Reveal } from "./reveal"
 import { Server, Bot, BarChart3, CheckCircle2, ArrowRight, Sparkles } from "lucide-react"
+import {
+  TextRevealCard,
+  TextRevealCardDescription,
+  TextRevealCardTitle,
+} from "@/components/ui/text-reveal-card"
 
 const platforms = [
   {
@@ -63,7 +68,7 @@ export function CollectionStrip() {
       </div>
 
       <div className="container-custom">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 mb-12">
           {platforms.map((platform, index) => (
             <Reveal key={platform.id} delay={index * 0.1}>
               <motion.div
@@ -84,10 +89,10 @@ export function CollectionStrip() {
                 <div className="absolute inset-0 bg-white/10 backdrop-blur-xl" />
                 
                 {/* Card Content */}
-                <div className="relative z-10 p-8 h-full flex flex-col">
+                <div className="relative z-10 p-6 lg:p-8 h-full flex flex-col">
                   {/* Icon with Modern Styling */}
                   <motion.div 
-                    className={`w-20 h-20 rounded-2xl flex items-center justify-center mb-6 transition-all duration-300 ${
+                    className={`w-16 h-16 lg:w-20 lg:h-20 rounded-2xl flex items-center justify-center mb-4 lg:mb-6 transition-all duration-300 ${
                       platform.accentColor === 'blue' 
                         ? 'bg-gradient-to-br from-blue-500 to-blue-600 shadow-lg shadow-blue-500/25 group-hover:shadow-blue-500/40' 
                         : platform.accentColor === 'purple'
@@ -96,23 +101,23 @@ export function CollectionStrip() {
                     }`}
                     whileHover={{ rotate: 5, scale: 1.1 }}
                   >
-                    <platform.icon className="w-10 h-10 text-white" />
+                    <platform.icon className="w-8 h-8 lg:w-10 lg:h-10 text-white" />
                     <motion.div
                       className="absolute -top-1 -right-1"
                       animate={{ rotate: 360 }}
                       transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
                     >
-                      <Sparkles className="w-4 h-4 text-yellow-400" />
+                      <Sparkles className="w-3 h-3 lg:w-4 lg:h-4 text-yellow-400" />
                     </motion.div>
                   </motion.div>
 
                   {/* Bold Typography */}
-                  <h3 className="text-2xl font-bold text-neutral-900 mb-4 leading-tight group-hover:text-neutral-800 transition-colors duration-300">
+                  <h3 className="text-xl lg:text-2xl font-bold text-neutral-900 mb-3 lg:mb-4 leading-tight group-hover:text-neutral-800 transition-colors duration-300">
                     {platform.name}
                   </h3>
                   
                   {/* Description */}
-                  <p className="text-neutral-700 mb-6 leading-relaxed text-sm group-hover:text-neutral-800 transition-colors duration-300">
+                  <p className="text-neutral-700 mb-4 lg:mb-6 leading-relaxed text-sm group-hover:text-neutral-800 transition-colors duration-300">
                     {platform.description}
                   </p>
 
@@ -184,63 +189,22 @@ export function CollectionStrip() {
         </div>
 
         <Reveal delay={0.3}>
-          <motion.div 
-            className="relative overflow-hidden bg-gradient-to-br from-blue-600 via-blue-700 to-indigo-800 text-white rounded-3xl p-8 lg:p-12 text-center border border-white/10 backdrop-blur-sm"
-            whileHover={{ scale: 1.01 }}
-            transition={{ type: "spring", stiffness: 300, damping: 20 }}
-          >
-            {/* Background Pattern */}
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_70%,rgba(255,255,255,0.1)_0%,transparent_50%)] opacity-50" />
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_30%,rgba(255,255,255,0.05)_0%,transparent_50%)] opacity-30" />
-            
-            {/* Glassmorphism Overlay */}
-            <div className="absolute inset-0 bg-white/5 backdrop-blur-xl" />
-            
-            <div className="relative z-10">
-              <motion.h3 
-                className="text-3xl lg:text-4xl font-bold mb-6 bg-gradient-to-r from-white to-blue-100 bg-clip-text text-transparent"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.4 }}
-              >
+          <div className="flex justify-center">
+            <TextRevealCard
+              text="Traditional PMS systems only handle basic operations"
+              revealText="Aiyra goes beyond by including advanced AI and analytics"
+              className="w-full max-w-4xl"
+            >
+              <TextRevealCardTitle>
                 Why This Matters
-              </motion.h3>
-              <motion.p 
-                className="text-lg text-blue-50 max-w-4xl mx-auto leading-relaxed"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.5 }}
-              >
+              </TextRevealCardTitle>
+              <TextRevealCardDescription>
                 Traditional PMS systems only handle basic operations. Aiyra goes beyond by including advanced AI and
                 analytics that most competitors charge extra for - or don't offer at all. You get three enterprise-grade
                 platforms for the price of one simple PMS subscription.
-              </motion.p>
-              
-              {/* Decorative Elements */}
-              <motion.div 
-                className="flex justify-center mt-8 gap-4"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: 0.6 }}
-              >
-                <motion.div 
-                  className="w-2 h-2 bg-white/60 rounded-full"
-                  animate={{ scale: [1, 1.2, 1] }}
-                  transition={{ duration: 2, repeat: Infinity, delay: 0 }}
-                />
-                <motion.div 
-                  className="w-2 h-2 bg-white/80 rounded-full"
-                  animate={{ scale: [1, 1.2, 1] }}
-                  transition={{ duration: 2, repeat: Infinity, delay: 0.5 }}
-                />
-                <motion.div 
-                  className="w-2 h-2 bg-white/60 rounded-full"
-                  animate={{ scale: [1, 1.2, 1] }}
-                  transition={{ duration: 2, repeat: Infinity, delay: 1 }}
-                />
-              </motion.div>
-            </div>
-          </motion.div>
+              </TextRevealCardDescription>
+            </TextRevealCard>
+          </div>
         </Reveal>
       </div>
     </section>

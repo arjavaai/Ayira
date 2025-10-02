@@ -1,164 +1,128 @@
-"use client"
-import { motion } from "framer-motion"
-import { Instagram, Twitter, Facebook, Linkedin, Mail, Phone, MapPin } from "lucide-react"
+"use client";
+import React from 'react';
+import type { ComponentProps, ReactNode } from 'react';
+import { motion, useReducedMotion } from 'motion/react';
+import { FacebookIcon, FrameIcon, InstagramIcon, LinkedinIcon, YoutubeIcon } from 'lucide-react';
+
+interface FooterLink {
+	title: string;
+	href: string;
+	icon?: React.ComponentType<{ className?: string }>;
+}
+
+interface FooterSection {
+	label: string;
+	links: FooterLink[];
+}
+
+const footerLinks: FooterSection[] = [
+	{
+		label: 'Product',
+		links: [
+			{ title: 'Solutions', href: '#solutions' },
+			{ title: 'Features', href: '#features' },
+			{ title: 'Pricing', href: '#pricing' },
+			{ title: 'Integrations', href: '#integrations' },
+			{ title: 'Mobile App', href: '#mobile' },
+		],
+	},
+	{
+		label: 'Company',
+		links: [
+			{ title: 'About Us', href: '/about' },
+			{ title: 'Careers', href: '/careers' },
+			{ title: 'Press', href: '/press' },
+			{ title: 'Partners', href: '/partners' },
+		],
+	},
+	{
+		label: 'Resources',
+		links: [
+			{ title: 'Blog', href: '/blog' },
+			{ title: 'Help Center', href: '/help' },
+			{ title: 'API Documentation', href: '/docs' },
+			{ title: 'Webinars', href: '/webinars' },
+		],
+	},
+	{
+		label: 'Social Links',
+		links: [
+			{ title: 'Facebook', href: '#', icon: FacebookIcon },
+			{ title: 'Instagram', href: '#', icon: InstagramIcon },
+			{ title: 'Youtube', href: '#', icon: YoutubeIcon },
+			{ title: 'LinkedIn', href: '#', icon: LinkedinIcon },
+		],
+	},
+];
 
 export function Footer() {
-  const currentYear = new Date().getFullYear()
+	return (
+		<footer className="relative w-full bg-slate-900 text-white">
+			<div className="md:rounded-t-6xl relative w-full max-w-6xl mx-auto flex flex-col items-center justify-center rounded-t-4xl border-t border-white/10 px-4 sm:px-6 py-8 sm:py-12 lg:py-16">
+				<div className="bg-white/20 absolute top-0 right-1/2 left-1/2 h-px w-1/3 -translate-x-1/2 -translate-y-1/2 rounded-full blur" />
 
-  const footerLinks = {
-    Product: [
-      { name: "Solutions", href: "#" },
-      { name: "Features", href: "#" },
-      { name: "Pricing", href: "#" },
-      { name: "Integrations", href: "#" },
-      { name: "Mobile App", href: "#" },
-    ],
-    Company: [
-      { name: "About Us", href: "#" },
-      { name: "Careers", href: "#" },
-      { name: "Press", href: "#" },
-      { name: "Partners", href: "#" },
-    ],
-    Resources: [
-      { name: "Blog", href: "#" },
-      { name: "Help Center", href: "#" },
-      { name: "API Documentation", href: "#" },
-      { name: "Webinars", href: "#" },
-    ],
-    Support: [
-      { name: "Contact Us", href: "#" },
-      { name: "Book a Demo", href: "#" },
-      { name: "System Status", href: "#" },
-      { name: "Customer Stories", href: "#" },
-    ],
-  }
+				<div className="grid w-full gap-6 sm:gap-8 xl:grid-cols-3 xl:gap-8">
+					<AnimatedContainer className="space-y-4 text-center xl:text-left">
+						<div className="flex items-baseline gap-2 justify-center xl:justify-start">
+							<span className="text-xs uppercase tracking-wider text-white/60">LUVERA</span>
+							<FrameIcon className="size-6 sm:size-8 text-blue-400" />
+							<span className="text-xl sm:text-2xl font-bold text-blue-400">Aiyra</span>
+						</div>
+						<p className="text-white/70 mt-4 sm:mt-8 text-xs sm:text-sm xl:mt-0">
+							© {new Date().getFullYear()} Luvera Aiyra. All rights reserved.
+						</p>
+					</AnimatedContainer>
 
-  const socialLinks = [
-    { name: "Instagram", icon: Instagram, href: "#" },
-    { name: "Twitter", icon: Twitter, href: "#" },
-    { name: "Facebook", icon: Facebook, href: "#" },
-    { name: "LinkedIn", icon: Linkedin, href: "#" },
-  ]
+					<div className="mt-6 sm:mt-10 grid grid-cols-2 gap-6 sm:gap-8 md:grid-cols-4 xl:col-span-2 xl:mt-0">
+						{footerLinks.map((section, index) => (
+							<AnimatedContainer key={section.label} delay={0.1 + index * 0.1}>
+								<div className="mb-6 sm:mb-10 md:mb-0">
+									<h3 className="text-xs font-semibold text-white">{section.label}</h3>
+									<ul className="text-white/70 mt-3 sm:mt-4 space-y-2 text-xs sm:text-sm">
+										{section.links.map((link) => (
+											<li key={link.title}>
+												<a
+													href={link.href}
+													className="hover:text-white inline-flex items-center transition-all duration-300"
+												>
+													{link.icon && <link.icon className="me-1 size-3 sm:size-4" />}
+													{link.title}
+												</a>
+											</li>
+										))}
+									</ul>
+								</div>
+							</AnimatedContainer>
+						))}
+					</div>
+				</div>
+			</div>
+		</footer>
+	);
+};
 
-  return (
-    <footer className="bg-slate-900 text-white">
-      <div className="container-custom py-16 lg:py-20">
-        {/* Main Footer Content */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 mb-12">
-          {/* Brand Section */}
-          <div className="lg:col-span-4">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-              viewport={{ once: true }}
-            >
-              <div className="flex items-baseline gap-2 mb-4">
-                <span className="text-xs uppercase tracking-wider text-white/60">LUVERA</span>
-                <h3 className="text-3xl font-bold text-blue-400">Aiyra</h3>
-              </div>
-              <p className="text-white/70 mb-6 leading-relaxed">
-                Aiyra transforms hospitality management with intelligent automation, advanced analytics, and premium
-                support to help hotels maximize profitability and deliver exceptional guest experiences.
-              </p>
+type ViewAnimationProps = {
+	delay?: number;
+	className?: ComponentProps<typeof motion.div>['className'];
+	children: ReactNode;
+};
 
-              {/* Contact Info */}
-              <div className="space-y-3 mb-6 text-sm text-white/70">
-                <div className="flex items-center gap-2">
-                  <Mail className="w-4 h-4" />
-                  <span>support@aiyra.com</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <Phone className="w-4 h-4" />
-                  <span>+1 (555) 123-AIYRA</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <MapPin className="w-4 h-4" />
-                  <span>Serving Hotels Worldwide</span>
-                </div>
-              </div>
+function AnimatedContainer({ className, delay = 0.1, children }: ViewAnimationProps) {
+	const shouldReduceMotion = useReducedMotion();
 
-              {/* Social Links */}
-              <div>
-                <p className="text-sm text-white/60 mb-3">Connect with Aiyra:</p>
-                <div className="flex space-x-3">
-                  {socialLinks.map((social) => (
-                    <motion.a
-                      key={social.name}
-                      href={social.href}
-                      className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center text-white/70 hover:text-white hover:bg-blue-600 transition-all duration-200"
-                      whileHover={{ scale: 1.1 }}
-                      whileTap={{ scale: 0.95 }}
-                    >
-                      <social.icon size={18} />
-                      <span className="sr-only">{social.name}</span>
-                    </motion.a>
-                  ))}
-                </div>
-              </div>
-            </motion.div>
-          </div>
+	if (shouldReduceMotion) {
+		return children;
+	}
 
-          {/* Links Sections */}
-          <div className="lg:col-span-8">
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-8 lg:gap-12">
-              {Object.entries(footerLinks).map(([category, links], index) => (
-                <motion.div
-                  key={category}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
-                  viewport={{ once: true }}
-                >
-                  <h4 className="font-semibold text-white mb-4">{category}</h4>
-                  <ul className="space-y-3">
-                    {links.map((link) => (
-                      <li key={link.name}>
-                        <a
-                          href={link.href}
-                          className="text-white/70 hover:text-white transition-colors duration-200 text-sm"
-                        >
-                          {link.name}
-                        </a>
-                      </li>
-                    ))}
-                  </ul>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </div>
-
-        {/* Bottom Section */}
-        <motion.div
-          className="pt-8 border-t border-white/10"
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ duration: 0.6, delay: 0.3 }}
-          viewport={{ once: true }}
-        >
-          <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-white/60">
-            <p>
-              &copy; {currentYear} Luvera Aiyra. All rights reserved. | Transforming hospitality with intelligent
-              technology.
-            </p>
-            <div className="flex flex-wrap justify-center gap-6">
-              <a href="#" className="hover:text-white transition-colors">
-                Privacy Policy
-              </a>
-              <a href="#" className="hover:text-white transition-colors">
-                Terms of Service
-              </a>
-              <a href="#" className="hover:text-white transition-colors">
-                Cookie Policy
-              </a>
-              <a href="#" className="hover:text-white transition-colors">
-                GDPR
-              </a>
-            </div>
-          </div>
-        </motion.div>
-      </div>
-    </footer>
-  )
-}
+	return (
+		<motion.div
+			initial={{ filter: 'blur(4px)', translateY: -8, opacity: 0 }}
+			whileInView={{ filter: 'blur(0px)', translateY: 0, opacity: 1 }}
+			viewport={{ once: true }}
+			transition={{ delay, duration: 0.8 }}
+			className={className}
+		>
+			{children}
+		</motion.div>
+	);
+};
