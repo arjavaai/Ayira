@@ -4,11 +4,19 @@ import { useState, useEffect } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 import { cn } from "@/lib/utils"
 import { ChevronDown, Menu, X } from "lucide-react"
+import { usePathname } from "next/navigation"
 
 export function Header() {
   const [isScrolled, setIsScrolled] = useState(false)
   const [isProductsOpen, setIsProductsOpen] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+  const pathname = usePathname()
+  
+  // Check if we're on the homepage (which has a dark background)
+  const isHomepage = pathname === "/"
+  
+  // Determine if we should use dark text (for light backgrounds)
+  const shouldUseDarkText = !isHomepage || isScrolled
 
   useEffect(() => {
     const handleScroll = () => {
@@ -50,8 +58,10 @@ export function Header() {
     <motion.header
       className={cn(
         "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
-        "backdrop-blur-md border-b border-white/[0.02]",
-        isScrolled ? "bg-white/[0.02]" : "bg-white/[0.02]",
+        "backdrop-blur-md border-b",
+        shouldUseDarkText 
+          ? "bg-white/80 border-gray-200/50" 
+          : "bg-white/[0.02] border-white/[0.02]",
       )}
       initial={{ y: -100 }}
       animate={{ y: 0 }}
@@ -89,7 +99,7 @@ export function Header() {
                 <span
                   className={cn(
                     "text-xs uppercase tracking-wider font-medium transition-colors leading-none",
-                    isScrolled ? "text-neutral-500" : "text-white/70",
+                    shouldUseDarkText ? "text-neutral-500" : "text-white/70",
                   )}
                 >
                   LUVERA
@@ -97,7 +107,9 @@ export function Header() {
                 <span
                   className={cn(
                     "text-xl lg:text-2xl font-bold tracking-tight transition-colors leading-none",
-                    isScrolled ? "text-transparent bg-gradient-to-r from-blue-600 to-teal-600 bg-clip-text hover:from-blue-700 hover:to-teal-700" : "text-transparent bg-gradient-to-r from-blue-400 to-teal-400 bg-clip-text hover:from-blue-300 hover:to-teal-300",
+                    shouldUseDarkText 
+                      ? "text-transparent bg-gradient-to-r from-blue-600 to-teal-600 bg-clip-text hover:from-blue-700 hover:to-teal-700" 
+                      : "text-transparent bg-gradient-to-r from-blue-400 to-teal-400 bg-clip-text hover:from-blue-300 hover:to-teal-300",
                   )}
                 >
                   Aiyra
@@ -116,45 +128,87 @@ export function Header() {
               <button
                 className={cn(
                   "flex items-center gap-1 transition-colors",
-                  isScrolled ? "text-neutral-700 hover:text-neutral-900" : "text-white/90 hover:text-white",
+                  shouldUseDarkText ? "text-neutral-700 hover:text-neutral-900" : "text-white/90 hover:text-white",
                 )}
               >
                 Products
-                <ChevronDown className="w-4 h-4" />
+                <ChevronDown className={cn("w-4 h-4 transition-transform", isProductsOpen && "rotate-180")} />
               </button>
+              <AnimatePresence>
+                {isProductsOpen && (
+                  <motion.div
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: 10 }}
+                    transition={{ duration: 0.2 }}
+                    className="absolute top-full left-0 mt-2 w-64 bg-white rounded-xl shadow-xl border border-gray-200 overflow-hidden z-50"
+                  >
+                    <div className="p-2">
+                      <a
+                        href="/#dashboard"
+                        className="block px-4 py-3 rounded-lg hover:bg-blue-50 transition-colors"
+                      >
+                        <div className="font-semibold text-gray-900 mb-1">Operations Hub</div>
+                        <div className="text-sm text-gray-600">PMS, POS, Analytics & Tasks</div>
+                      </a>
+                      <a
+                        href="/#dashboard"
+                        className="block px-4 py-3 rounded-lg hover:bg-blue-50 transition-colors"
+                      >
+                        <div className="font-semibold text-gray-900 mb-1">Sales Hub</div>
+                        <div className="text-sm text-gray-600">Booking, Channel & Revenue Manager</div>
+                      </a>
+                      <a
+                        href="/#dashboard"
+                        className="block px-4 py-3 rounded-lg hover:bg-blue-50 transition-colors"
+                      >
+                        <div className="font-semibold text-gray-900 mb-1">Guest Hub</div>
+                        <div className="text-sm text-gray-600">Messaging, AI Support & Reviews</div>
+                      </a>
+                      <a
+                        href="/#dashboard"
+                        className="block px-4 py-3 rounded-lg hover:bg-blue-50 transition-colors"
+                      >
+                        <div className="font-semibold text-gray-900 mb-1">Payments Hub</div>
+                        <div className="text-sm text-gray-600">Gateway, Billing & Settlement</div>
+                      </a>
+                    </div>
+                  </motion.div>
+                )}
+              </AnimatePresence>
             </div>
             <a
-              href="#features"
+              href="/features"
               className={cn(
                 "transition-colors",
-                isScrolled ? "text-neutral-700 hover:text-neutral-900" : "text-white/90 hover:text-white",
+                shouldUseDarkText ? "text-neutral-700 hover:text-neutral-900" : "text-white/90 hover:text-white",
               )}
             >
               Features
             </a>
             <a
-              href="#pricing"
+              href="/pricing"
               className={cn(
                 "transition-colors",
-                isScrolled ? "text-neutral-700 hover:text-neutral-900" : "text-white/90 hover:text-white",
+                shouldUseDarkText ? "text-neutral-700 hover:text-neutral-900" : "text-white/90 hover:text-white",
               )}
             >
               Pricing
             </a>
             <a
-              href="#resources"
+              href="/resources"
               className={cn(
                 "transition-colors",
-                isScrolled ? "text-neutral-700 hover:text-neutral-900" : "text-white/90 hover:text-white",
+                shouldUseDarkText ? "text-neutral-700 hover:text-neutral-900" : "text-white/90 hover:text-white",
               )}
             >
               Resources
             </a>
             <a
-              href="#contact"
+              href="/contact"
               className={cn(
                 "transition-colors",
-                isScrolled ? "text-neutral-700 hover:text-neutral-900" : "text-white/90 hover:text-white",
+                shouldUseDarkText ? "text-neutral-700 hover:text-neutral-900" : "text-white/90 hover:text-white",
               )}
             >
               Contact
@@ -163,20 +217,23 @@ export function Header() {
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden p-2 rounded-lg transition-colors hover:bg-white/10"
+            className={cn(
+              "md:hidden p-2 rounded-lg transition-colors",
+              shouldUseDarkText ? "hover:bg-gray-100" : "hover:bg-white/10"
+            )}
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             aria-label="Toggle mobile menu"
           >
             {isMobileMenuOpen ? (
-              <X className="w-6 h-6 text-white" />
+              <X className={cn("w-6 h-6", shouldUseDarkText ? "text-gray-700" : "text-white")} />
             ) : (
-              <Menu className="w-6 h-6 text-white" />
+              <Menu className={cn("w-6 h-6", shouldUseDarkText ? "text-gray-700" : "text-white")} />
             )}
           </button>
 
           {/* CTA Button - Hidden on mobile */}
           <motion.a
-            href="#experience"
+            href="/experience"
             className="hidden md:block bg-blue-600 text-white px-6 py-2.5 rounded-full font-medium hover:bg-blue-700 transition-colors"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
@@ -230,28 +287,28 @@ export function Header() {
 
               <nav className="flex-1 space-y-2 sm:space-y-4">
                 <a
-                  href="#features"
+                  href="/features"
                   className="block py-3 px-4 text-neutral-700 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors text-sm sm:text-base"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   Features
                 </a>
                 <a
-                  href="#pricing"
+                  href="/pricing"
                   className="block py-3 px-4 text-neutral-700 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors text-sm sm:text-base"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   Pricing
                 </a>
                 <a
-                  href="#resources"
+                  href="/resources"
                   className="block py-3 px-4 text-neutral-700 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors text-sm sm:text-base"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   Resources
                 </a>
                 <a
-                  href="#contact"
+                  href="/contact"
                   className="block py-3 px-4 text-neutral-700 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors text-sm sm:text-base"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
@@ -259,7 +316,7 @@ export function Header() {
                 </a>
                 <div className="pt-4 border-t border-gray-200 mt-4">
                   <motion.a
-                    href="#experience"
+                    href="/experience"
                     className="block w-full bg-blue-600 text-white px-6 py-3 rounded-full font-medium text-center hover:bg-blue-700 transition-colors text-sm sm:text-base"
                     whileTap={{ scale: 0.95 }}
                     onClick={() => setIsMobileMenuOpen(false)}
