@@ -10,40 +10,40 @@ const inter = Inter({
 })
 
 export const metadata: Metadata = {
-  title: "Katachi — Design furniture for spaces that breathe.",
-  description: "Architected in Belgium, built to last—timeless pieces.",
+  title: "Luvera Aiyra — Hotel Management Solutions",
+  description: "Comprehensive hotel management platform for modern hospitality businesses.",
   generator: "v0.app",
   viewport: "width=device-width, initial-scale=1",
   alternates: {
-    canonical: "https://katachi.example/",
+    canonical: "https://luveraaiyra.com/",
   },
   openGraph: {
-    siteName: "Katachi",
-    title: "Design furniture for spaces that breathe. | Katachi",
-    description: "Architected in Belgium, built to last—timeless pieces.",
+    siteName: "Luvera Aiyra",
+    title: "Hotel Management Solutions | Luvera Aiyra",
+    description: "Comprehensive hotel management platform for modern hospitality businesses.",
     type: "website",
-    url: "https://katachi.example/",
+    url: "https://luveraaiyra.com/",
     images: [
       {
-        url: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/opengraph-katachi.jpg-7vz2r3hxZA6woukGOmH115Fg7Piyjs.jpeg",
-        alt: "Katachi design furniture — timeless pieces, architected in Belgium",
+        url: "https://luveraaiyra.com/og-image.jpg",
+        alt: "Luvera Aiyra — Hotel Management Solutions",
         width: 1200,
         height: 630,
       },
     ],
-    locale: "en_BE",
+    locale: "en_US",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Design furniture for spaces that breathe. | Katachi",
-    description: "Architected in Belgium, built to last—timeless pieces.",
+    title: "Hotel Management Solutions | Luvera Aiyra",
+    description: "Comprehensive hotel management platform for modern hospitality businesses.",
     images: [
       {
-        url: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/opengraph-katachi.jpg-7vz2r3hxZA6woukGOmH115Fg7Piyjs.jpeg",
-        alt: "Katachi design furniture — timeless pieces, architected in Belgium",
+        url: "https://luveraaiyra.com/og-image.jpg",
+        alt: "Luvera Aiyra — Hotel Management Solutions",
       },
     ],
-    site: "@katachi",
+    site: "@luveraaiyra",
   },
 }
 

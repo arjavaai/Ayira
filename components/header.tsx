@@ -3,13 +3,14 @@
 import { useState, useEffect } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 import { cn } from "@/lib/utils"
-import { ChevronDown, Menu, X } from "lucide-react"
+import { ChevronDown, Menu, X, Building, Star, Home, Users2, MapPin, ArrowRight } from "lucide-react"
 import { usePathname } from "next/navigation"
 
 export function Header() {
   const [isScrolled, setIsScrolled] = useState(false)
   const [isProductsOpen, setIsProductsOpen] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+  const [isMobileProductsOpen, setIsMobileProductsOpen] = useState(false)
   const pathname = usePathname()
   
   // Check if we're on the homepage (which has a dark background)
@@ -71,7 +72,7 @@ export function Header() {
         <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
           <motion.div className="flex items-center gap-3" whileHover={{ scale: 1.02 }} transition={{ duration: 0.2 }}>
-            <a href="#" className="flex items-center gap-3" aria-label="Luvera Aiyra Home">
+            <a href="/" className="flex items-center gap-3" aria-label="Luvera Aiyra Home">
               {/* Circular Logo with LA initials */}
               <motion.div 
                 className="relative w-10 h-10 lg:w-12 lg:h-12 rounded-full border-2 border-transparent bg-gradient-to-r from-blue-400 via-blue-500 to-teal-500 p-0.5 flex items-center justify-center"
@@ -141,37 +142,94 @@ export function Header() {
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: 10 }}
                     transition={{ duration: 0.2 }}
-                    className="absolute top-full left-0 mt-2 w-64 bg-white rounded-xl shadow-xl border border-gray-200 overflow-hidden z-50"
+                    className="absolute top-full left-0 mt-2 w-[32rem] bg-white rounded-xl shadow-xl border border-gray-200 overflow-hidden z-50"
                   >
-                    <div className="p-2">
+                    <div className="p-4">
+                      <div className="grid grid-cols-3 gap-3">
+                        <a
+                          href="/products/independent-hotels"
+                          className="group flex items-start gap-3 p-3 rounded-lg hover:bg-blue-50 transition-colors"
+                        >
+                          <div className="w-10 h-10 bg-blue-500 rounded-lg flex items-center justify-center flex-shrink-0">
+                            <Building className="w-5 h-5 text-white" />
+                          </div>
+                          <div className="flex-1 min-w-0">
+                            <div className="font-semibold text-gray-900 text-sm mb-1">Independent Hotels</div>
+                            <div className="text-xs text-gray-600 leading-relaxed">Professional management tools to compete with major hotel chains.</div>
+                          </div>
+                          <ArrowRight className="w-4 h-4 text-gray-400 group-hover:text-blue-500 transition-colors flex-shrink-0" />
+                        </a>
+                        
+                        <a
+                          href="/products/resorts-luxury"
+                          className="group flex items-start gap-3 p-3 rounded-lg hover:bg-blue-50 transition-colors"
+                        >
+                          <div className="w-10 h-10 bg-purple-500 rounded-lg flex items-center justify-center flex-shrink-0">
+                            <Star className="w-5 h-5 text-white" />
+                          </div>
+                          <div className="flex-1 min-w-0">
+                            <div className="font-semibold text-gray-900 text-sm mb-1">Resorts & Luxury Properties</div>
+                            <div className="text-xs text-gray-600 leading-relaxed">Sophisticated tools for delivering exceptional luxury guest experiences.</div>
+                          </div>
+                          <ArrowRight className="w-4 h-4 text-gray-400 group-hover:text-blue-500 transition-colors flex-shrink-0" />
+                        </a>
+                        
                       <a
                         href="/#dashboard"
-                        className="block px-4 py-3 rounded-lg hover:bg-blue-50 transition-colors"
-                      >
-                        <div className="font-semibold text-gray-900 mb-1">Operations Hub</div>
-                        <div className="text-sm text-gray-600">PMS, POS, Analytics & Tasks</div>
-                      </a>
+                          className="group flex items-start gap-3 p-3 rounded-lg hover:bg-blue-50 transition-colors"
+                        >
+                          <div className="w-10 h-10 bg-blue-500 rounded-lg flex items-center justify-center flex-shrink-0">
+                            <Home className="w-5 h-5 text-white" />
+                          </div>
+                          <div className="flex-1 min-w-0">
+                            <div className="font-semibold text-gray-900 text-sm mb-1">Airbnb & Vacation Rentals</div>
+                            <div className="text-xs text-gray-600 leading-relaxed">Streamlined management for vacation rental property owners.</div>
+                          </div>
+                          <ArrowRight className="w-4 h-4 text-gray-400 group-hover:text-blue-500 transition-colors flex-shrink-0" />
+                        </a>
+                        
                       <a
                         href="/#dashboard"
-                        className="block px-4 py-3 rounded-lg hover:bg-blue-50 transition-colors"
-                      >
-                        <div className="font-semibold text-gray-900 mb-1">Sales Hub</div>
-                        <div className="text-sm text-gray-600">Booking, Channel & Revenue Manager</div>
-                      </a>
+                          className="group flex items-start gap-3 p-3 rounded-lg hover:bg-blue-50 transition-colors"
+                        >
+                          <div className="w-10 h-10 bg-blue-500 rounded-lg flex items-center justify-center flex-shrink-0">
+                            <Building className="w-5 h-5 text-white" />
+                          </div>
+                          <div className="flex-1 min-w-0">
+                            <div className="font-semibold text-gray-900 text-sm mb-1">Hotel Chains</div>
+                            <div className="text-xs text-gray-600 leading-relaxed">Centralized management solutions for multi-property hospitality groups.</div>
+                          </div>
+                          <ArrowRight className="w-4 h-4 text-gray-400 group-hover:text-blue-500 transition-colors flex-shrink-0" />
+                        </a>
+                        
                       <a
                         href="/#dashboard"
-                        className="block px-4 py-3 rounded-lg hover:bg-blue-50 transition-colors"
-                      >
-                        <div className="font-semibold text-gray-900 mb-1">Guest Hub</div>
-                        <div className="text-sm text-gray-600">Messaging, AI Support & Reviews</div>
-                      </a>
+                          className="group flex items-start gap-3 p-3 rounded-lg hover:bg-blue-50 transition-colors"
+                        >
+                          <div className="w-10 h-10 bg-blue-500 rounded-lg flex items-center justify-center flex-shrink-0">
+                            <Users2 className="w-5 h-5 text-white" />
+                          </div>
+                          <div className="flex-1 min-w-0">
+                            <div className="font-semibold text-gray-900 text-sm mb-1">Hostels</div>
+                            <div className="text-xs text-gray-600 leading-relaxed">Community-focused solutions for hostels and budget accommodations.</div>
+                          </div>
+                          <ArrowRight className="w-4 h-4 text-gray-400 group-hover:text-blue-500 transition-colors flex-shrink-0" />
+                        </a>
+                        
                       <a
                         href="/#dashboard"
-                        className="block px-4 py-3 rounded-lg hover:bg-blue-50 transition-colors"
-                      >
-                        <div className="font-semibold text-gray-900 mb-1">Payments Hub</div>
-                        <div className="text-sm text-gray-600">Gateway, Billing & Settlement</div>
-                      </a>
+                          className="group flex items-start gap-3 p-3 rounded-lg hover:bg-blue-50 transition-colors"
+                        >
+                          <div className="w-10 h-10 bg-blue-500 rounded-lg flex items-center justify-center flex-shrink-0">
+                            <MapPin className="w-5 h-5 text-white" />
+                          </div>
+                          <div className="flex-1 min-w-0">
+                            <div className="font-semibold text-gray-900 text-sm mb-1">Apartment Communities</div>
+                            <div className="text-xs text-gray-600 leading-relaxed">Modern solutions for residential property and community management.</div>
+                          </div>
+                          <ArrowRight className="w-4 h-4 text-gray-400 group-hover:text-blue-500 transition-colors flex-shrink-0" />
+                        </a>
+                      </div>
                     </div>
                   </motion.div>
                 )}
@@ -286,6 +344,71 @@ export function Header() {
               </div>
 
               <nav className="flex-1 space-y-2 sm:space-y-4">
+                <div className="space-y-2">
+                  <button
+                    className="flex items-center justify-between w-full py-3 px-4 text-neutral-700 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors text-sm sm:text-base"
+                    onClick={() => setIsMobileProductsOpen(!isMobileProductsOpen)}
+                  >
+                    <span>Products</span>
+                    <ChevronDown className={cn("w-4 h-4 transition-transform", isMobileProductsOpen && "rotate-180")} />
+                  </button>
+                  <AnimatePresence>
+                    {isMobileProductsOpen && (
+                      <motion.div
+                        initial={{ opacity: 0, height: 0 }}
+                        animate={{ opacity: 1, height: "auto" }}
+                        exit={{ opacity: 0, height: 0 }}
+                        transition={{ duration: 0.2 }}
+                        className="overflow-hidden"
+                      >
+                        <div className="pl-4 space-y-1">
+                          <a
+                            href="/products/independent-hotels"
+                            className="block py-2 px-4 text-neutral-600 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors text-sm"
+                            onClick={() => setIsMobileMenuOpen(false)}
+                          >
+                            Independent Hotels
+                          </a>
+                          <a
+                            href="/#dashboard"
+                            className="block py-2 px-4 text-neutral-600 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors text-sm"
+                            onClick={() => setIsMobileMenuOpen(false)}
+                          >
+                            Hotel Chains
+                          </a>
+                          <a
+                            href="/products/resorts-luxury"
+                            className="block py-2 px-4 text-neutral-600 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors text-sm"
+                            onClick={() => setIsMobileMenuOpen(false)}
+                          >
+                            Resorts & Luxury Properties
+                          </a>
+                          <a
+                            href="/#dashboard"
+                            className="block py-2 px-4 text-neutral-600 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors text-sm"
+                            onClick={() => setIsMobileMenuOpen(false)}
+                          >
+                            Hostels
+                          </a>
+                          <a
+                            href="/#dashboard"
+                            className="block py-2 px-4 text-neutral-600 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors text-sm"
+                            onClick={() => setIsMobileMenuOpen(false)}
+                          >
+                            Airbnb & Vacation Rentals
+                          </a>
+                          <a
+                            href="/#dashboard"
+                            className="block py-2 px-4 text-neutral-600 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors text-sm"
+                            onClick={() => setIsMobileMenuOpen(false)}
+                          >
+                            Apartment Communities
+                          </a>
+                        </div>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </div>
                 <a
                   href="/features"
                   className="block py-3 px-4 text-neutral-700 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors text-sm sm:text-base"

@@ -3,62 +3,88 @@
 import { motion } from "framer-motion"
 import Image from "next/image"
 import { Reveal } from "./reveal"
-import { Activity, DollarSign, Users, Bot, BarChart3, Headphones, CheckCircle2, Calendar, ArrowRight, TrendingUp, Zap, Monitor, CreditCard, MessageSquare, Settings, Shield } from "lucide-react"
+import { Activity, DollarSign, Users, Bot, BarChart3, Headphones, CheckCircle2, Calendar, ArrowRight, TrendingUp, Zap, Monitor, CreditCard, MessageSquare, Settings, Shield, Building, TreePine, Home, MapPin, Star, Users2 } from "lucide-react"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { ContainerScroll, CardSticky } from "@/components/ui/cards-stack"
 
-const dashboardHubs = [
+const propertySolutions = [
   {
-    id: "operations",
-    title: "Operations Hub",
-    subtitle: "Automate front desk, back office, and housekeeping tasks",
-    icon: Settings,
+    id: "independent-hotels",
+    title: "Independent Hotels",
+    subtitle: "Tools to compete with big chains",
+    icon: Building,
     color: "from-blue-500 to-blue-600",
     features: [
-      { icon: Monitor, label: "PMS", description: "Complete property management system" },
-      { icon: DollarSign, label: "POS", description: "Point of sale integration" },
-      { icon: BarChart3, label: "Analytics", description: "Real-time performance insights" },
-      { icon: CheckCircle2, label: "Tasks", description: "Automated workflow management" }
+      { icon: Monitor, label: "Simplified Management", description: "Dashboard for streamlined operations" },
+      { icon: Users, label: "Guest Experience", description: "Improve with fewer staff" },
+      { icon: BarChart3, label: "Performance Analytics", description: "Real-time insights and reporting" },
+      { icon: CheckCircle2, label: "Competitive Tools", description: "Features to match major chains" }
     ]
   },
   {
-    id: "sales",
-    title: "Sales Hub", 
-    subtitle: "Maximize bookings and revenue with advanced tools",
-    icon: TrendingUp,
+    id: "hotel-chains",
+    title: "Hotel Chains", 
+    subtitle: "Centralized multi-property control",
+    icon: Building,
     color: "from-green-500 to-green-600",
     features: [
-      { icon: Calendar, label: "Booking Engine", description: "Direct booking optimization" },
-      { icon: Activity, label: "Channel Manager", description: "Multi-platform distribution" },
-      { icon: DollarSign, label: "Revenue Manager", description: "Dynamic pricing automation" },
-      { icon: BarChart3, label: "Analytics", description: "Revenue forecasting & insights" }
+      { icon: Activity, label: "Multi-Property Control", description: "Centralized management system" },
+      { icon: BarChart3, label: "Performance Benchmarking", description: "Compare across properties" },
+      { icon: DollarSign, label: "Revenue Optimization", description: "Corporate-level strategies" },
+      { icon: Settings, label: "Unified Operations", description: "Streamlined chain management" }
     ]
   },
   {
-    id: "guest",
-    title: "Guest Hub",
-    subtitle: "Enhance guest experience with personalized services", 
-    icon: Users,
+    id: "resorts-luxury",
+    title: "Resorts & Luxury Properties",
+    subtitle: "High-end guest personalization", 
+    icon: Star,
     color: "from-purple-500 to-purple-600",
     features: [
-      { icon: MessageSquare, label: "Guest Messaging", description: "Automated communication" },
-      { icon: Bot, label: "AI Support", description: "24/7 intelligent assistance" },
-      { icon: CheckCircle2, label: "Reviews", description: "Feedback management system" },
-      { icon: Users, label: "Profiles", description: "Guest preference tracking" }
+      { icon: Users, label: "VIP Service Automation", description: "Personalized luxury experiences" },
+      { icon: MessageSquare, label: "Guest Personalization", description: "Tailored high-end services" },
+      { icon: CheckCircle2, label: "Reputation Management", description: "Review and feedback systems" },
+      { icon: Star, label: "Luxury Standards", description: "Premium service delivery" }
     ]
   },
   {
-    id: "payments",
-    title: "Payments Hub",
-    subtitle: "Simplify billing and secure payment processing",
-    icon: CreditCard,
+    id: "hostels",
+    title: "Hostels",
+    subtitle: "Budget-friendly solutions",
+    icon: Users2,
     color: "from-orange-500 to-orange-600", 
     features: [
-      { icon: CreditCard, label: "Payment Gateway", description: "Secure transaction processing" },
-      { icon: DollarSign, label: "Billing", description: "Automated invoice generation" },
-      { icon: CheckCircle2, label: "Settlement", description: "Fast fund transfers" },
-      { icon: Shield, label: "Security", description: "PCI DSS compliance" }
+      { icon: Users2, label: "Community Experience", description: "Community-driven management" },
+      { icon: Calendar, label: "Shared Room Booking", description: "Optimized bed allocation" },
+      { icon: MessageSquare, label: "Guest Communication", description: "Community-focused messaging" },
+      { icon: DollarSign, label: "Budget Solutions", description: "Cost-effective management tools" }
+    ]
+  },
+  {
+    id: "airbnb-vacation",
+    title: "Airbnb & Vacation Rentals",
+    subtitle: "Multi-platform calendar sync",
+    icon: Home,
+    color: "from-teal-500 to-teal-600", 
+    features: [
+      { icon: Calendar, label: "Calendar Sync", description: "Across multiple platforms" },
+      { icon: Monitor, label: "Owner Dashboards", description: "Single/multi-property management" },
+      { icon: MessageSquare, label: "Guest Communication", description: "Automated messaging system" },
+      { icon: Activity, label: "Platform Integration", description: "Seamless booking management" }
+    ]
+  },
+  {
+    id: "apartment-communities",
+    title: "Apartment Communities",
+    subtitle: "Long-term rental management",
+    icon: MapPin,
+    color: "from-indigo-500 to-indigo-600", 
+    features: [
+      { icon: Calendar, label: "Community Events", description: "Event management system" },
+      { icon: MessageSquare, label: "Tenant Communication", description: "Centralized communication hub" },
+      { icon: Settings, label: "Amenity Integration", description: "Modern booking systems" },
+      { icon: Users, label: "Long-term Rentals", description: "Residential property management" }
     ]
   }
 ]
@@ -98,13 +124,13 @@ export function MaterialsSection() {
                 All-In-One Platform
               </div>
               <h2 className="bg-gradient-to-r from-gray-900 via-blue-900 to-purple-900 bg-clip-text text-transparent text-5xl lg:text-7xl font-bold mb-6">
-                <AnimatedText text="Intelligent Dashboard" delay={0.2} />
+                <AnimatedText text="Property Management Solutions" delay={0.2} />
               </h2>
               <p className="text-xl text-gray-600 mb-4 max-w-3xl mx-auto">
-                The Operating System for hospitality
+                Discover tailored solutions designed for every type of hospitality business
               </p>
               <p className="text-lg text-gray-500 max-w-4xl mx-auto">
-                Magically simplify hotel operations, channel distribution, payments and guest experience with Aiyra's intelligent platform
+                From independent hotels to luxury resorts, our comprehensive platform adapts to your unique needs and business model
               </p>
             </div>
           </Reveal>
@@ -114,34 +140,34 @@ export function MaterialsSection() {
         <div className="mb-20">
           <div className="grid lg:grid-cols-2 lg:gap-8 xl:gap-12">
             <div className="left-0 top-0 lg:sticky lg:h-svh lg:py-12 mb-8 lg:mb-0">
-              <h5 className="text-xs uppercase tracking-wide text-gray-500">Our Platform</h5>
+              <h5 className="text-xs uppercase tracking-wide text-gray-500">Our Solutions</h5>
               <h2 className="mb-6 mt-4 text-3xl sm:text-4xl font-bold tracking-tight">
-                Complete{" "}
-                <span className="text-blue-500">Hospitality Management</span> Solution
+                Tailored{" "}
+                <span className="text-blue-500">Property Management</span> Solutions
               </h2>
               <p className="max-w-prose text-sm text-gray-600">
-                Aiyra's intelligent platform revolutionizes hotel operations with cutting-edge technology. 
-                From automated front desk operations to AI-powered guest services, our comprehensive suite 
-                of tools empowers hospitality professionals to deliver exceptional experiences while maximizing revenue.
+                Every hospitality business is unique. Our platform adapts to your specific needs, whether you're 
+                managing a boutique hotel, luxury resort, hostel, or vacation rental. Each solution is designed 
+                to maximize efficiency and enhance guest experiences for your particular business model.
               </p>
             </div>
-            <ContainerScroll className="min-h-[400vh] space-y-6 lg:space-y-8 py-6 lg:py-12">
-              {dashboardHubs.map((hub, index) => (
+            <ContainerScroll className="min-h-[600vh] space-y-6 lg:space-y-8 py-6 lg:py-12">
+              {propertySolutions.map((solution, index) => (
                 <CardSticky
-                  key={hub.id}
-                  index={index + 2}
+                  key={solution.id}
+                  index={index + 1}
                   className="rounded-2xl border p-4 sm:p-6 lg:p-8 shadow-md backdrop-blur-md bg-white"
                 >
                   <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-6">
                     <div className="flex items-center gap-3 sm:gap-4">
-                      <div className={`w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 bg-gradient-to-r ${hub.color} rounded-2xl flex items-center justify-center shadow-lg`}>
-                        <hub.icon className="w-6 h-6 sm:w-7 sm:h-7 lg:w-8 lg:h-8 text-white" />
+                      <div className={`w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 bg-gradient-to-r ${solution.color} rounded-2xl flex items-center justify-center shadow-lg`}>
+                        <solution.icon className="w-6 h-6 sm:w-7 sm:h-7 lg:w-8 lg:h-8 text-white" />
                       </div>
                       <div>
                         <h2 className="text-xl sm:text-2xl font-bold tracking-tighter text-gray-900">
-                          {hub.title}
+                          {solution.title}
                         </h2>
-                        <p className="text-gray-600 text-xs sm:text-sm">{hub.subtitle}</p>
+                        <p className="text-gray-600 text-xs sm:text-sm">{solution.subtitle}</p>
                       </div>
                     </div>
                     <h3 className="text-xl sm:text-2xl font-bold text-blue-500 self-start sm:self-auto">
@@ -150,7 +176,7 @@ export function MaterialsSection() {
                   </div>
 
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
-                    {hub.features.map((feature, featureIndex) => (
+                    {solution.features.map((feature, featureIndex) => (
                       <motion.div
                         key={featureIndex}
                         className="flex items-center gap-3 p-3 rounded-xl hover:bg-gray-50 transition-colors"
@@ -193,7 +219,7 @@ export function MaterialsSection() {
                   whileTap={{ scale: 0.95 }}
                   className="flex items-center gap-2"
                 >
-                  Explore the Aiyra Experience
+                  Book a Demo
                   <ArrowRight className="w-5 h-5" />
                 </motion.a>
               </Button>
@@ -208,10 +234,24 @@ export function MaterialsSection() {
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                 >
-                  Request Demo
+                  Schedule Demo
                 </motion.a>
               </Button>
             </motion.div>
+          </div>
+        </Reveal>
+
+        {/* Support Statement */}
+        <Reveal delay={0.6}>
+          <div className="text-center mt-16">
+            <div className="inline-flex items-center gap-3 px-6 py-3 bg-blue-50 rounded-full">
+              <div className="w-8 h-8 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full flex items-center justify-center">
+                <Star className="w-4 h-4 text-white" />
+              </div>
+              <span className="text-gray-700 font-medium">
+                All solutions include 24/7 support, training & implementation
+              </span>
+            </div>
           </div>
         </Reveal>
 

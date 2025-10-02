@@ -68,9 +68,6 @@ export function Footer() {
 							<FrameIcon className="size-6 sm:size-8 text-blue-400" />
 							<span className="text-xl sm:text-2xl font-bold text-blue-400">Aiyra</span>
 						</div>
-						<p className="text-white/70 mt-4 sm:mt-8 text-xs sm:text-sm xl:mt-0">
-							© {new Date().getFullYear()} Luvera Aiyra. All rights reserved.
-						</p>
 					</AnimatedContainer>
 
 					<div className="mt-6 sm:mt-10 grid grid-cols-2 gap-6 sm:gap-8 md:grid-cols-4 xl:col-span-2 xl:mt-0">
@@ -95,6 +92,36 @@ export function Footer() {
 							</AnimatedContainer>
 						))}
 					</div>
+				</div>
+
+				{/* ThreeAtoms Credit */}
+				<div className="mt-8 pt-6 border-t border-white/10 text-center">
+					<p className="text-white/70 text-xs sm:text-sm">
+						Designed & Developed by{' '}
+						<a 
+							href="https://www.threeatoms.com" 
+							target="_blank" 
+							rel="dofollow" 
+							className="text-blue-400 hover:text-blue-300 transition-colors duration-300"
+						>
+							ThreeAtoms
+						</a>
+						{' – '}
+						<a 
+							href="https://wa.me/918179247099?text=Hello%20ThreeAtoms%2C%20I%20have%20seen%20one%20of%20your%20developed%20websites%20and%20I%20am%20contacting%20you%20because%20I%20am%20looking%20for%20a%20website%20for%20my%20business." 
+							target="_blank" 
+							className="text-green-400 hover:text-green-300 transition-colors duration-300"
+						>
+							+91 8179247099
+						</a>
+					</p>
+				</div>
+
+				{/* Copyright */}
+				<div className="mt-4 text-center">
+					<p className="text-white/70 text-xs sm:text-sm">
+						© {new Date().getFullYear()} Luvera Aiyra. All rights reserved.
+					</p>
 				</div>
 			</div>
 		</footer>
