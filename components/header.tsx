@@ -1,7 +1,7 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import { motion } from "framer-motion"
+import { motion, AnimatePresence } from "framer-motion"
 import { cn } from "@/lib/utils"
 import { ChevronDown, Menu, X } from "lucide-react"
 
@@ -18,6 +18,33 @@ export function Header() {
     window.addEventListener("scroll", handleScroll)
     return () => window.removeEventListener("scroll", handleScroll)
   }, [])
+
+  // Lock body scroll when mobile menu is open and handle keyboard events
+  useEffect(() => {
+    if (isMobileMenuOpen) {
+      document.body.style.overflow = 'hidden'
+      
+      // Close menu on Escape key
+      const handleEscape = (e: KeyboardEvent) => {
+        if (e.key === 'Escape') {
+          setIsMobileMenuOpen(false)
+        }
+      }
+      
+      document.addEventListener('keydown', handleEscape)
+      
+      return () => {
+        document.removeEventListener('keydown', handleEscape)
+      }
+    } else {
+      document.body.style.overflow = 'unset'
+    }
+
+    // Cleanup on unmount
+    return () => {
+      document.body.style.overflow = 'unset'
+    }
+  }, [isMobileMenuOpen])
 
   return (
     <motion.header
@@ -136,14 +163,14 @@ export function Header() {
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden p-2 rounded-lg transition-colors"
+            className="md:hidden p-2 rounded-lg transition-colors hover:bg-white/10"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             aria-label="Toggle mobile menu"
           >
             {isMobileMenuOpen ? (
-              <X className="w-6 h-6 text-neutral-700" />
+              <X className="w-6 h-6 text-white" />
             ) : (
-              <Menu className="w-6 h-6 text-neutral-700" />
+              <Menu className="w-6 h-6 text-white" />
             )}
           </button>
 
@@ -159,77 +186,81 @@ export function Header() {
         </div>
       </div>
 
-      {/* Mobile Menu Overlay */}
-      {isMobileMenuOpen && (
-        <motion.div
-          className="fixed inset-0 z-40 md:hidden"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          transition={{ duration: 0.2 }}
-        >
-          <div className="absolute inset-0 bg-black/50 backdrop-blur-sm" onClick={() => setIsMobileMenuOpen(false)} />
-          <motion.div
-            className="absolute top-0 right-0 w-80 max-w-[85vw] h-full bg-white shadow-2xl"
-            initial={{ x: "100%" }}
-            animate={{ x: 0 }}
-            exit={{ x: "100%" }}
-            transition={{ type: "spring", damping: 25, stiffness: 200 }}
-          >
-            <div className="p-6">
-              <div className="flex items-center justify-between mb-8">
+          {/* Mobile Menu Overlay */}
+          <AnimatePresence>
+            {isMobileMenuOpen && (
+              <motion.div
+                className="mobile-menu-overlay md:hidden"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.2 }}
+              >
+                <div 
+                  className="absolute inset-0 bg-black/70 backdrop-blur-sm" 
+                  onClick={() => setIsMobileMenuOpen(false)}
+                />
+                <motion.div
+                  className="mobile-menu-panel"
+                  initial={{ x: "100%" }}
+                  animate={{ x: 0 }}
+                  exit={{ x: "100%" }}
+                  transition={{ type: "spring", damping: 25, stiffness: 200 }}
+                >
+            <div className="p-4 sm:p-6 h-full flex flex-col">
+              <div className="flex items-center justify-between mb-6 sm:mb-8">
                 <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-full border-2 border-transparent bg-gradient-to-r from-blue-400 via-blue-500 to-teal-500 p-0.5 flex items-center justify-center">
+                  <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-full border-2 border-transparent bg-gradient-to-r from-blue-400 via-blue-500 to-teal-500 p-0.5 flex items-center justify-center">
                     <div className="w-full h-full rounded-full bg-white flex items-center justify-center">
-                      <span className="text-lg font-bold text-blue-600">LA</span>
+                      <span className="text-sm sm:text-lg font-bold text-blue-600">LA</span>
                     </div>
                   </div>
                   <div className="flex flex-col">
                     <span className="text-xs uppercase tracking-wider font-medium text-neutral-500">LUVERA</span>
-                    <span className="text-xl font-bold tracking-tight text-transparent bg-gradient-to-r from-blue-600 to-teal-600 bg-clip-text">Aiyra</span>
+                    <span className="text-lg sm:text-xl font-bold tracking-tight text-transparent bg-gradient-to-r from-blue-600 to-teal-600 bg-clip-text">Aiyra</span>
                   </div>
                 </div>
                 <button
                   onClick={() => setIsMobileMenuOpen(false)}
                   className="p-2 rounded-lg hover:bg-gray-100 transition-colors"
                 >
-                  <X className="w-6 h-6 text-neutral-700" />
+                  <X className="w-5 h-5 sm:w-6 sm:h-6 text-neutral-700" />
                 </button>
               </div>
 
-              <nav className="space-y-4">
+              <nav className="flex-1 space-y-2 sm:space-y-4">
                 <a
                   href="#features"
-                  className="block py-3 px-4 text-neutral-700 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors"
+                  className="block py-3 px-4 text-neutral-700 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors text-sm sm:text-base"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   Features
                 </a>
                 <a
                   href="#pricing"
-                  className="block py-3 px-4 text-neutral-700 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors"
+                  className="block py-3 px-4 text-neutral-700 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors text-sm sm:text-base"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   Pricing
                 </a>
                 <a
                   href="#resources"
-                  className="block py-3 px-4 text-neutral-700 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors"
+                  className="block py-3 px-4 text-neutral-700 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors text-sm sm:text-base"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   Resources
                 </a>
                 <a
                   href="#contact"
-                  className="block py-3 px-4 text-neutral-700 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors"
+                  className="block py-3 px-4 text-neutral-700 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors text-sm sm:text-base"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   Contact
                 </a>
-                <div className="pt-4 border-t border-gray-200">
+                <div className="pt-4 border-t border-gray-200 mt-4">
                   <motion.a
                     href="#experience"
-                    className="block w-full bg-blue-600 text-white px-6 py-3 rounded-full font-medium text-center hover:bg-blue-700 transition-colors"
+                    className="block w-full bg-blue-600 text-white px-6 py-3 rounded-full font-medium text-center hover:bg-blue-700 transition-colors text-sm sm:text-base"
                     whileTap={{ scale: 0.95 }}
                     onClick={() => setIsMobileMenuOpen(false)}
                   >
@@ -240,7 +271,8 @@ export function Header() {
             </div>
           </motion.div>
         </motion.div>
-      )}
+        )}
+      </AnimatePresence>
     </motion.header>
   )
 }

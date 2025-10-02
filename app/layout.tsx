@@ -13,6 +13,7 @@ export const metadata: Metadata = {
   title: "Katachi — Design furniture for spaces that breathe.",
   description: "Architected in Belgium, built to last—timeless pieces.",
   generator: "v0.app",
+  viewport: "width=device-width, initial-scale=1",
   alternates: {
     canonical: "https://katachi.example/",
   },
