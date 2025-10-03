@@ -60,6 +60,9 @@ export function HeroSection() {
         />
       </motion.div>
 
+      {/* Black overlay for better text visibility */}
+      <div className="absolute inset-0 bg-black/40 z-5" />
+
       {/* Content */}
       <motion.div
         className="relative z-10 h-full flex items-center justify-center"
