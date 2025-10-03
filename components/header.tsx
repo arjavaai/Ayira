@@ -13,11 +13,8 @@ export function Header() {
   const [isMobileProductsOpen, setIsMobileProductsOpen] = useState(false)
   const pathname = usePathname()
   
-  // Check if we're on the homepage (which has a dark background)
-  const isHomepage = pathname === "/"
-  
-  // Determine if we should use dark text (for light backgrounds)
-  const shouldUseDarkText = !isHomepage || isScrolled
+  // Since we're using a consistent dark theme, always use light text
+  const shouldUseDarkText = false
 
   useEffect(() => {
     const handleScroll = () => {
@@ -57,84 +54,81 @@ export function Header() {
 
   return (
     <motion.header
-      className={cn(
-        "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
-        "backdrop-blur-md border-b",
-        shouldUseDarkText 
-          ? "bg-white/80 border-gray-200/50" 
-          : "bg-white/[0.02] border-white/[0.02]",
-      )}
+      className="fixed top-0 left-0 right-0 z-50"
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.6, ease: [0.21, 0.47, 0.32, 0.98] }}
     >
-      <div className="container-custom">
-        <div className="flex items-center justify-between h-16 lg:h-20">
-          {/* Logo */}
-          <motion.div className="flex items-center gap-3" whileHover={{ scale: 1.02 }} transition={{ duration: 0.2 }}>
-            <a href="/" className="flex items-center gap-3" aria-label="Luvera Aiyra Home">
-              {/* Circular Logo with LA initials */}
-              <motion.div 
-                className="relative w-10 h-10 lg:w-12 lg:h-12 rounded-full border-2 border-transparent bg-gradient-to-r from-blue-400 via-blue-500 to-teal-500 p-0.5 flex items-center justify-center"
-                whileHover={{ rotate: 5 }}
-                transition={{ type: "spring", stiffness: 300, damping: 20 }}
-              >
-                {/* Inner circle with gradient border */}
-                <div className="w-full h-full rounded-full bg-white flex items-center justify-center relative overflow-hidden">
-                  {/* Gradient background for the letters */}
-                  <div className="absolute inset-0 bg-gradient-to-br from-blue-50 to-teal-50 rounded-full" />
-                  
-                  {/* LA Letters */}
-                  <div className="relative z-10 flex items-center justify-center">
-                    <span className="text-lg lg:text-xl font-bold text-blue-600 leading-none">L</span>
-                    <span className="text-lg lg:text-xl font-bold bg-gradient-to-r from-blue-500 to-teal-600 bg-clip-text text-transparent leading-none">A</span>
-                  </div>
-                  
-                  {/* Subtle shine effect */}
-                  <div className="absolute inset-0 bg-gradient-to-br from-white/20 to-transparent rounded-full" />
-                </div>
-              </motion.div>
+      <div className="flex justify-center px-4 py-3">
+        <div className={cn(
+          "flex items-center justify-between w-full max-w-7xl",
+          "bg-black/50 border border-white/10 backdrop-blur-lg",
+          "py-3 px-4 lg:px-6 rounded-full shadow-lg transition-all duration-300"
+        )}>
+          <div className="flex items-center flex-1">
+            {/* Logo */}
+            <motion.div className="flex items-center gap-3" whileHover={{ scale: 1.02 }} transition={{ duration: 0.2 }}>
+              <a href="/" className="flex items-center gap-2 lg:gap-3" aria-label="Luvera Aiyra Home">
+                {/* Circular Logo with LA initials */}
+                <motion.div
+                  className="relative w-8 h-8 lg:w-10 lg:h-10 rounded-full border-2 border-transparent bg-gradient-to-r from-[#097abe] via-[#076198] to-[#054972] p-0.5 flex items-center justify-center"
+                  whileHover={{ rotate: 5 }}
+                  transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                >
+                  {/* Inner circle with gradient border */}
+                  <div className="w-full h-full rounded-full bg-white flex items-center justify-center relative overflow-hidden">
+                    {/* Gradient background for the letters */}
+                    <div className="absolute inset-0 bg-gradient-to-br from-[#097abe]/10 to-[#054972]/10 rounded-full" />
 
-              {/* Text Logo */}
-              <div className="flex flex-col">
-                <span
-                  className={cn(
-                    "text-xs uppercase tracking-wider font-medium transition-colors leading-none",
-                    shouldUseDarkText ? "text-neutral-500" : "text-white/70",
-                  )}
-                >
-                  LUVERA
-                </span>
-                <span
-                  className={cn(
-                    "text-xl lg:text-2xl font-bold tracking-tight transition-colors leading-none",
-                    shouldUseDarkText 
-                      ? "text-transparent bg-gradient-to-r from-blue-600 to-teal-600 bg-clip-text hover:from-blue-700 hover:to-teal-700" 
-                      : "text-transparent bg-gradient-to-r from-blue-400 to-teal-400 bg-clip-text hover:from-blue-300 hover:to-teal-300",
-                  )}
-                >
-                  Aiyra
-                </span>
-              </div>
-            </a>
-          </motion.div>
+                    {/* LA Letters */}
+                    <div className="relative z-10 flex items-center justify-center">
+                      <span className="text-sm lg:text-base font-bold text-[#097abe] leading-none">L</span>
+                      <span className="text-sm lg:text-base font-bold bg-gradient-to-r from-[#097abe] to-[#054972] bg-clip-text text-transparent leading-none">A</span>
+                    </div>
+
+                    {/* Subtle shine effect */}
+                    <div className="absolute inset-0 bg-gradient-to-br from-white/20 to-transparent rounded-full" />
+                  </div>
+                </motion.div>
+
+                {/* Text Logo */}
+                <div className="hidden sm:flex flex-col">
+                  <span className="text-xs uppercase tracking-wider font-medium text-white/70 leading-none">
+                    LUVERA
+                  </span>
+                  <span className="text-lg lg:text-xl font-bold tracking-tight text-transparent bg-gradient-to-r from-[#097abe] to-[#054972] bg-clip-text leading-none">
+                    Aiyra
+                  </span>
+                </div>
+              </a>
+            </motion.div>
+          </div>
 
           {/* Navigation */}
-          <nav className="hidden md:flex items-center gap-8">
+          <nav className="hidden md:flex items-center gap-2 lg:gap-3 mx-auto">
             <div
               className="relative"
               onMouseEnter={() => setIsProductsOpen(true)}
               onMouseLeave={() => setIsProductsOpen(false)}
             >
-              <button
-                className={cn(
-                  "flex items-center gap-1 transition-colors",
-                  shouldUseDarkText ? "text-neutral-700 hover:text-neutral-900" : "text-white/90 hover:text-white",
-                )}
+              <motion.button
+                className="flex items-center gap-1 text-sm font-semibold px-4 lg:px-6 py-2 lg:py-3 rounded-full transition-all duration-300 text-white/70 hover:text-white relative"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
               >
+                <AnimatePresence>
+                  {isProductsOpen && (
+                    <motion.div
+                      initial={{ opacity: 0, scale: 0.8 }}
+                      animate={{ opacity: 1, scale: 1 }}
+                      exit={{ opacity: 0, scale: 0.8 }}
+                      className="absolute inset-0 bg-white/10 rounded-full -z-10"
+                    />
+                  )}
+                </AnimatePresence>
                 Products
                 <ChevronDown className={cn("w-4 h-4 transition-transform", isProductsOpen && "rotate-180")} />
-              </button>
+              </motion.button>
               <AnimatePresence>
                 {isProductsOpen && (
                   <motion.div
@@ -142,92 +136,92 @@ export function Header() {
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: 10 }}
                     transition={{ duration: 0.2 }}
-                    className="absolute top-full left-0 mt-2 w-[32rem] bg-white rounded-xl shadow-xl border border-gray-200 overflow-hidden z-50"
+                    className="absolute top-full left-0 mt-2 w-[52rem] bg-black/80 backdrop-blur-xl border border-white/20 rounded-3xl shadow-2xl overflow-hidden z-50"
                   >
                     <div className="p-4">
                       <div className="grid grid-cols-3 gap-3">
                         <a
                           href="/products/independent-hotels"
-                          className="group flex items-start gap-3 p-3 rounded-lg hover:bg-blue-50 transition-colors"
+                          className="group flex items-start gap-3 p-3 rounded-2xl hover:bg-white/10 transition-colors"
                         >
-                          <div className="w-10 h-10 bg-blue-500 rounded-lg flex items-center justify-center flex-shrink-0">
+                          <div className="w-10 h-10 bg-blue-500 rounded-xl flex items-center justify-center flex-shrink-0">
                             <Building className="w-5 h-5 text-white" />
                           </div>
                           <div className="flex-1 min-w-0">
-                            <div className="font-semibold text-gray-900 text-sm mb-1">Independent Hotels</div>
-                            <div className="text-xs text-gray-600 leading-relaxed">Professional management tools to compete with major hotel chains.</div>
+                            <div className="font-semibold text-white text-sm mb-1">Independent Hotels</div>
+                            <div className="text-xs text-white/70 leading-relaxed">Professional management tools to compete with major hotel chains.</div>
                           </div>
-                          <ArrowRight className="w-4 h-4 text-gray-400 group-hover:text-blue-500 transition-colors flex-shrink-0" />
+                          <ArrowRight className="w-4 h-4 text-white/40 group-hover:text-blue-400 transition-colors flex-shrink-0" />
                         </a>
-                        
+
                         <a
                           href="/products/resorts-luxury"
-                          className="group flex items-start gap-3 p-3 rounded-lg hover:bg-blue-50 transition-colors"
+                          className="group flex items-start gap-3 p-3 rounded-2xl hover:bg-white/10 transition-colors"
                         >
-                          <div className="w-10 h-10 bg-purple-500 rounded-lg flex items-center justify-center flex-shrink-0">
+                          <div className="w-10 h-10 bg-purple-500 rounded-xl flex items-center justify-center flex-shrink-0">
                             <Star className="w-5 h-5 text-white" />
                           </div>
                           <div className="flex-1 min-w-0">
-                            <div className="font-semibold text-gray-900 text-sm mb-1">Resorts & Luxury Properties</div>
-                            <div className="text-xs text-gray-600 leading-relaxed">Sophisticated tools for delivering exceptional luxury guest experiences.</div>
+                            <div className="font-semibold text-white text-sm mb-1">Resorts & Luxury Properties</div>
+                            <div className="text-xs text-white/70 leading-relaxed">Sophisticated tools for delivering exceptional luxury guest experiences.</div>
                           </div>
-                          <ArrowRight className="w-4 h-4 text-gray-400 group-hover:text-blue-500 transition-colors flex-shrink-0" />
+                          <ArrowRight className="w-4 h-4 text-white/40 group-hover:text-purple-400 transition-colors flex-shrink-0" />
                         </a>
-                        
+
                       <a
                         href="/products/vacation-rentals"
-                          className="group flex items-start gap-3 p-3 rounded-lg hover:bg-blue-50 transition-colors"
+                          className="group flex items-start gap-3 p-3 rounded-2xl hover:bg-white/10 transition-colors"
                         >
-                          <div className="w-10 h-10 bg-green-500 rounded-lg flex items-center justify-center flex-shrink-0">
+                          <div className="w-10 h-10 bg-green-500 rounded-xl flex items-center justify-center flex-shrink-0">
                             <Home className="w-5 h-5 text-white" />
                           </div>
                           <div className="flex-1 min-w-0">
-                            <div className="font-semibold text-gray-900 text-sm mb-1">Airbnb & Vacation Rentals</div>
-                            <div className="text-xs text-gray-600 leading-relaxed">Streamlined management for vacation rental property owners.</div>
+                            <div className="font-semibold text-white text-sm mb-1">Airbnb & Vacation Rentals</div>
+                            <div className="text-xs text-white/70 leading-relaxed">Streamlined management for vacation rental property owners.</div>
                           </div>
-                          <ArrowRight className="w-4 h-4 text-gray-400 group-hover:text-blue-500 transition-colors flex-shrink-0" />
+                          <ArrowRight className="w-4 h-4 text-white/40 group-hover:text-green-400 transition-colors flex-shrink-0" />
                         </a>
 
                       <a
                         href="/products/hotel-chains"
-                          className="group flex items-start gap-3 p-3 rounded-lg hover:bg-blue-50 transition-colors"
+                          className="group flex items-start gap-3 p-3 rounded-2xl hover:bg-white/10 transition-colors"
                         >
-                          <div className="w-10 h-10 bg-indigo-500 rounded-lg flex items-center justify-center flex-shrink-0">
+                          <div className="w-10 h-10 bg-indigo-500 rounded-xl flex items-center justify-center flex-shrink-0">
                             <Building className="w-5 h-5 text-white" />
                           </div>
                           <div className="flex-1 min-w-0">
-                            <div className="font-semibold text-gray-900 text-sm mb-1">Hotel Chains</div>
-                            <div className="text-xs text-gray-600 leading-relaxed">Centralized management solutions for multi-property hospitality groups.</div>
+                            <div className="font-semibold text-white text-sm mb-1">Hotel Chains</div>
+                            <div className="text-xs text-white/70 leading-relaxed">Centralized management solutions for multi-property hospitality groups.</div>
                           </div>
-                          <ArrowRight className="w-4 h-4 text-gray-400 group-hover:text-blue-500 transition-colors flex-shrink-0" />
+                          <ArrowRight className="w-4 h-4 text-white/40 group-hover:text-indigo-400 transition-colors flex-shrink-0" />
                         </a>
 
                       <a
                         href="/products/hostels"
-                          className="group flex items-start gap-3 p-3 rounded-lg hover:bg-blue-50 transition-colors"
+                          className="group flex items-start gap-3 p-3 rounded-2xl hover:bg-white/10 transition-colors"
                         >
-                          <div className="w-10 h-10 bg-orange-500 rounded-lg flex items-center justify-center flex-shrink-0">
+                          <div className="w-10 h-10 bg-orange-500 rounded-xl flex items-center justify-center flex-shrink-0">
                             <Users2 className="w-5 h-5 text-white" />
                           </div>
                           <div className="flex-1 min-w-0">
-                            <div className="font-semibold text-gray-900 text-sm mb-1">Hostels</div>
-                            <div className="text-xs text-gray-600 leading-relaxed">Community-focused solutions for hostels and budget accommodations.</div>
+                            <div className="font-semibold text-white text-sm mb-1">Hostels</div>
+                            <div className="text-xs text-white/70 leading-relaxed">Community-focused solutions for hostels and budget accommodations.</div>
                           </div>
-                          <ArrowRight className="w-4 h-4 text-gray-400 group-hover:text-blue-500 transition-colors flex-shrink-0" />
+                          <ArrowRight className="w-4 h-4 text-white/40 group-hover:text-orange-400 transition-colors flex-shrink-0" />
                         </a>
 
                       <a
                         href="/products/apartments"
-                          className="group flex items-start gap-3 p-3 rounded-lg hover:bg-blue-50 transition-colors"
+                          className="group flex items-start gap-3 p-3 rounded-2xl hover:bg-white/10 transition-colors"
                         >
-                          <div className="w-10 h-10 bg-teal-500 rounded-lg flex items-center justify-center flex-shrink-0">
+                          <div className="w-10 h-10 bg-teal-500 rounded-xl flex items-center justify-center flex-shrink-0">
                             <MapPin className="w-5 h-5 text-white" />
                           </div>
                           <div className="flex-1 min-w-0">
-                            <div className="font-semibold text-gray-900 text-sm mb-1">Apartment Communities</div>
-                            <div className="text-xs text-gray-600 leading-relaxed">Modern solutions for residential property and community management.</div>
+                            <div className="font-semibold text-white text-sm mb-1">Apartment Communities</div>
+                            <div className="text-xs text-white/70 leading-relaxed">Modern solutions for residential property and community management.</div>
                           </div>
-                          <ArrowRight className="w-4 h-4 text-gray-400 group-hover:text-blue-500 transition-colors flex-shrink-0" />
+                          <ArrowRight className="w-4 h-4 text-white/40 group-hover:text-teal-400 transition-colors flex-shrink-0" />
                         </a>
                       </div>
                     </div>
@@ -235,69 +229,79 @@ export function Header() {
                 )}
               </AnimatePresence>
             </div>
-            <a
+            <motion.a
               href="/features"
-              className={cn(
-                "transition-colors",
-                shouldUseDarkText ? "text-neutral-700 hover:text-neutral-900" : "text-white/90 hover:text-white",
-              )}
+              className="text-sm font-semibold px-4 lg:px-6 py-2 lg:py-3 rounded-full transition-all duration-300 text-white/70 hover:text-white relative"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
             >
+              <motion.div
+                className="absolute inset-0 bg-white/10 rounded-full -z-10 opacity-0 hover:opacity-100 transition-opacity"
+              />
               Features
-            </a>
-            <a
+            </motion.a>
+            <motion.a
               href="/pricing"
-              className={cn(
-                "transition-colors",
-                shouldUseDarkText ? "text-neutral-700 hover:text-neutral-900" : "text-white/90 hover:text-white",
-              )}
+              className="text-sm font-semibold px-4 lg:px-6 py-2 lg:py-3 rounded-full transition-all duration-300 text-white/70 hover:text-white relative"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
             >
+              <motion.div
+                className="absolute inset-0 bg-white/10 rounded-full -z-10 opacity-0 hover:opacity-100 transition-opacity"
+              />
               Pricing
-            </a>
-            <a
+            </motion.a>
+            <motion.a
               href="/resources"
-              className={cn(
-                "transition-colors",
-                shouldUseDarkText ? "text-neutral-700 hover:text-neutral-900" : "text-white/90 hover:text-white",
-              )}
+              className="text-sm font-semibold px-4 lg:px-6 py-2 lg:py-3 rounded-full transition-all duration-300 text-white/70 hover:text-white relative"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
             >
+              <motion.div
+                className="absolute inset-0 bg-white/10 rounded-full -z-10 opacity-0 hover:opacity-100 transition-opacity"
+              />
               Resources
-            </a>
-            <a
+            </motion.a>
+            <motion.a
               href="/contact"
-              className={cn(
-                "transition-colors",
-                shouldUseDarkText ? "text-neutral-700 hover:text-neutral-900" : "text-white/90 hover:text-white",
-              )}
+              className="text-sm font-semibold px-4 lg:px-6 py-2 lg:py-3 rounded-full transition-all duration-300 text-white/70 hover:text-white relative"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
             >
+              <motion.div
+                className="absolute inset-0 bg-white/10 rounded-full -z-10 opacity-0 hover:opacity-100 transition-opacity"
+              />
               Contact
-            </a>
+            </motion.a>
           </nav>
 
-          {/* Mobile Menu Button */}
-          <button
-            className={cn(
-              "md:hidden p-2 rounded-lg transition-colors",
-              shouldUseDarkText ? "hover:bg-gray-100" : "hover:bg-white/10"
-            )}
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            aria-label="Toggle mobile menu"
-          >
-            {isMobileMenuOpen ? (
-              <X className={cn("w-6 h-6", shouldUseDarkText ? "text-gray-700" : "text-white")} />
-            ) : (
-              <Menu className={cn("w-6 h-6", shouldUseDarkText ? "text-gray-700" : "text-white")} />
-            )}
-          </button>
+          {/* Right side - CTA and Mobile Menu */}
+          <div className="flex items-center gap-2 lg:gap-3 flex-1 justify-end">
+            {/* CTA Button */}
+            <motion.a
+              href="/experience"
+              className="hidden md:block bg-gradient-to-r from-[#097abe] to-[#076198] text-white px-4 lg:px-6 py-2 lg:py-2.5 rounded-full text-sm font-semibold hover:from-[#076198] hover:to-[#054972] transition-all duration-300 shadow-lg shadow-[#097abe]/20"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              Experience Aiyra
+            </motion.a>
 
-          {/* CTA Button - Hidden on mobile */}
-          <motion.a
-            href="/experience"
-            className="hidden md:block bg-blue-600 text-white px-6 py-2.5 rounded-full font-medium hover:bg-blue-700 transition-colors"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            Experience Aiyra
-          </motion.a>
+            {/* Mobile Menu Button */}
+            <motion.button
+              className="md:hidden p-2 rounded-full hover:bg-white/10 transition-colors"
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              aria-label="Toggle mobile menu"
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
+            >
+              {isMobileMenuOpen ? (
+                <X className="w-5 h-5 text-white" />
+              ) : (
+                <Menu className="w-5 h-5 text-white" />
+              )}
+            </motion.button>
+          </div>
         </div>
       </div>
 

@@ -1,211 +1,340 @@
 "use client"
 
-import { useRef } from "react"
+import { useRef, useState, useEffect, ReactNode } from "react"
 import { motion } from "framer-motion"
 import { Reveal } from "./reveal"
-import { Server, Bot, BarChart3, CheckCircle2, ArrowRight, Sparkles } from "lucide-react"
-import {
-  TextRevealCard,
-  TextRevealCardDescription,
-  TextRevealCardTitle,
-} from "@/components/ui/text-reveal-card"
+import { Activity, DollarSign, Users, Bot, BarChart3, Headphones, CheckCircle2, Calendar, ArrowRight, TrendingUp, Zap, Monitor, CreditCard, MessageSquare, Settings, Shield, Building, TreePine, Home, MapPin, Star, Users2, MessageCircle, BarChart, Brain, Globe, Target } from "lucide-react"
+import { Button } from "@/components/ui/button"
 
-const platforms = [
+// CardSwap Component
+export interface CardProps {
+  children: ReactNode
+}
+
+export const Card: React.FC<CardProps> = ({ children }) => {
+  return (
+    <div className="w-full h-full relative">
+      <div className="absolute inset-0 bg-[#626E7C] rounded-3xl shadow-2xl backdrop-blur-md border border-[#BDC3C8]/30">
+        <div className="relative h-full p-8">
+          {children}
+        </div>
+      </div>
+    </div>
+  )
+}
+
+interface CardSwapProps {
+  children: ReactNode[]
+  cardDistance?: number
+  verticalDistance?: number
+  delay?: number
+  pauseOnHover?: boolean
+}
+
+export const CardSwap: React.FC<CardSwapProps> = ({
+  children,
+  cardDistance = 40,
+  verticalDistance = 50,
+  delay = 4000,
+  pauseOnHover = true
+}) => {
+  const [currentIndex, setCurrentIndex] = useState(0)
+  const [isPaused, setIsPaused] = useState(false)
+
+  useEffect(() => {
+    if (isPaused) return
+
+    const interval = setInterval(() => {
+      setCurrentIndex((prev) => (prev + 1) % children.length)
+    }, delay)
+
+    return () => clearInterval(interval)
+  }, [children.length, delay, isPaused])
+
+  const handleMouseEnter = () => {
+    if (pauseOnHover) {
+      setIsPaused(true)
+    }
+  }
+
+  const handleMouseLeave = () => {
+    if (pauseOnHover) {
+      setIsPaused(false)
+    }
+  }
+
+  return (
+    <div 
+      className="relative w-full h-full perspective-1000"
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
+    >
+      {children.map((child, index) => {
+        const offset = index - currentIndex
+        const zIndex = children.length - Math.abs(offset)
+        const isActive = index === currentIndex
+        const isNext = index === (currentIndex + 1) % children.length
+        const isPrev = index === (currentIndex - 1 + children.length) % children.length
+        
+        // Calculate transform based on position
+        let transform = ''
+        let opacity = 0.3
+        let scale = 0.9
+        
+        if (isActive) {
+          transform = 'translateZ(0px) rotateY(0deg) rotateX(0deg)'
+          opacity = 1
+          scale = 1
+        } else if (isNext) {
+          transform = `translateX(${cardDistance}px) translateY(${verticalDistance}px) rotateY(-12deg) rotateX(3deg) translateZ(-30px)`
+          opacity = 0.8
+          scale = 0.95
+        } else if (isPrev) {
+          transform = `translateX(-${cardDistance * 0.4}px) translateY(-${verticalDistance * 0.4}px) rotateY(12deg) rotateX(-3deg) translateZ(-60px)`
+          opacity = 0.6
+          scale = 0.9
+        } else {
+          transform = `translateX(${cardDistance * (offset > 0 ? 1.5 : -1)}px) translateY(${verticalDistance * offset}px) rotateY(${offset * 10}deg) rotateX(${offset * 2}deg) translateZ(${-90 * Math.abs(offset)}px)`
+          opacity = 0.3
+          scale = 0.85
+        }
+        
+        const style = {
+          position: 'absolute' as const,
+          top: 0,
+          left: 0,
+          right: 0,
+          bottom: 0,
+          zIndex,
+          opacity,
+          scale,
+          transform,
+          transformStyle: 'preserve-3d' as const,
+          transition: 'all 1s cubic-bezier(0.25, 0.46, 0.45, 0.94)',
+          pointerEvents: isActive ? 'auto' : 'none' as const
+        }
+
+        return (
+          <div key={index} style={style}>
+            {child}
+          </div>
+        )
+      })}
+    </div>
+  )
+}
+
+const platformFeatures = [
   {
-    id: "pms",
-    icon: Server,
-    name: "Property Management System",
-    description:
-      "Complete PMS with reservations, check-ins, housekeeping, and operations management for all property types.",
-    features: ["Reservations & Channel Management", "Housekeeping & Maintenance", "Guest Communication"],
-    color: "blue",
-    gradient: "from-blue-50 via-blue-100/50 to-indigo-50",
-    accentColor: "blue",
-    bgPattern: "bg-[radial-gradient(circle_at_20%_80%,rgba(59,130,246,0.1)_0%,transparent_50%)]",
+    id: "property-management",
+    title: "Property Management System",
+    subtitle: "Complete PMS with reservations, check-ins, housekeeping, and operations management for all property types.",
+    icon: Building,
+    color: "from-[#097abe] to-[#076198]",
+    features: [
+      { icon: Calendar, label: "Reservations & Channel Management", description: "Seamless booking across all channels" },
+      { icon: Settings, label: "Housekeeping & Maintenance", description: "Streamlined operations management" },
+      { icon: MessageCircle, label: "Guest Communication", description: "Centralized messaging system" }
+    ]
   },
   {
-    id: "ai",
+    id: "ai-chatbot",
+    title: "AI Chatbot & Automation",
+    subtitle: "Built-in AI chatbot that handles guest inquiries, automates responses, and provides 24/7 customer support.",
     icon: Bot,
-    name: "AI Chatbot & Automation",
-    description:
-      "Built-in AI chatbot that handles guest inquiries, automates responses, and provides 24/7 customer support.",
-    features: ["24/7 Automated Guest Support", "Multi-language Capabilities", "Smart Recommendations"],
-    color: "purple",
-    gradient: "from-purple-50 via-purple-100/50 to-pink-50",
-    accentColor: "purple",
-    bgPattern: "bg-[radial-gradient(circle_at_80%_20%,rgba(147,51,234,0.1)_0%,transparent_50%)]",
+    color: "from-[#076198] to-[#054972]",
+    features: [
+      { icon: Headphones, label: "24/7 Automated Guest Support", description: "Always available customer service" },
+      { icon: Globe, label: "Multi-language Capabilities", description: "Support guests in their language" },
+      { icon: Brain, label: "Smart Recommendations", description: "Personalized suggestions and offers" }
+    ]
   },
   {
-    id: "analytics",
-    icon: BarChart3,
-    name: "Analytics & Business Intelligence",
-    description:
-      "Advanced BI platform with real-time dashboards, predictive analytics, and actionable insights for data-driven decisions.",
-    features: ["Real-time Performance Dashboards", "Predictive Revenue Analytics", "Custom KPI Tracking"],
-    color: "teal",
-    gradient: "from-teal-50 via-teal-100/50 to-emerald-50",
-    accentColor: "teal",
-    bgPattern: "bg-[radial-gradient(circle_at_40%_40%,rgba(20,184,166,0.1)_0%,transparent_50%)]",
-  },
+    id: "analytics-bi",
+    title: "Analytics & Business Intelligence",
+    subtitle: "Advanced BI platform with real-time dashboards, predictive analytics, and actionable insights for data-driven decisions.",
+    icon: BarChart,
+    color: "from-[#054972] to-[#03304c]",
+    features: [
+      { icon: Monitor, label: "Real-time Performance Dashboards", description: "Live insights into your business" },
+      { icon: TrendingUp, label: "Predictive Revenue Analytics", description: "Forecast and optimize revenue" },
+      { icon: Target, label: "Custom KPI Tracking", description: "Monitor what matters most" }
+    ]
+  }
 ]
 
 export function CollectionStrip() {
   const containerRef = useRef<HTMLDivElement>(null)
 
+  const AnimatedText = ({ text, delay = 0 }: { text: string; delay?: number }) => {
+    return (
+      <span>
+        {text.split("").map((char, index) => (
+          <motion.span
+            key={index}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{
+              duration: 0.5,
+              delay: delay + index * 0.03,
+              ease: [0.21, 0.47, 0.32, 0.98],
+            }}
+            style={{ display: char === " " ? "inline" : "inline-block" }}
+          >
+            {char === " " ? "\u00A0" : char}
+          </motion.span>
+        ))}
+      </span>
+    )
+  }
+
   return (
-    <section ref={containerRef} className="py-20 lg:py-32 bg-gradient-to-b from-white to-blue-50/30">
-      <div className="mb-12">
-        <Reveal>
-          <div className="container-custom text-center">
-            <h2 className="text-neutral-900 mb-4 text-5xl lg:text-6xl font-normal">More Than Just PMS Software</h2>
-            <p className="text-xl text-neutral-600 mb-2">Three Platforms in One Solution</p>
-            <p className="text-lg text-neutral-600 max-w-3xl mx-auto">
-              Unlike traditional PMS systems, Aiyra combines property management, AI intelligence, and business
-              analytics in one integrated platform.
-            </p>
-          </div>
-        </Reveal>
-      </div>
-
+    <section ref={containerRef} className="py-20 lg:py-32 bg-gradient-to-b from-[#EFF0F1] to-[#626E7C]" id="dashboard">
       <div className="container-custom">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 mb-12">
-          {platforms.map((platform, index) => (
-            <Reveal key={platform.id} delay={index * 0.1}>
-              <motion.div
-                className={`relative group overflow-hidden rounded-3xl bg-gradient-to-br ${platform.gradient} border border-white/20 backdrop-blur-sm hover:border-white/40 transition-all duration-500 cursor-pointer`}
-                whileHover={{ 
-                  y: -12,
-                  scale: 1.02,
-                  transition: { type: "spring", stiffness: 300, damping: 20 }
-                }}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: index * 0.1, duration: 0.6 }}
-              >
-                {/* Background Pattern */}
-                <div className={`absolute inset-0 ${platform.bgPattern} opacity-50`} />
-                
-                {/* Glassmorphism Effect */}
-                <div className="absolute inset-0 bg-white/10 backdrop-blur-xl" />
-                
-                {/* Card Content */}
-                <div className="relative z-10 p-6 lg:p-8 h-full flex flex-col">
-                  {/* Icon with Modern Styling */}
-                  <motion.div 
-                    className={`w-16 h-16 lg:w-20 lg:h-20 rounded-2xl flex items-center justify-center mb-4 lg:mb-6 transition-all duration-300 ${
-                      platform.accentColor === 'blue' 
-                        ? 'bg-gradient-to-br from-blue-500 to-blue-600 shadow-lg shadow-blue-500/25 group-hover:shadow-blue-500/40' 
-                        : platform.accentColor === 'purple'
-                        ? 'bg-gradient-to-br from-purple-500 to-purple-600 shadow-lg shadow-purple-500/25 group-hover:shadow-purple-500/40'
-                        : 'bg-gradient-to-br from-teal-500 to-teal-600 shadow-lg shadow-teal-500/25 group-hover:shadow-teal-500/40'
-                    }`}
-                    whileHover={{ rotate: 5, scale: 1.1 }}
-                  >
-                    <platform.icon className="w-8 h-8 lg:w-10 lg:h-10 text-white" />
-                    <motion.div
-                      className="absolute -top-1 -right-1"
-                      animate={{ rotate: 360 }}
-                      transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
-                    >
-                      <Sparkles className="w-3 h-3 lg:w-4 lg:h-4 text-yellow-400" />
-                    </motion.div>
-                  </motion.div>
+        {/* Main Content Section */}
+        <div className="mb-20">
+          <Reveal>
+            <div className="grid lg:grid-cols-2 gap-16 items-center">
+              {/* Left Side - Text Content */}
+              <div className="text-left">
+                <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-[#3B82F6] to-[#097abe] text-white rounded-full text-sm font-medium mb-6">
+                  <Zap className="w-4 h-4" />
+                  All-In-One Platform
+                </div>
+                <h2 className="text-black text-4xl lg:text-6xl font-bold mb-6 leading-tight">
+                  <AnimatedText text="More Than Just PMS Software" delay={0.2} />
+                </h2>
+                <p className="text-xl lg:text-2xl font-semibold text-[#626E7C] mb-4">
+                  Three Platforms in One Solution
+                </p>
+                <p className="text-lg text-black leading-relaxed">
+                  Unlike traditional PMS systems, Aiyra combines property management, AI intelligence, and business analytics in one integrated platform.
+                </p>
+              </div>
 
-                  {/* Bold Typography */}
-                  <h3 className="text-xl lg:text-2xl font-bold text-neutral-900 mb-3 lg:mb-4 leading-tight group-hover:text-neutral-800 transition-colors duration-300">
-                    {platform.name}
+              {/* Right Side - CardSwap */}
+              <div className="relative" style={{ height: '600px' }}>
+                <CardSwap
+                  cardDistance={40}
+                  verticalDistance={50}
+                  delay={4000}
+                  pauseOnHover={true}
+                >
+                  {platformFeatures.map((platform, index) => (
+                    <Card key={platform.id}>
+                      <div className="h-full flex flex-col">
+                        {/* Header */}
+                        <div className="flex items-start gap-6 mb-8">
+                          <div className={`w-20 h-20 bg-gradient-to-br ${platform.color} rounded-3xl flex items-center justify-center shadow-xl flex-shrink-0`}>
+                            <platform.icon className="w-10 h-10 text-white" />
+                          </div>
+                          <div className="flex-1">
+                            <h3 className="text-3xl font-bold text-white mb-3 leading-tight">
+                              {platform.title}
                   </h3>
-                  
-                  {/* Description */}
-                  <p className="text-neutral-700 mb-4 lg:mb-6 leading-relaxed text-sm group-hover:text-neutral-800 transition-colors duration-300">
-                    {platform.description}
-                  </p>
+                            <p className="text-[#E0E3E5] text-base leading-relaxed">
+                              {platform.subtitle}
+                            </p>
+                          </div>
+                        </div>
 
-                  {/* Features with Enhanced Styling */}
-                  <div className="flex-1">
-                    <ul className="space-y-3">
-                      {platform.features.map((feature, idx) => (
-                        <motion.li 
-                          key={idx} 
-                          className="flex items-center gap-3 text-sm font-medium text-neutral-700 group-hover:text-neutral-800 transition-colors duration-300"
-                          initial={{ opacity: 0, x: -20 }}
-                          animate={{ opacity: 1, x: 0 }}
-                          transition={{ delay: (index * 0.1) + (idx * 0.1) + 0.3 }}
-                        >
+                        {/* Features */}
+                        <div className="space-y-6 flex-1 mb-8">
+                          {platform.features.map((feature, featureIndex) => (
                           <motion.div
-                            className={`w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0 ${
-                              platform.accentColor === 'blue' 
-                                ? 'bg-gradient-to-br from-blue-500 to-blue-600' 
-                                : platform.accentColor === 'purple'
-                                ? 'bg-gradient-to-br from-purple-500 to-purple-600'
-                                : 'bg-gradient-to-br from-teal-500 to-teal-600'
-                            }`}
-                            whileHover={{ scale: 1.2 }}
-                          >
-                            <CheckCircle2 className="w-4 h-4 text-white" />
+                              key={featureIndex}
+                              className="flex items-start gap-5 p-5 rounded-2xl hover:bg-[#3B82F6]/20 transition-all duration-300 group"
+                              whileHover={{ scale: 1.02 }}
+                            >
+                              <div className="w-12 h-12 bg-[#3B82F6]/30 backdrop-blur-sm rounded-2xl flex items-center justify-center flex-shrink-0 group-hover:bg-[#3B82F6]/50 transition-colors">
+                                <feature.icon className="w-6 h-6 text-white" />
+                              </div>
+                              <div className="flex-1">
+                                <h4 className="font-semibold text-white text-base mb-2">
+                                  {feature.label}
+                                </h4>
+                                <p className="text-sm text-[#E0E3E5] leading-relaxed">
+                                  {feature.description}
+                                </p>
+                              </div>
                           </motion.div>
-                          <span>{feature}</span>
-                        </motion.li>
                       ))}
-                    </ul>
                   </div>
 
-                  {/* Interactive CTA */}
-                  <motion.div 
-                    className="mt-6 pt-6 border-t border-white/20"
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    transition={{ delay: (index * 0.1) + 0.5 }}
-                  >
-                    <motion.button
-                      className={`flex items-center gap-2 font-semibold text-sm transition-colors duration-300 ${
-                        platform.accentColor === 'blue' 
-                          ? 'text-blue-600 group-hover:text-blue-700' 
-                          : platform.accentColor === 'purple'
-                          ? 'text-purple-600 group-hover:text-purple-700'
-                          : 'text-teal-600 group-hover:text-teal-700'
-                      }`}
-                      whileHover={{ x: 5 }}
+                        {/* Learn More Button */}
+                        <div className="mt-auto pt-6 border-t border-[#3B82F6]/30">
+                          <Button 
+                            variant="outline" 
+                            className="w-full h-12 border-2 border-[#3B82F6]/50 text-white hover:bg-[#3B82F6]/20 hover:border-[#3B82F6] font-semibold text-base rounded-2xl backdrop-blur-sm transition-all duration-300"
                     >
                       Learn More
-                      <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
-                    </motion.button>
-                  </motion.div>
+                          </Button>
+                        </div>
+                      </div>
+                    </Card>
+                  ))}
+                </CardSwap>
+              </div>
                 </div>
-
-                {/* Hover Glow Effect */}
-                <motion.div
-                  className={`absolute inset-0 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 ${
-                    platform.accentColor === 'blue' 
-                      ? 'bg-gradient-to-br from-blue-500/10 to-transparent' 
-                      : platform.accentColor === 'purple'
-                      ? 'bg-gradient-to-br from-purple-500/10 to-transparent'
-                      : 'bg-gradient-to-br from-teal-500/10 to-transparent'
-                  }`}
-                />
-              </motion.div>
             </Reveal>
-          ))}
         </div>
 
-        <Reveal delay={0.3}>
-          <div className="flex justify-center">
-            <TextRevealCard
-              text="Traditional PMS systems only handle basic operations"
-              revealText="Aiyra goes beyond by including advanced AI and analytics"
-              className="w-full max-w-4xl"
+        {/* CTA Section */}
+        <Reveal delay={0.4}>
+          <div className="text-center mb-20 mt-20">
+            <motion.div
+              className="flex flex-col sm:flex-row items-center justify-center gap-6"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.5 }}
             >
-              <TextRevealCardTitle>
-                Why This Matters
-              </TextRevealCardTitle>
-              <TextRevealCardDescription>
-                Traditional PMS systems only handle basic operations. Aiyra goes beyond by including advanced AI and
-                analytics that most competitors charge extra for - or don't offer at all. You get three enterprise-grade
-                platforms for the price of one simple PMS subscription.
-              </TextRevealCardDescription>
-            </TextRevealCard>
+              <Button
+                size="lg"
+                className="bg-gradient-to-r from-[#3B82F6] to-[#097abe] hover:from-[#097abe] hover:to-[#3B82F6] text-white px-8 py-4 text-lg font-semibold rounded-full shadow-lg hover:shadow-xl transition-all duration-300"
+                asChild
+              >
+                <motion.a
+                  href="#experience"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="flex items-center gap-2"
+                >
+                  Book a Demo
+                  <ArrowRight className="w-5 h-5" />
+                </motion.a>
+              </Button>
+              <Button
+                variant="outline"
+                size="lg"
+                className="border-2 border-[#626E7C] text-[#626E7C] hover:bg-[#626E7C] hover:text-white px-8 py-4 text-lg font-semibold rounded-full transition-colors"
+                asChild
+              >
+                <motion.a
+                  href="#contact"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  Schedule Demo
+                </motion.a>
+              </Button>
+            </motion.div>
           </div>
         </Reveal>
+
+        {/* Support Statement */}
+        <Reveal delay={0.6}>
+          <div className="text-center mt-16">
+            <div className="inline-flex items-center gap-3 px-6 py-3 bg-[#3B82F6]/20 backdrop-blur-sm rounded-full border border-[#3B82F6]/30">
+              <div className="w-8 h-8 bg-gradient-to-r from-[#3B82F6] to-[#097abe] rounded-full flex items-center justify-center">
+                <Star className="w-4 h-4 text-white" />
+              </div>
+              <span className="text-black font-medium">
+                All solutions include 24/7 support, training & implementation
+              </span>
+            </div>
+          </div>
+        </Reveal>
+
       </div>
     </section>
   )

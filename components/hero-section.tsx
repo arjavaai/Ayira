@@ -42,7 +42,7 @@ export function HeroSection() {
   }
 
   return (
-    <section ref={containerRef} className="relative h-screen overflow-hidden">
+    <section ref={containerRef} className="relative h-screen overflow-hidden bg-gradient-to-br from-[#EFF0F1] to-[#626E7C]">
       <motion.div
         className="absolute inset-0"
         style={{ scale: imageScale, y: imageY }}
@@ -51,14 +51,13 @@ export function HeroSection() {
         transition={{ duration: 1.2, ease: [0.21, 0.47, 0.32, 0.98] }}
       >
         <Image
-          src="/luxury-hotel-lobby-with-warm-lighting-modern-desig.jpg"
-          alt="Luxury hotel lobby with modern design"
+          src="https://images.unsplash.com/photo-1582719508461-905c673771fd?q=80&w=2070&auto=format&fit=crop"
+          alt="Modern minimalist hotel lobby with gray tones"
           fill
-          className="object-cover"
+          className="object-cover opacity-100"
           priority
           sizes="100vw"
         />
-        <div className="absolute inset-0 bg-black/30" />
       </motion.div>
 
       {/* Content */}
@@ -66,25 +65,25 @@ export function HeroSection() {
         className="relative z-10 h-full flex items-center justify-center"
         style={{ y: contentY, opacity: contentOpacity }}
       >
-        <div className="container-custom text-center text-white">
+        <div className="container-custom text-center">
           <Reveal>
             <motion.div
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-teal-500/20 backdrop-blur-sm border border-teal-400/30 mb-8"
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#3B82F6]/20 backdrop-blur-sm border border-[#3B82F6]/30 mb-8"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.3 }}
             >
-              <Zap className="w-4 h-4 text-teal-400" />
-              <span className="text-sm font-medium text-teal-100">The Future of Hotel Management</span>
+              <Zap className="w-4 h-4 text-[#3B82F6]" />
+              <span className="text-sm font-medium text-black">The Future of Hotel Management</span>
             </motion.div>
           </Reveal>
 
           <Reveal>
             <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-9xl font-bold leading-none tracking-tight mb-6">
-              <span className="text-white">
+              <span className="text-black">
                 <AnimatedText text="Meet " delay={0.5} />
               </span>
-              <span className="text-blue-400">
+              <span className="bg-gradient-to-r from-[#097abe] to-[#3B82F6] bg-clip-text text-transparent">
                 <AnimatedText text="Aiyra" delay={0.7} />
               </span>
             </h1>
@@ -92,7 +91,7 @@ export function HeroSection() {
 
           <Reveal delay={0.2}>
             <motion.p
-              className="text-base sm:text-lg md:text-xl text-white/90 mb-8 sm:mb-12 leading-relaxed max-w-4xl mx-auto px-4 sm:px-0"
+              className="text-base sm:text-lg md:text-xl text-white mb-8 sm:mb-12 leading-relaxed max-w-4xl mx-auto px-4 sm:px-0"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.9, ease: [0.21, 0.47, 0.32, 0.98] }}
@@ -111,7 +110,7 @@ export function HeroSection() {
             >
               <motion.a
                 href="#experience"
-                className="w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-4 bg-blue-600 text-white rounded-full font-medium hover:bg-blue-700 transition-colors text-center"
+                className="w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-[#3B82F6] to-[#097abe] text-white rounded-full font-medium hover:from-[#097abe] hover:to-[#3B82F6] transition-all duration-300 text-center shadow-lg"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
@@ -119,7 +118,7 @@ export function HeroSection() {
               </motion.a>
               <motion.a
                 href="#features"
-                className="w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-4 bg-white/10 backdrop-blur-sm text-white rounded-full font-medium border border-white/20 hover:bg-white/20 transition-colors text-center"
+                className="w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-4 bg-[#626E7C]/10 backdrop-blur-sm text-black rounded-full font-medium border-2 border-[#626E7C]/30 hover:bg-[#626E7C]/20 transition-colors text-center"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
@@ -136,18 +135,18 @@ export function HeroSection() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 1.3, ease: [0.21, 0.47, 0.32, 0.98] }}
       >
-        <BlurPanel className="mx-4 sm:mx-6 mb-4 sm:mb-6 px-4 sm:px-6 py-3 sm:py-4 bg-black/24 backdrop-blur-md border-white/20">
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-6 text-white/90">
+        <BlurPanel className="mx-4 sm:mx-6 mb-4 sm:mb-6 px-4 sm:px-6 py-3 sm:py-4 bg-[#626E7C]/80 backdrop-blur-md border-[#BDC3C8]/30">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-6 text-white">
             <div className="flex items-center gap-2">
-              <Shield className="w-4 h-4 text-green-400" />
+              <Shield className="w-4 h-4 text-[#3B82F6]" />
               <span className="text-xs sm:text-sm">Enterprise Security</span>
             </div>
             <div className="flex items-center gap-2">
-              <Zap className="w-4 h-4 text-amber-400" />
+              <Zap className="w-4 h-4 text-[#3B82F6]" />
               <span className="text-xs sm:text-sm">Real-time Intelligence</span>
             </div>
             <div className="flex items-center gap-2">
-              <Globe className="w-4 h-4 text-blue-400" />
+              <Globe className="w-4 h-4 text-[#3B82F6]" />
               <span className="text-xs sm:text-sm">Global Support</span>
             </div>
           </div>

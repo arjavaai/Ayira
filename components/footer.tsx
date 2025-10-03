@@ -57,7 +57,7 @@ const footerLinks: FooterSection[] = [
 
 export function Footer() {
 	return (
-		<footer className="relative w-full bg-slate-900 text-white">
+		<footer className="relative w-full bg-[#011826] text-white">
 			<div className="md:rounded-t-6xl relative w-full max-w-6xl mx-auto flex flex-col items-center justify-center rounded-t-4xl border-t border-white/10 px-4 sm:px-6 py-8 sm:py-12 lg:py-16">
 				<div className="bg-white/20 absolute top-0 right-1/2 left-1/2 h-px w-1/3 -translate-x-1/2 -translate-y-1/2 rounded-full blur" />
 
@@ -65,8 +65,8 @@ export function Footer() {
 					<AnimatedContainer className="space-y-4 text-center xl:text-left">
 						<div className="flex items-baseline gap-2 justify-center xl:justify-start">
 							<span className="text-xs uppercase tracking-wider text-white/60">LUVERA</span>
-							<FrameIcon className="size-6 sm:size-8 text-blue-400" />
-							<span className="text-xl sm:text-2xl font-bold text-blue-400">Aiyra</span>
+							<FrameIcon className="size-6 sm:size-8 text-[#097abe]" />
+							<span className="text-xl sm:text-2xl font-bold text-[#097abe]">Aiyra</span>
 						</div>
 					</AnimatedContainer>
 
