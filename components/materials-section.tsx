@@ -3,62 +3,88 @@
 import { motion } from "framer-motion"
 import Image from "next/image"
 import { Reveal } from "./reveal"
-import { Activity, DollarSign, Users, Bot, BarChart3, Headphones, CheckCircle2, Calendar, ArrowRight, TrendingUp, Zap, Monitor, CreditCard, MessageSquare, Settings, Shield } from "lucide-react"
+import { Activity, DollarSign, Users, Bot, BarChart3, Headphones, CheckCircle2, Calendar, ArrowRight, TrendingUp, Zap, Monitor, CreditCard, MessageSquare, Settings, Shield, Building, Star, Home, Users2, MapPin } from "lucide-react"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { ContainerScroll, CardSticky } from "@/components/ui/cards-stack"       
 
 const dashboardHubs = [
   {
-    id: "operations",
-    title: "Operations Hub",
-    subtitle: "Automate front desk, back office, and housekeeping tasks",       
-    icon: Settings,
+    id: "independent-hotels",
+    title: "Independent Hotels",
+    subtitle: "Professional management tools to compete with major hotel chains",       
+    icon: Building,
     color: "from-blue-500 to-blue-600",
     features: [
-      { icon: Monitor, label: "PMS", description: "Complete property management system" },
-      { icon: DollarSign, label: "POS", description: "Point of sale integration" },
-      { icon: BarChart3, label: "Analytics", description: "Real-time performance insights" },
-      { icon: CheckCircle2, label: "Tasks", description: "Automated workflow management" }
+      { icon: Monitor, label: "Property Management", description: "Complete PMS for independent properties" },
+      { icon: Calendar, label: "Booking Management", description: "Direct booking optimization" },
+      { icon: BarChart3, label: "Revenue Analytics", description: "Real-time performance insights" },
+      { icon: CheckCircle2, label: "Guest Services", description: "Personalized guest experience" }
     ]
   },
   {
-    id: "sales",
-    title: "Sales Hub",
-    subtitle: "Maximize bookings and revenue with advanced tools",
-    icon: TrendingUp,
-    color: "from-green-500 to-green-600",
-    features: [
-      { icon: Calendar, label: "Booking Engine", description: "Direct booking optimization" },
-      { icon: Activity, label: "Channel Manager", description: "Multi-platform distribution" },
-      { icon: DollarSign, label: "Revenue Manager", description: "Dynamic pricing automation" },
-      { icon: BarChart3, label: "Analytics", description: "Revenue forecasting & insights" }
-    ]
-  },
-  {
-    id: "guest",
-    title: "Guest Hub",
-    subtitle: "Enhance guest experience with personalized services", 
-    icon: Users,
+    id: "resorts-luxury",
+    title: "Resorts & Luxury Properties",
+    subtitle: "Sophisticated tools for delivering exceptional luxury guest experiences",
+    icon: Star,
     color: "from-purple-500 to-purple-600",
     features: [
-      { icon: MessageSquare, label: "Guest Messaging", description: "Automated communication" },
-      { icon: Bot, label: "AI Support", description: "24/7 intelligent assistance" },
-      { icon: CheckCircle2, label: "Reviews", description: "Feedback management system" },
-      { icon: Users, label: "Profiles", description: "Guest preference tracking" }
+      { icon: Star, label: "Luxury Services", description: "Premium guest experience management" },
+      { icon: Activity, label: "Spa & Wellness", description: "Spa booking and management" },
+      { icon: DollarSign, label: "Premium Pricing", description: "Dynamic luxury pricing" },
+      { icon: BarChart3, label: "Guest Analytics", description: "Luxury guest insights" }
     ]
   },
   {
-    id: "payments",
-    title: "Payments Hub",
-    subtitle: "Simplify billing and secure payment processing",
-    icon: CreditCard,
+    id: "vacation-rentals",
+    title: "Airbnb & Vacation Rentals",
+    subtitle: "Streamlined management for vacation rental property owners", 
+    icon: Home,
+    color: "from-green-500 to-green-600",
+    features: [
+      { icon: Calendar, label: "Multi-Platform Sync", description: "Sync across booking platforms" },
+      { icon: Bot, label: "Automated Messaging", description: "Guest communication automation" },
+      { icon: CheckCircle2, label: "Cleaning Management", description: "Turnover coordination" },
+      { icon: Users, label: "Guest Profiles", description: "Guest preference tracking" }
+    ]
+  },
+  {
+    id: "hotel-chains",
+    title: "Hotel Chains",
+    subtitle: "Centralized management solutions for multi-property hospitality groups",
+    icon: Building,
+    color: "from-indigo-500 to-indigo-600",
+    features: [
+      { icon: Building, label: "Multi-Property", description: "Centralized chain management" },
+      { icon: DollarSign, label: "Corporate Billing", description: "Centralized billing system" },
+      { icon: CheckCircle2, label: "Brand Standards", description: "Consistent brand experience" },
+      { icon: Shield, label: "Enterprise Security", description: "Enterprise-grade security" }    
+    ]
+  },
+  {
+    id: "hostels",
+    title: "Hostels",
+    subtitle: "Community-focused solutions for hostels and budget accommodations",
+    icon: Users2,
     color: "from-orange-500 to-orange-600",
     features: [
-      { icon: CreditCard, label: "Payment Gateway", description: "Secure transaction processing" },
-      { icon: DollarSign, label: "Billing", description: "Automated invoice generation" },
-      { icon: CheckCircle2, label: "Settlement", description: "Fast fund transfers" },
-      { icon: Shield, label: "Security", description: "PCI DSS compliance" }    
+      { icon: Users2, label: "Community Management", description: "Social space coordination" },
+      { icon: Calendar, label: "Bed Management", description: "Bunk and bed allocation" },
+      { icon: CheckCircle2, label: "Events & Activities", description: "Community event planning" },
+      { icon: MessageSquare, label: "Guest Communication", description: "Multi-language support" }    
+    ]
+  },
+  {
+    id: "apartments",
+    title: "Apartment Communities",
+    subtitle: "Modern solutions for residential property and community management",
+    icon: MapPin,
+    color: "from-teal-500 to-teal-600",
+    features: [
+      { icon: MapPin, label: "Property Management", description: "Residential property oversight" },
+      { icon: DollarSign, label: "Rent Collection", description: "Automated rent management" },
+      { icon: CheckCircle2, label: "Maintenance", description: "Facility maintenance tracking" },
+      { icon: Users, label: "Resident Services", description: "Community resident portal" }    
     ]
   }
 ]
@@ -125,11 +151,11 @@ export function MaterialsSection() {
                 of tools empowers hospitality professionals to deliver exceptional experiences while maximizing revenue.
               </p>
             </div>
-            <ContainerScroll className="min-h-[400vh] space-y-6 lg:space-y-8 py-6 lg:py-12">
+            <ContainerScroll className="min-h-[600vh] space-y-6 lg:space-y-8 py-6 lg:py-12">
               {dashboardHubs.map((hub, index) => (
                 <CardSticky
                   key={hub.id}
-                  index={index + 2}
+                  index={index + 1}
                   className="rounded-2xl border border-[#BDC3C8] p-4 sm:p-6 lg:p-8 shadow-md backdrop-blur-md bg-[#626E7C]"
                 >
                   <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-6">
