@@ -3,14 +3,14 @@
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 
-export default function ApartmentCommunitiesPage() {
+export default function PricingPage() {
   return (
-    <div className="min-h-screen bg-white">
+    <main className="min-h-screen">
       <Header />
       <div className="pt-32 pb-20">
-        <h1>Apartments Page Test</h1>
+        <h1>Pricing Page</h1>
       </div>
       <Footer />
-    </div>
+    </main>
   )
 }

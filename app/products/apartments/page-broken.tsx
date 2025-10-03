@@ -2,38 +2,36 @@
 
 import { motion } from "framer-motion"
 import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { Separator } from "@/components/ui/separator"
-import { Progress } from "@/components/ui/progress"
 import { AnimatedTabs } from "@/components/ui/animated-tabs"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
-import { 
-  BarChart3, 
-  Calendar, 
-  DollarSign, 
-  Users, 
-  Bot, 
-  Smartphone, 
-  CheckCircle2, 
+import {
+  CheckCircle2,
   ArrowRight,
   Star,
+  Building,
   TrendingUp,
-  Clock,
+  Users,
+  FileText,
+  DollarSign,
+  Wrench,
   Shield,
-  Zap,
-  Target,
-  Award,
-  Globe,
-  Settings,
-  Activity,
-  Headphones
+  Bell,
+  Calendar,
+  CreditCard,
+  Home,
+  Lock,
+  Heart,
+  Camera,
+  UserCheck,
+  CalendarCheck
 } from "lucide-react"
 import Image from "next/image"
 // import { ScrollAnimatedText, ScrollAnimatedWords, ScrollFadeIn, ScrollSlideIn } from "@/components/ScrollAnimatedText"
 
-export default function IndependentHotelsPage() {
+export default function ApartmentCommunitiesPage() {
   return (
     <div className="min-h-screen bg-white">
       <Header />
@@ -41,7 +39,7 @@ export default function IndependentHotelsPage() {
       <section className="relative py-20 lg:py-32 bg-gradient-to-br from-[#EFF0F1] to-[#626E7C] overflow-hidden">
         {/* Background Pattern */}
         <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmZmZmYiIGZpbGwtb3BhY2l0eT0iMC4wNSI+PGNpcmNsZSBjeD0iMzAiIGN5PSIzMCIgcj0iMSIvPjwvZz48L2c+PC9zdmc+')] opacity-20" />
-        
+
         <div className="container-custom relative">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <motion.div
@@ -51,21 +49,21 @@ export default function IndependentHotelsPage() {
               className="space-y-8"
             >
               <div className="space-y-6">
-                <Badge variant="secondary" className="bg-blue-100 text-blue-700 border-blue-200 hover:bg-blue-200">
-                  <Target className="w-3 h-3 mr-1" />
-                  Independent Hotels
+                <Badge variant="secondary" className="bg-teal-100 text-teal-700 border-teal-200 hover:bg-teal-200">
+                  <Building className="w-3 h-3 mr-1" />
+                  Apartment Communities
                 </Badge>
-                
+
                 <h1 className="text-5xl lg:text-7xl font-bold tracking-tight text-white">
-                  Perfect PMS for{" "}
-                  <span className="bg-gradient-to-r from-[#097abe] to-[#3B82F6] bg-clip-text text-transparent">Independent</span>{" "}
-                  <span className="bg-gradient-to-r from-[#097abe] to-[#3B82F6] bg-clip-text text-transparent">Hotels</span>
+                  Smart Management for{" "}
+                  <span className="bg-gradient-to-r from-[#097abe] to-[#3B82F6] bg-clip-text text-transparent">Apartment</span>{" "}
+                  <span className="bg-gradient-to-r from-[#097abe] to-[#3B82F6] bg-clip-text text-transparent">Communities</span>
                 </h1>
 
                 <p className="text-xl text-white leading-relaxed max-w-2xl">
-                  More than just PMS software - Aiyra combines property management with built-in AI chatbot,
-                  advanced analytics, and business intelligence. Designed specifically for independent hotels
-                  who need enterprise-grade tools without the complexity or cost.
+                  Comprehensive management solution for apartment complexes and residential communities. Streamline
+                  lease management, automate rent collection, enhance community engagement, and provide exceptional
+                  tenant experiences.
                 </p>
               </div>
 
@@ -74,7 +72,7 @@ export default function IndependentHotelsPage() {
                   size="lg"
                   className="bg-gradient-to-r from-[#3B82F6] to-[#097abe] hover:opacity-90 text-white shadow-lg hover:shadow-xl transition-all duration-300 group"
                 >
-                  Start Free Trial
+                  Schedule Demo
                   <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
                 </Button>
                 <Button
@@ -82,12 +80,32 @@ export default function IndependentHotelsPage() {
                   size="lg"
                   className="border-2 border-white/30 text-white hover:bg-white/10 hover:border-white/50 transition-all duration-300"
                 >
-                  Book Demo
+                  Contact Sales
                 </Button>
               </div>
 
+              {/* Feature highlights */}
+              <div className="grid grid-cols-2 gap-4 pt-4">
+                <div className="flex items-center gap-2 text-sm text-white/90">
+                  <CheckCircle2 className="w-4 h-4 text-green-500" />
+                  Complete residential property management
+                </div>
+                <div className="flex items-center gap-2 text-sm text-white/90">
+                  <CheckCircle2 className="w-4 h-4 text-green-500" />
+                  Digital lease management system
+                </div>
+                <div className="flex items-center gap-2 text-sm text-white/90">
+                  <CheckCircle2 className="w-4 h-4 text-green-500" />
+                  Automated rent collection
+                </div>
+                <div className="flex items-center gap-2 text-sm text-white/90">
+                  <CheckCircle2 className="w-4 h-4 text-green-500" />
+                  Maintenance request tracking
+                </div>
+              </div>
+
             </motion.div>
-            
+
             <motion.div
               initial={{ opacity: 0, x: 20 }}
               animate={{ opacity: 1, x: 0 }}
@@ -96,17 +114,17 @@ export default function IndependentHotelsPage() {
             >
               <div className="relative z-10 rounded-2xl overflow-hidden shadow-2xl">
                 <Image
-                  src="/luxury-hotel-lobby-with-warm-lighting-modern-desig.jpg"
-                  alt="Elegant Independent Hotel Lobby"
+                  src="/luxury-hotel-lobby-with-white-flowers-elegant-mode.jpg"
+                  alt="Modern Apartment Community Complex"
                   width={600}
                   height={400}
                   className="w-full h-auto object-cover"
                 />
               </div>
-              
+
               {/* Floating Elements */}
-              <div className="absolute -top-4 -right-4 w-16 h-16 bg-blue-500/20 rounded-full animate-pulse"></div>
-              <div className="absolute -bottom-4 -left-4 w-12 h-12 bg-purple-500/20 rounded-full animate-pulse delay-1000"></div>
+              <div className="absolute -top-4 -right-4 w-16 h-16 bg-teal-500/20 rounded-full animate-pulse"></div>
+              <div className="absolute -bottom-4 -left-4 w-12 h-12 bg-blue-500/20 rounded-full animate-pulse delay-1000"></div>
             </motion.div>
           </div>
         </div>
@@ -115,42 +133,25 @@ export default function IndependentHotelsPage() {
       {/* Features Section */}
       <section className="py-20 lg:py-32 bg-white">
         <div className="container-custom">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-4xl lg:text-6xl font-bold tracking-tight mb-6">
-              Everything Your{" "}
-              <span className="text-blue-600">
-                Independent Hotel
-              </span>{" "}
-              Needs
-            </h2>
-            <p className="text-xl text-slate-600 max-w-4xl mx-auto leading-relaxed">
-              Professional-grade features designed specifically for independent hotels. No unnecessary complexity, just the tools you need to succeed.
-            </p>
-          </motion.div>
+          <h2 className="text-4xl lg:text-6xl font-bold tracking-tight mb-6 text-center">
+            Complete Residential Community Management
+          </h2>
+          <p className="text-xl text-slate-600 max-w-4xl mx-auto leading-relaxed text-center mb-16">
+            Everything you need to manage modern apartment communities efficiently. From digital leasing to
+            community engagement and maintenance coordination.
+          </p>
 
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            viewport={{ once: true }}
-            className="flex justify-center"
-          >
-            <AnimatedTabs 
+          <div className="flex justify-center">
+            <AnimatedTabs
               tabs={[
                 {
-                  id: "dashboard",
-                  label: "Dashboard",
+                  id: "lease",
+                  label: "Lease Management",
                   content: (
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 w-full h-full">
                       <Image
                         src="/luxury-hotel-lobby-with-warm-lighting-modern-desig.jpg"
-                        alt="Property Management Dashboard"
+                        alt="Lease Management System"
                         width={500}
                         height={300}
                         className="rounded-lg w-full h-48 md:h-60 object-cover mt-0 !m-0 shadow-[0_0_20px_rgba(0,0,0,0.2)] border-none"
@@ -158,31 +159,31 @@ export default function IndependentHotelsPage() {
                       <div className="flex flex-col gap-y-3 md:gap-y-4">
                         <div className="flex items-center gap-3">
                           <div className="w-10 h-10 md:w-12 md:h-12 bg-blue-500/20 rounded-xl flex items-center justify-center">
-                            <BarChart3 className="w-5 h-5 md:w-6 md:h-6 text-blue-400" />
+                            <FileText className="w-5 h-5 md:w-6 md:h-6 text-blue-400" />
                           </div>
                           <h2 className="text-lg md:text-2xl font-bold mb-0 text-white mt-0 !m-0">
-                            Property Management Dashboard
+                            Lease Management System
                           </h2>
                         </div>
                         <p className="text-xs md:text-sm text-gray-200 mt-0 leading-relaxed">
-                          Centralized control of all hotel operations with intuitive interface designed for independent operators.
+                          Comprehensive lease management with automated renewals, document storage, and compliance tracking.
                         </p>
                         <div className="space-y-2">
                           <div className="flex items-center gap-2 text-blue-400 text-xs md:text-sm">
                             <CheckCircle2 className="w-3 h-3" />
-                            Real-time occupancy tracking
+                            Digital lease agreements
                           </div>
                           <div className="flex items-center gap-2 text-blue-400 text-xs md:text-sm">
                             <CheckCircle2 className="w-3 h-3" />
-                            Guest check-in/out management
+                            Renewal automation
                           </div>
                           <div className="flex items-center gap-2 text-blue-400 text-xs md:text-sm">
                             <CheckCircle2 className="w-3 h-3" />
-                            Room status updates
+                            Document management
                           </div>
                           <div className="flex items-center gap-2 text-blue-400 text-xs md:text-sm">
                             <CheckCircle2 className="w-3 h-3" />
-                            Housekeeping coordination
+                            Compliance tracking
                           </div>
                         </div>
                       </div>
@@ -190,13 +191,13 @@ export default function IndependentHotelsPage() {
                   ),
                 },
                 {
-                  id: "channels",
-                  label: "Channels",
+                  id: "portal",
+                  label: "Tenant Portal",
                   content: (
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 w-full h-full">
                       <Image
                         src="/hotel-management-dashboard-with-occupancy-charts-r.jpg"
-                        alt="Channel Management"
+                        alt="Tenant Portal & Community"
                         width={500}
                         height={300}
                         className="rounded-lg w-full h-48 md:h-60 object-cover mt-0 !m-0 shadow-[0_0_20px_rgba(0,0,0,0.2)] border-none"
@@ -204,31 +205,31 @@ export default function IndependentHotelsPage() {
                       <div className="flex flex-col gap-y-3 md:gap-y-4">
                         <div className="flex items-center gap-3">
                           <div className="w-10 h-10 md:w-12 md:h-12 bg-green-500/20 rounded-xl flex items-center justify-center">
-                            <Activity className="w-5 h-5 md:w-6 md:h-6 text-green-400" />
+                            <Users className="w-5 h-5 md:w-6 md:h-6 text-green-400" />
                           </div>
                           <h2 className="text-lg md:text-2xl font-bold mb-0 text-white mt-0 !m-0">
-                            Channel Management
+                            Tenant Portal & Community
                           </h2>
                         </div>
                         <p className="text-xs md:text-sm text-gray-200 mt-0 leading-relaxed">
-                          Connect to 20+ OTA platforms including Booking.com, Expedia, and Airbnb with real-time synchronization.
+                          Modern tenant portal with community features, announcements, and resident communication tools.
                         </p>
                         <div className="space-y-2">
                           <div className="flex items-center gap-2 text-green-400 text-xs md:text-sm">
                             <CheckCircle2 className="w-3 h-3" />
-                            Automated inventory updates
+                            Online rent payments
                           </div>
                           <div className="flex items-center gap-2 text-green-400 text-xs md:text-sm">
                             <CheckCircle2 className="w-3 h-3" />
-                            Rate management
+                            Community announcements
                           </div>
                           <div className="flex items-center gap-2 text-green-400 text-xs md:text-sm">
                             <CheckCircle2 className="w-3 h-3" />
-                            Zero double bookings
+                            Resident directory
                           </div>
                           <div className="flex items-center gap-2 text-green-400 text-xs md:text-sm">
                             <CheckCircle2 className="w-3 h-3" />
-                            Commission tracking
+                            Event coordination
                           </div>
                         </div>
                       </div>
@@ -236,13 +237,13 @@ export default function IndependentHotelsPage() {
                   ),
                 },
                 {
-                  id: "pricing",
-                  label: "Pricing",
+                  id: "maintenance",
+                  label: "Maintenance",
                   content: (
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 w-full h-full">
                       <Image
                         src="/modern-hotel-management-dashboard-interface-with-c.jpg"
-                        alt="Smart Pricing Engine"
+                        alt="Maintenance Request System"
                         width={500}
                         height={300}
                         className="rounded-lg w-full h-48 md:h-60 object-cover mt-0 !m-0 shadow-[0_0_20px_rgba(0,0,0,0.2)] border-none"
@@ -250,31 +251,31 @@ export default function IndependentHotelsPage() {
                       <div className="flex flex-col gap-y-3 md:gap-y-4">
                         <div className="flex items-center gap-3">
                           <div className="w-10 h-10 md:w-12 md:h-12 bg-purple-500/20 rounded-xl flex items-center justify-center">
-                            <DollarSign className="w-5 h-5 md:w-6 md:h-6 text-purple-400" />
+                            <Wrench className="w-5 h-5 md:w-6 md:h-6 text-purple-400" />
                           </div>
                           <h2 className="text-lg md:text-2xl font-bold mb-0 text-white mt-0 !m-0">
-                            Smart Pricing Engine
+                            Maintenance Request System
                           </h2>
                         </div>
                         <p className="text-xs md:text-sm text-gray-200 mt-0 leading-relaxed">
-                          AI-powered dynamic pricing that analyzes local market conditions and competitor rates.
+                          Streamlined maintenance management with work order tracking, vendor coordination, and tenant communication.
                         </p>
                         <div className="space-y-2">
                           <div className="flex items-center gap-2 text-purple-400 text-xs md:text-sm">
                             <CheckCircle2 className="w-3 h-3" />
-                            Automated rate adjustments
+                            Online maintenance requests
                           </div>
                           <div className="flex items-center gap-2 text-purple-400 text-xs md:text-sm">
                             <CheckCircle2 className="w-3 h-3" />
-                            Revenue optimization
+                            Work order tracking
                           </div>
                           <div className="flex items-center gap-2 text-purple-400 text-xs md:text-sm">
                             <CheckCircle2 className="w-3 h-3" />
-                            Seasonal pricing
+                            Vendor management
                           </div>
                           <div className="flex items-center gap-2 text-purple-400 text-xs md:text-sm">
                             <CheckCircle2 className="w-3 h-3" />
-                            Event-based pricing
+                            Priority scheduling
                           </div>
                         </div>
                       </div>
@@ -282,13 +283,13 @@ export default function IndependentHotelsPage() {
                   ),
                 },
                 {
-                  id: "analytics",
-                  label: "Analytics",
+                  id: "finance",
+                  label: "Finance",
                   content: (
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 w-full h-full">
                       <Image
-                        src="/modern-hotel-management-dashboard-interface-with-c.jpg"
-                        alt="Business Intelligence"
+                        src="/luxury-hotel-lobby-with-white-flowers-elegant-mode.jpg"
+                        alt="Rent Collection & Finance"
                         width={500}
                         height={300}
                         className="rounded-lg w-full h-48 md:h-60 object-cover mt-0 !m-0 shadow-[0_0_20px_rgba(0,0,0,0.2)] border-none"
@@ -296,31 +297,31 @@ export default function IndependentHotelsPage() {
                       <div className="flex flex-col gap-y-3 md:gap-y-4">
                         <div className="flex items-center gap-3">
                           <div className="w-10 h-10 md:w-12 md:h-12 bg-orange-500/20 rounded-xl flex items-center justify-center">
-                            <TrendingUp className="w-5 h-5 md:w-6 md:h-6 text-orange-400" />
+                            <DollarSign className="w-5 h-5 md:w-6 md:h-6 text-orange-400" />
                           </div>
                           <h2 className="text-lg md:text-2xl font-bold mb-0 text-white mt-0 !m-0">
-                            Built-in Business Intelligence
+                            Rent Collection & Finance
                           </h2>
                         </div>
                         <p className="text-xs md:text-sm text-gray-200 mt-0 leading-relaxed">
-                          Advanced BI platform with real-time dashboards, predictive analytics, and actionable insights - included with every subscription.
+                          Automated rent collection with payment processing, late fee management, and financial reporting.
                         </p>
                         <div className="space-y-2">
                           <div className="flex items-center gap-2 text-orange-400 text-xs md:text-sm">
                             <CheckCircle2 className="w-3 h-3" />
-                            Real-time performance dashboards
+                            Automated rent collection
                           </div>
                           <div className="flex items-center gap-2 text-orange-400 text-xs md:text-sm">
                             <CheckCircle2 className="w-3 h-3" />
-                            Predictive revenue analytics
+                            Late fee processing
                           </div>
                           <div className="flex items-center gap-2 text-orange-400 text-xs md:text-sm">
                             <CheckCircle2 className="w-3 h-3" />
-                            Custom KPI tracking
+                            Financial reporting
                           </div>
                           <div className="flex items-center gap-2 text-orange-400 text-xs md:text-sm">
                             <CheckCircle2 className="w-3 h-3" />
-                            Competitive benchmarking
+                            Payment tracking
                           </div>
                         </div>
                       </div>
@@ -328,13 +329,13 @@ export default function IndependentHotelsPage() {
                   ),
                 },
                 {
-                  id: "ai",
-                  label: "AI Support",
+                  id: "security",
+                  label: "Security",
                   content: (
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 w-full h-full">
                       <Image
-                        src="/luxury-hotel-lobby-with-white-flowers-elegant-mode.jpg"
-                        alt="AI Chatbot"
+                        src="/hotel-management-dashboard-with-occupancy-charts-r.jpg"
+                        alt="Security & Access Control"
                         width={500}
                         height={300}
                         className="rounded-lg w-full h-48 md:h-60 object-cover mt-0 !m-0 shadow-[0_0_20px_rgba(0,0,0,0.2)] border-none"
@@ -342,31 +343,31 @@ export default function IndependentHotelsPage() {
                       <div className="flex flex-col gap-y-3 md:gap-y-4">
                         <div className="flex items-center gap-3">
                           <div className="w-10 h-10 md:w-12 md:h-12 bg-teal-500/20 rounded-xl flex items-center justify-center">
-                            <Bot className="w-5 h-5 md:w-6 md:h-6 text-teal-400" />
+                            <Shield className="w-5 h-5 md:w-6 md:h-6 text-teal-400" />
                           </div>
                           <h2 className="text-lg md:text-2xl font-bold mb-0 text-white mt-0 !m-0">
-                            AI Chatbot & Automation
+                            Security & Access Control
                           </h2>
                         </div>
                         <p className="text-xs md:text-sm text-gray-200 mt-0 leading-relaxed">
-                          Built-in AI chatbot that handles guest inquiries 24/7, automates responses, and provides intelligent recommendations.
+                          Integrated security system with access control, visitor management, and community safety features.
                         </p>
                         <div className="space-y-2">
                           <div className="flex items-center gap-2 text-teal-400 text-xs md:text-sm">
                             <CheckCircle2 className="w-3 h-3" />
-                            24/7 AI-powered support
+                            Access control management
                           </div>
                           <div className="flex items-center gap-2 text-teal-400 text-xs md:text-sm">
                             <CheckCircle2 className="w-3 h-3" />
-                            Multi-language capabilities
+                            Visitor registration
                           </div>
                           <div className="flex items-center gap-2 text-teal-400 text-xs md:text-sm">
                             <CheckCircle2 className="w-3 h-3" />
-                            Smart upselling suggestions
+                            Security monitoring
                           </div>
                           <div className="flex items-center gap-2 text-teal-400 text-xs md:text-sm">
                             <CheckCircle2 className="w-3 h-3" />
-                            Automated review responses
+                            Emergency alerts
                           </div>
                         </div>
                       </div>
@@ -374,13 +375,13 @@ export default function IndependentHotelsPage() {
                   ),
                 },
                 {
-                  id: "mobile",
-                  label: "Mobile",
+                  id: "community",
+                  label: "Community",
                   content: (
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 w-full h-full">
                       <Image
                         src="/luxury-hotel-lobby-with-warm-lighting-modern-desig.jpg"
-                        alt="Mobile Management"
+                        alt="Community Engagement"
                         width={500}
                         height={300}
                         className="rounded-lg w-full h-48 md:h-60 object-cover mt-0 !m-0 shadow-[0_0_20px_rgba(0,0,0,0.2)] border-none"
@@ -388,74 +389,121 @@ export default function IndependentHotelsPage() {
                       <div className="flex flex-col gap-y-3 md:gap-y-4">
                         <div className="flex items-center gap-3">
                           <div className="w-10 h-10 md:w-12 md:h-12 bg-red-500/20 rounded-xl flex items-center justify-center">
-                            <Smartphone className="w-5 h-5 md:w-6 md:h-6 text-red-400" />
+                            <Heart className="w-5 h-5 md:w-6 md:h-6 text-red-400" />
                           </div>
                           <h2 className="text-lg md:text-2xl font-bold mb-0 text-white mt-0 !m-0">
-                            Mobile Management
+                            Community Engagement
                           </h2>
                         </div>
                         <p className="text-xs md:text-sm text-gray-200 mt-0 leading-relaxed">
-                          Manage your hotel operations from anywhere with our mobile-first interface.
+                          Tools to build vibrant communities with events, amenity booking, and resident communication.
                         </p>
                         <div className="space-y-2">
                           <div className="flex items-center gap-2 text-red-400 text-xs md:text-sm">
                             <CheckCircle2 className="w-3 h-3" />
-                            iOS & Android apps
+                            Event planning tools
                           </div>
                           <div className="flex items-center gap-2 text-red-400 text-xs md:text-sm">
                             <CheckCircle2 className="w-3 h-3" />
-                            Real-time notifications
+                            Amenity reservations
                           </div>
                           <div className="flex items-center gap-2 text-red-400 text-xs md:text-sm">
                             <CheckCircle2 className="w-3 h-3" />
-                            Remote management
+                            Community boards
                           </div>
                           <div className="flex items-center gap-2 text-red-400 text-xs md:text-sm">
                             <CheckCircle2 className="w-3 h-3" />
-                            Staff communication
+                            Neighbor connections
                           </div>
                         </div>
                       </div>
                     </div>
                   ),
                 }
-              ]} 
-              defaultTab="dashboard"
+              ]}
+              defaultTab="lease"
               className="max-w-4xl w-full"
             />
-          </motion.div>
+            </div>
+        </div>
+      </section>
+
+      {/* Modern Features Section */}
+      <section className="py-20 lg:py-32 bg-gray-50">
+        <div className="container-custom">
+          <h2 className="text-4xl lg:text-6xl font-bold tracking-tight mb-6 text-center">
+            Modern Community Living Features
+          </h2>
+          <p className="text-xl text-slate-600 max-w-4xl mx-auto leading-relaxed text-center mb-16">
+            Tools designed to create vibrant, connected apartment communities where residents love to live
+          </p>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {[
+              {
+                title: "Tenant Portal",
+                description: "Modern online portal for rent payments, maintenance requests, and community communication.",
+                icon: Home,
+                color: "bg-blue-100 text-blue-600"
+              },
+              {
+                title: "Community Events",
+                description: "Event planning tools, amenity booking system, and community engagement features.",
+                icon: Calendar,
+                color: "bg-green-100 text-green-600"
+              },
+              {
+                title: "Security & Safety",
+                description: "Access control, visitor management, and emergency communication systems.",
+                icon: Lock,
+                color: "bg-purple-100 text-purple-600"
+              }
+            ].map((feature, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                viewport={{ once: true }}
+              >
+                <Card className="bg-white border border-gray-200 hover:shadow-lg transition-all duration-300 h-full">
+                  <CardContent className="p-8 text-center">
+                    <div className={`w-16 h-16 ${feature.color} rounded-2xl flex items-center justify-center mx-auto mb-6`}>
+                      <feature.icon className="w-8 h-8" />
+                    </div>
+                    <h3 className="text-xl font-bold text-gray-900 mb-4">
+                      {feature.title}
+                    </h3>
+                    <p className="text-gray-600 leading-relaxed">
+                      {feature.description}
+                    </p>
+                  </CardContent>
+                </Card>
+              </motion.div>
+            ))}
+            </div>
         </div>
       </section>
 
       {/* Stats Section */}
       <section className="py-20 lg:py-32 bg-white relative">
         <div className="container-custom relative">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-            className="text-center mb-16"
-          >
+          <h2 className="text-4xl lg:text-6xl font-bold text-black mb-6 tracking-tight text-center">
+            Leading property management companies choose Aiyra
+          </h2>
+          <div className="text-center mb-16">
             <Badge variant="secondary" className="mb-6 bg-gray-100 text-gray-700 border-gray-200">
-              <Globe className="w-3 h-3 mr-1" />
-              Global Trust
+              <Building className="w-3 h-3 mr-1" />
+              Trusted by Apartment Communities
             </Badge>
-            <h2 className="text-4xl lg:text-6xl font-bold text-black mb-6 tracking-tight">
-              Trusted by Independent Hotels{" "}
-              <span className="text-blue-600">Worldwide</span>
-            </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-              Join thousands of independent hotel owners who trust Aiyra to manage their operations
-            </p>
-          </motion.div>
+          </div>
 
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
             {[
-              { number: "2,500+", label: "Independent Hotels", icon: Users },
-              { number: "32%", label: "Average Revenue Increase", icon: TrendingUp },
-              { number: "15min", label: "Daily Time Saved", icon: Clock },
-              { number: "99.9%", label: "System Uptime", icon: Shield }
+              { number: "450+", label: "Apartment Communities", icon: Building },
+              { number: "25,000+", label: "Residential Units", icon: Home },
+              { number: "95%", label: "Rent Collection Rate", icon: CreditCard },
+              { number: "4.7★", label: "Tenant Satisfaction", icon: Star }
             ].map((stat, index) => (
               <motion.div
                 key={index}
@@ -480,74 +528,49 @@ export default function IndependentHotelsPage() {
                 </Card>
               </motion.div>
             ))}
-          </div>
+            </div>
         </div>
       </section>
 
       {/* CTA Section */}
       <section className="py-20 lg:py-32 bg-gradient-to-br from-[#EFF0F1] to-[#626E7C] relative">
         <div className="container-custom text-center relative">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-            className="space-y-12"
-          >
-            {/* Top Button */}
-            <div className="flex justify-center">
-              <Button 
-                variant="outline" 
-                size="sm"
-                className="bg-gray-100 text-gray-700 border-gray-200 hover:bg-gray-200 rounded-lg px-4 py-2 text-sm font-normal"
+          <h2 className="text-5xl lg:text-7xl font-bold text-white tracking-tight leading-tight text-center">
+            Ready to Transform Your Community?
+          </h2>
+          <div className="space-y-8 max-w-4xl mx-auto mb-12">
+            <p className="text-xl text-white max-w-2xl mx-auto leading-relaxed">
+              Build Thriving Apartment Communities
+            </p>
+            <p className="text-lg text-white/80 max-w-3xl mx-auto leading-relaxed">
+              Join forward-thinking property managers who've revolutionized their apartment communities with modern
+              technology, better tenant experiences, and streamlined operations.
+            </p>
+          </div>
+
+          {/* CTA Buttons */}
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Button
+                size="lg"
+                className="bg-black text-white hover:bg-gray-800 rounded-lg px-8 py-4 text-lg font-normal"
               >
-                Read our launch article
-                <ArrowRight className="w-3 h-3 ml-1" />
+                Schedule Demo
+                <ArrowRight className="w-4 h-4 ml-2" />
               </Button>
-            </div>
-
-            {/* Main Content */}
-            <div className="space-y-8 max-w-4xl mx-auto">
-              <h2 className="text-5xl lg:text-7xl font-bold text-white tracking-tight leading-tight">
-                Ready to Transform Your{" "}
-                <span className="bg-gradient-to-r from-[#097abe] to-[#3B82F6] bg-clip-text text-transparent">Independent</span>{" "}
-                <span className="bg-gradient-to-r from-[#097abe] to-[#3B82F6] bg-clip-text text-transparent">Hotel?</span>
-              </h2>
-
-              <p className="text-xl text-white max-w-2xl mx-auto leading-relaxed">
-                Join thousands of independent hotel owners who have already transformed their operations with Aiyra
-              </p>
-            </div>
-
-            {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button 
-                variant="outline" 
+              <Button
+                variant="outline"
                 size="lg"
                 className="bg-white text-black border-2 border-gray-300 hover:bg-gray-50 hover:border-gray-400 rounded-lg px-8 py-4 text-lg font-normal"
               >
-                Jump on a call
-                <span className="ml-2">📞</span>
-              </Button>
-              <Button 
-                size="lg" 
-                className="bg-black text-white hover:bg-gray-800 rounded-lg px-8 py-4 text-lg font-normal"
-              >
-                Sign up here
-                <ArrowRight className="w-4 h-4 ml-2" />
+                Contact Sales Team
               </Button>
             </div>
 
             {/* Trust Indicators */}
             <div className="pt-8">
-              <p className="text-sm text-white/80 mb-4">Trusted by independent hotels worldwide</p>
-              <div className="flex items-center justify-center gap-8 text-sm text-white/80">
-                <div>✓ 30-day free trial</div>
-                <div>✓ No setup fees</div>
-                <div>✓ 24/7 support</div>
-              </div>
+              <p className="text-sm text-white/80 mb-4">Custom implementation • Training included • Ongoing support • Scalable solution</p>
             </div>
-          </motion.div>
+            </div>
         </div>
       </section>
       <Footer />

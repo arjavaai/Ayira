@@ -29,6 +29,7 @@ import {
   Zap
 } from "lucide-react"
 import Image from "next/image"
+// import { ScrollAnimatedText, ScrollAnimatedWords, ScrollFadeIn, ScrollSlideIn } from "@/components/ScrollAnimatedText"
 
 export default function VacationRentalsPage() {
   return (
