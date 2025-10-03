@@ -17,7 +17,7 @@ const contactMethods = [
     icon: Mail,
     title: "Email Support",
     subtitle: "Get help via email",
-    detail: "support@ayiraone.com",
+    detail: "support@aiyraone.com",
     info: "Response within 24 hours"
   },
   {
