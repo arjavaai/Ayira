@@ -37,7 +37,7 @@ export default function IndependentHotelsPage() {
     <div className="min-h-screen bg-white">
       <Header />
       {/* Hero Section */}
-      <section className="relative py-20 lg:py-32 bg-white overflow-hidden">
+      <section className="relative py-20 lg:py-32 bg-gradient-to-br from-[#EFF0F1] to-[#626E7C] overflow-hidden">
         {/* Background Pattern */}
         <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmZmZmYiIGZpbGwtb3BhY2l0eT0iMC4wNSI+PGNpcmNsZSBjeD0iMzAiIGN5PSIzMCIgcj0iMSIvPjwvZz48L2c+PC9zdmc+')] opacity-20" />
         
@@ -55,31 +55,31 @@ export default function IndependentHotelsPage() {
                   Independent Hotels
                 </Badge>
                 
-                <h1 className="text-5xl lg:text-7xl font-bold tracking-tight text-gray-900">
+                <h1 className="text-5xl lg:text-7xl font-bold tracking-tight text-white">
                   Perfect PMS for{" "}
-                  <span className="text-blue-600">Independent</span>{" "}
-                  <span className="text-purple-600">Hotels</span>
+                  <span className="bg-gradient-to-r from-[#097abe] to-[#3B82F6] bg-clip-text text-transparent">Independent</span>{" "}
+                  <span className="bg-gradient-to-r from-[#097abe] to-[#3B82F6] bg-clip-text text-transparent">Hotels</span>
                 </h1>
-                
-                <p className="text-xl text-gray-600 leading-relaxed max-w-2xl">
-                  More than just PMS software - Aiyra combines property management with built-in AI chatbot, 
-                  advanced analytics, and business intelligence. Designed specifically for independent hotels 
+
+                <p className="text-xl text-white leading-relaxed max-w-2xl">
+                  More than just PMS software - Aiyra combines property management with built-in AI chatbot,
+                  advanced analytics, and business intelligence. Designed specifically for independent hotels
                   who need enterprise-grade tools without the complexity or cost.
                 </p>
               </div>
 
               <div className="flex flex-col sm:flex-row gap-4">
-                <Button 
-                  size="lg" 
-                  className="bg-blue-600 hover:bg-blue-700 text-white shadow-lg hover:shadow-xl transition-all duration-300 group"
+                <Button
+                  size="lg"
+                  className="bg-gradient-to-r from-[#3B82F6] to-[#097abe] hover:opacity-90 text-white shadow-lg hover:shadow-xl transition-all duration-300 group"
                 >
                   Start Free Trial
                   <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
                 </Button>
-                <Button 
-                  variant="outline" 
+                <Button
+                  variant="outline"
                   size="lg"
-                  className="border-2 border-gray-300 text-gray-700 hover:bg-gray-50 hover:border-gray-400 transition-all duration-300"
+                  className="border-2 border-white/30 text-white hover:bg-white/10 hover:border-white/50 transition-all duration-300"
                 >
                   Book Demo
                 </Button>
@@ -484,7 +484,7 @@ export default function IndependentHotelsPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 lg:py-32 bg-white relative">
+      <section className="py-20 lg:py-32 bg-gradient-to-br from-[#EFF0F1] to-[#626E7C] relative">
         <div className="container-custom text-center relative">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -507,13 +507,13 @@ export default function IndependentHotelsPage() {
 
             {/* Main Content */}
             <div className="space-y-8 max-w-4xl mx-auto">
-              <h2 className="text-5xl lg:text-7xl font-bold text-black tracking-tight leading-tight">
+              <h2 className="text-5xl lg:text-7xl font-bold text-white tracking-tight leading-tight">
                 Ready to Transform Your{" "}
-                <span className="text-blue-600">Independent</span>{" "}
-                <span className="text-purple-600">Hotel?</span>
+                <span className="bg-gradient-to-r from-[#097abe] to-[#3B82F6] bg-clip-text text-transparent">Independent</span>{" "}
+                <span className="bg-gradient-to-r from-[#097abe] to-[#3B82F6] bg-clip-text text-transparent">Hotel?</span>
               </h2>
-              
-              <p className="text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
+
+              <p className="text-xl text-white max-w-2xl mx-auto leading-relaxed">
                 Join thousands of independent hotel owners who have already transformed their operations with Aiyra
               </p>
             </div>
@@ -539,8 +539,8 @@ export default function IndependentHotelsPage() {
 
             {/* Trust Indicators */}
             <div className="pt-8">
-              <p className="text-sm text-gray-500 mb-4">Trusted by independent hotels worldwide</p>
-              <div className="flex items-center justify-center gap-8 text-sm text-gray-500">
+              <p className="text-sm text-white/80 mb-4">Trusted by independent hotels worldwide</p>
+              <div className="flex items-center justify-center gap-8 text-sm text-white/80">
                 <div>✓ 30-day free trial</div>
                 <div>✓ No setup fees</div>
                 <div>✓ 24/7 support</div>

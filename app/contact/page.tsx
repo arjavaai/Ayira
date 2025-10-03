@@ -72,20 +72,21 @@ export default function ContactPage() {
       <Header />
 
       {/* Hero Section */}
-      <section className="pt-32 pb-20 bg-gradient-to-b from-blue-50 via-white to-white">
+      <section className="pt-32 pb-20 bg-gradient-to-br from-[#EFF0F1] to-[#626E7C]">
         <div className="container-custom">
           <Reveal>
             <div className="text-center max-w-4xl mx-auto">
               <motion.h1
-                className="text-5xl lg:text-7xl font-bold mb-6 bg-gradient-to-r from-gray-900 via-blue-900 to-purple-900 bg-clip-text text-transparent"
+                className="text-5xl lg:text-7xl font-bold mb-6"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6 }}
               >
-                Get in Touch
+                <span className="text-black">Get in </span>
+                <span className="bg-gradient-to-r from-[#097abe] to-[#3B82F6] bg-clip-text text-transparent">Touch</span>
               </motion.h1>
               <motion.p
-                className="text-xl text-gray-600 mb-6"
+                className="text-xl text-white mb-6"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.2 }}
@@ -100,8 +101,8 @@ export default function ContactPage() {
               >
                 {benefits.map((benefit, index) => (
                   <div key={index} className="flex items-center gap-2">
-                    <CheckCircle2 className="w-5 h-5 text-green-500" />
-                    <span className="text-gray-700 font-medium">{benefit}</span>
+                    <CheckCircle2 className="w-5 h-5 text-[#3B82F6]" />
+                    <span className="text-black font-medium">{benefit}</span>
                   </div>
                 ))}
               </motion.div>
@@ -241,14 +242,15 @@ export default function ContactPage() {
       </section>
 
       {/* Global Offices */}
-      <section className="py-20 bg-gradient-to-b from-white to-blue-50">
+      <section className="py-20 bg-gradient-to-br from-[#EFF0F1] to-[#626E7C]">
         <div className="container-custom">
           <Reveal>
             <div className="text-center mb-12">
-              <h2 className="text-4xl lg:text-5xl font-bold mb-4 text-gray-900">
-                Our Global Offices
+              <h2 className="text-4xl lg:text-5xl font-bold mb-4">
+                <span className="text-black">Our Global </span>
+                <span className="bg-gradient-to-r from-[#097abe] to-[#3B82F6] bg-clip-text text-transparent">Offices</span>
               </h2>
-              <p className="text-xl text-gray-600">
+              <p className="text-xl text-white">
                 Serving hotels worldwide with local expertise and support.
               </p>
             </div>
@@ -284,19 +286,20 @@ export default function ContactPage() {
       </section>
 
       {/* Bottom CTA */}
-      <section className="py-20 bg-blue-50">
+      <section className="py-20 bg-gradient-to-br from-[#EFF0F1] to-[#626E7C]">
         <div className="container-custom">
           <Reveal>
             <div className="text-center max-w-3xl mx-auto">
-              <h2 className="text-4xl lg:text-5xl font-bold mb-6 text-gray-900">
-                Ready to Get Started?
+              <h2 className="text-4xl lg:text-5xl font-bold mb-6">
+                <span className="text-black">Ready to </span>
+                <span className="bg-gradient-to-r from-[#097abe] to-[#3B82F6] bg-clip-text text-transparent">Get Started?</span>
               </h2>
-              <p className="text-xl text-gray-600 mb-8">
+              <p className="text-xl text-white mb-8">
                 Don't wait to transform your hotel operations. See Aiyra in action with a personalized demo.
               </p>
               <Button
                 size="lg"
-                className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-8 py-4 text-lg font-semibold rounded-full"
+                className="bg-gradient-to-r from-[#3B82F6] to-[#097abe] text-white px-8 py-4 text-lg font-semibold rounded-full hover:from-[#097abe] hover:to-[#3B82F6] transition-all duration-300 shadow-lg"
                 asChild
               >
                 <motion.a

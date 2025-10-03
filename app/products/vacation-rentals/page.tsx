@@ -35,7 +35,7 @@ export default function VacationRentalsPage() {
     <div className="min-h-screen bg-white">
       <Header />
       {/* Hero Section */}
-      <section className="relative py-20 lg:py-32 bg-white overflow-hidden">
+      <section className="relative py-20 lg:py-32 bg-gradient-to-br from-[#EFF0F1] to-[#626E7C] overflow-hidden">
         {/* Background Pattern */}
         <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmZmZmYiIGZpbGwtb3BhY2l0eT0iMC4wNSI+PGNpcmNsZSBjeD0iMzAiIGN5PSIzMCIgcj0iMSIvPjwvZz48L2c+PC9zdmc+')] opacity-20" />
 
@@ -53,13 +53,13 @@ export default function VacationRentalsPage() {
                   Airbnb & Vacation Rentals
                 </Badge>
 
-                <h1 className="text-5xl lg:text-7xl font-bold tracking-tight text-gray-900">
+                <h1 className="text-5xl lg:text-7xl font-bold tracking-tight text-white">
                   Smart Management for{" "}
-                  <span className="text-green-600">Vacation</span>{" "}
-                  <span className="text-blue-600">Rentals</span>
+                  <span className="bg-gradient-to-r from-[#097abe] to-[#3B82F6] bg-clip-text text-transparent">Vacation</span>{" "}
+                  <span className="bg-gradient-to-r from-[#097abe] to-[#3B82F6] bg-clip-text text-transparent">Rentals</span>
                 </h1>
 
-                <p className="text-xl text-gray-600 leading-relaxed max-w-2xl">
+                <p className="text-xl text-white leading-relaxed max-w-2xl">
                   Perfect for individual property owners and vacation rental managers. Automate guest communication,
                   synchronize across all platforms, and maximize your rental income with smart pricing and seamless operations.
                 </p>
@@ -68,7 +68,7 @@ export default function VacationRentalsPage() {
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button
                   size="lg"
-                  className="bg-green-600 hover:bg-green-700 text-white shadow-lg hover:shadow-xl transition-all duration-300 group"
+                  className="bg-gradient-to-r from-[#3B82F6] to-[#097abe] hover:opacity-90 text-white shadow-lg hover:shadow-xl transition-all duration-300 group"
                 >
                   Start Free Trial
                   <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
@@ -76,7 +76,7 @@ export default function VacationRentalsPage() {
                 <Button
                   variant="outline"
                   size="lg"
-                  className="border-2 border-gray-300 text-gray-700 hover:bg-gray-50 hover:border-gray-400 transition-all duration-300"
+                  className="border-2 border-white/30 text-white hover:bg-white/10 hover:border-white/50 transition-all duration-300"
                 >
                   See Demo
                 </Button>
@@ -84,19 +84,19 @@ export default function VacationRentalsPage() {
 
               {/* Feature highlights */}
               <div className="grid grid-cols-2 gap-4 pt-4">
-                <div className="flex items-center gap-2 text-sm text-gray-600">
+                <div className="flex items-center gap-2 text-sm text-white/90">
                   <CheckCircle2 className="w-4 h-4 text-green-500" />
                   Perfect for individual property owners
                 </div>
-                <div className="flex items-center gap-2 text-sm text-gray-600">
+                <div className="flex items-center gap-2 text-sm text-white/90">
                   <CheckCircle2 className="w-4 h-4 text-green-500" />
                   Multi-platform listing management
                 </div>
-                <div className="flex items-center gap-2 text-sm text-gray-600">
+                <div className="flex items-center gap-2 text-sm text-white/90">
                   <CheckCircle2 className="w-4 h-4 text-green-500" />
                   Automated guest communication
                 </div>
-                <div className="flex items-center gap-2 text-sm text-gray-600">
+                <div className="flex items-center gap-2 text-sm text-white/90">
                   <CheckCircle2 className="w-4 h-4 text-green-500" />
                   Smart pricing optimization
                 </div>
@@ -563,7 +563,7 @@ export default function VacationRentalsPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 lg:py-32 bg-white relative">
+      <section className="py-20 lg:py-32 bg-gradient-to-br from-[#EFF0F1] to-[#626E7C] relative">
         <div className="container-custom text-center relative">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -574,15 +574,15 @@ export default function VacationRentalsPage() {
           >
             {/* Main Content */}
             <div className="space-y-8 max-w-4xl mx-auto">
-              <h2 className="text-5xl lg:text-7xl font-bold text-black tracking-tight leading-tight">
+              <h2 className="text-5xl lg:text-7xl font-bold text-white tracking-tight leading-tight">
                 Ready to Automate Your{" "}
-                <span className="text-green-600">Rental?</span>
+                <span className="bg-gradient-to-r from-[#097abe] to-[#3B82F6] bg-clip-text text-transparent">Rental?</span>
               </h2>
 
-              <p className="text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
+              <p className="text-xl text-white max-w-2xl mx-auto leading-relaxed">
                 Maximize Your Rental Income
               </p>
-              <p className="text-lg text-gray-500 max-w-3xl mx-auto leading-relaxed">
+              <p className="text-lg text-white/80 max-w-3xl mx-auto leading-relaxed">
                 Join thousands of successful vacation rental owners who've automated their operations and increased
                 revenue with smart pricing and seamless guest management.
               </p>
@@ -608,7 +608,7 @@ export default function VacationRentalsPage() {
 
             {/* Trust Indicators */}
             <div className="pt-8">
-              <p className="text-sm text-gray-500 mb-4">Free 30-day trial • No setup fees • Platform integrations included • Cancel anytime</p>
+              <p className="text-sm text-white/80 mb-4">Free 30-day trial • No setup fees • Platform integrations included • Cancel anytime</p>
             </div>
           </motion.div>
         </div>

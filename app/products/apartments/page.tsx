@@ -35,7 +35,7 @@ export default function ApartmentCommunitiesPage() {
     <div className="min-h-screen bg-white">
       <Header />
       {/* Hero Section */}
-      <section className="relative py-20 lg:py-32 bg-white overflow-hidden">
+      <section className="relative py-20 lg:py-32 bg-gradient-to-br from-[#EFF0F1] to-[#626E7C] overflow-hidden">
         {/* Background Pattern */}
         <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmZmZmYiIGZpbGwtb3BhY2l0eT0iMC4wNSI+PGNpcmNsZSBjeD0iMzAiIGN5PSIzMCIgcj0iMSIvPjwvZz48L2c+PC9zdmc+')] opacity-20" />
 
@@ -53,13 +53,13 @@ export default function ApartmentCommunitiesPage() {
                   Apartment Communities
                 </Badge>
 
-                <h1 className="text-5xl lg:text-7xl font-bold tracking-tight text-gray-900">
+                <h1 className="text-5xl lg:text-7xl font-bold tracking-tight text-white">
                   Smart Management for{" "}
-                  <span className="text-teal-600">Apartment</span>{" "}
-                  <span className="text-blue-600">Communities</span>
+                  <span className="bg-gradient-to-r from-[#097abe] to-[#3B82F6] bg-clip-text text-transparent">Apartment</span>{" "}
+                  <span className="bg-gradient-to-r from-[#097abe] to-[#3B82F6] bg-clip-text text-transparent">Communities</span>
                 </h1>
 
-                <p className="text-xl text-gray-600 leading-relaxed max-w-2xl">
+                <p className="text-xl text-white leading-relaxed max-w-2xl">
                   Comprehensive management solution for apartment complexes and residential communities. Streamline
                   lease management, automate rent collection, enhance community engagement, and provide exceptional
                   tenant experiences.
@@ -69,7 +69,7 @@ export default function ApartmentCommunitiesPage() {
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button
                   size="lg"
-                  className="bg-teal-600 hover:bg-teal-700 text-white shadow-lg hover:shadow-xl transition-all duration-300 group"
+                  className="bg-gradient-to-r from-[#3B82F6] to-[#097abe] hover:opacity-90 text-white shadow-lg hover:shadow-xl transition-all duration-300 group"
                 >
                   Schedule Demo
                   <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
@@ -77,7 +77,7 @@ export default function ApartmentCommunitiesPage() {
                 <Button
                   variant="outline"
                   size="lg"
-                  className="border-2 border-gray-300 text-gray-700 hover:bg-gray-50 hover:border-gray-400 transition-all duration-300"
+                  className="border-2 border-white/30 text-white hover:bg-white/10 hover:border-white/50 transition-all duration-300"
                 >
                   Contact Sales
                 </Button>
@@ -85,19 +85,19 @@ export default function ApartmentCommunitiesPage() {
 
               {/* Feature highlights */}
               <div className="grid grid-cols-2 gap-4 pt-4">
-                <div className="flex items-center gap-2 text-sm text-gray-600">
+                <div className="flex items-center gap-2 text-sm text-white/90">
                   <CheckCircle2 className="w-4 h-4 text-green-500" />
                   Complete residential property management
                 </div>
-                <div className="flex items-center gap-2 text-sm text-gray-600">
+                <div className="flex items-center gap-2 text-sm text-white/90">
                   <CheckCircle2 className="w-4 h-4 text-green-500" />
                   Digital lease management system
                 </div>
-                <div className="flex items-center gap-2 text-sm text-gray-600">
+                <div className="flex items-center gap-2 text-sm text-white/90">
                   <CheckCircle2 className="w-4 h-4 text-green-500" />
                   Automated rent collection
                 </div>
-                <div className="flex items-center gap-2 text-sm text-gray-600">
+                <div className="flex items-center gap-2 text-sm text-white/90">
                   <CheckCircle2 className="w-4 h-4 text-green-500" />
                   Maintenance request tracking
                 </div>
@@ -565,7 +565,7 @@ export default function ApartmentCommunitiesPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 lg:py-32 bg-white relative">
+      <section className="py-20 lg:py-32 bg-gradient-to-br from-[#EFF0F1] to-[#626E7C] relative">
         <div className="container-custom text-center relative">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -576,15 +576,15 @@ export default function ApartmentCommunitiesPage() {
           >
             {/* Main Content */}
             <div className="space-y-8 max-w-4xl mx-auto">
-              <h2 className="text-5xl lg:text-7xl font-bold text-black tracking-tight leading-tight">
+              <h2 className="text-5xl lg:text-7xl font-bold text-white tracking-tight leading-tight">
                 Ready to Transform Your{" "}
-                <span className="text-teal-600">Community?</span>
+                <span className="bg-gradient-to-r from-[#097abe] to-[#3B82F6] bg-clip-text text-transparent">Community?</span>
               </h2>
 
-              <p className="text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
+              <p className="text-xl text-white max-w-2xl mx-auto leading-relaxed">
                 Build Thriving Apartment Communities
               </p>
-              <p className="text-lg text-gray-500 max-w-3xl mx-auto leading-relaxed">
+              <p className="text-lg text-white/80 max-w-3xl mx-auto leading-relaxed">
                 Join forward-thinking property managers who've revolutionized their apartment communities with modern
                 technology, better tenant experiences, and streamlined operations.
               </p>
@@ -610,7 +610,7 @@ export default function ApartmentCommunitiesPage() {
 
             {/* Trust Indicators */}
             <div className="pt-8">
-              <p className="text-sm text-gray-500 mb-4">Custom implementation • Training included • Ongoing support • Scalable solution</p>
+              <p className="text-sm text-white/80 mb-4">Custom implementation • Training included • Ongoing support • Scalable solution</p>
             </div>
           </motion.div>
         </div>

@@ -6,6 +6,7 @@ import { motion } from "framer-motion"
 import { Reveal } from "@/components/reveal"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
+import MagicBento from "@/components/MagicBento"
 import {
   Building2,
   BarChart3,
@@ -140,20 +141,21 @@ export default function FeaturesPage() {
       <Header />
 
       {/* Hero Section */}
-      <section className="pt-32 pb-20 bg-gradient-to-b from-blue-50 via-white to-white">
+      <section className="pt-32 pb-20 bg-gradient-to-br from-[#EFF0F1] to-[#626E7C]">
         <div className="container-custom">
           <Reveal>
             <div className="text-center max-w-4xl mx-auto">
               <motion.h1
-                className="text-5xl lg:text-7xl font-bold mb-6 bg-gradient-to-r from-gray-900 via-blue-900 to-purple-900 bg-clip-text text-transparent"
+                className="text-5xl lg:text-7xl font-bold mb-6"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6 }}
               >
-                Powerful Features for Modern Hotels
+                <span className="text-black">Powerful Features for </span>
+                <span className="bg-gradient-to-r from-[#097abe] to-[#3B82F6] bg-clip-text text-transparent">Modern Hotels</span>
               </motion.h1>
               <motion.p
-                className="text-xl text-gray-600 mb-8"
+                className="text-xl text-white mb-8"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.2 }}
@@ -167,7 +169,7 @@ export default function FeaturesPage() {
               >
                 <Button
                   size="lg"
-                  className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-8 py-4 text-lg font-semibold rounded-full"
+                  className="bg-gradient-to-r from-[#3B82F6] to-[#097abe] text-white px-8 py-4 text-lg font-semibold rounded-full hover:from-[#097abe] hover:to-[#3B82F6] transition-all duration-300 shadow-lg"
                   asChild
                 >
                   <a href="/experience">Book a Demo</a>
@@ -178,51 +180,40 @@ export default function FeaturesPage() {
         </div>
       </section>
 
-      {/* Feature Grid */}
+      {/* Magic Bento Grid */}
       <section className="py-20 bg-white">
-        <div className="container-custom">
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {features.map((feature, index) => (
-              <Reveal key={feature.id} delay={index * 0.1}>
-                <Card className="h-full hover:shadow-xl transition-all duration-300 border-2 hover:border-blue-200">
-                  <CardContent className="p-8">
-                    <div className={`w-16 h-16 bg-gradient-to-r ${feature.color} rounded-2xl flex items-center justify-center mb-6`}>
-                      <feature.icon className="w-8 h-8 text-white" />
-                    </div>
-                    <h3 className="text-2xl font-bold mb-2 text-gray-900">{feature.title}</h3>
-                    <p className="text-blue-600 font-semibold mb-4">{feature.subtitle}</p>
-                    <p className="text-gray-600 mb-6">{feature.description}</p>
-                    <div className="space-y-3">
-                      {feature.benefits.map((benefit, idx) => (
-                        <div key={idx} className="flex items-start gap-2">
-                          <CheckCircle2 className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
-                          <span className="text-sm text-gray-700">{benefit}</span>
-                        </div>
-                      ))}
-                    </div>
-                  </CardContent>
-                </Card>
-              </Reveal>
-            ))}
-          </div>
+        <div className="container-custom flex justify-center">
+          <MagicBento
+            textAutoHide={true}
+            enableStars={true}
+            enableSpotlight={true}
+            enableBorderGlow={true}
+            enableTilt={true}
+            enableMagnetism={true}
+            clickEffect={true}
+            spotlightRadius={300}
+            particleCount={12}
+            glowColor="59, 130, 246"
+          />
         </div>
       </section>
 
       {/* Bottom CTA */}
-      <section className="py-20 bg-gradient-to-b from-white to-blue-50">
+      <section className="py-20 bg-gradient-to-br from-[#EFF0F1] to-[#626E7C]">
         <div className="container-custom">
           <Reveal>
             <div className="text-center max-w-3xl mx-auto">
-              <h2 className="text-4xl lg:text-5xl font-bold mb-6 text-gray-900">
-                Ready to See These Features in Action?
+              <h2 className="text-4xl lg:text-5xl font-bold mb-6">
+                <span className="text-black">Ready to See These </span>
+                <span className="bg-gradient-to-r from-[#097abe] to-[#3B82F6] bg-clip-text text-transparent">Features in Action?</span>
               </h2>
-              <p className="text-xl text-gray-600 mb-8">
+              <p className="text-xl text-white mb-8">
                 Book a personalized demo and discover how Aiyra can transform your hotel operations.
               </p>
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                 <Button
                   size="lg"
-                  className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-8 py-4 text-lg font-semibold rounded-full"
+                  className="bg-gradient-to-r from-[#3B82F6] to-[#097abe] text-white px-8 py-4 text-lg font-semibold rounded-full hover:from-[#097abe] hover:to-[#3B82F6] transition-all duration-300 shadow-lg"
                   asChild
                 >
                   <motion.a
@@ -238,7 +229,7 @@ export default function FeaturesPage() {
                 <Button
                   variant="outline"
                   size="lg"
-                  className="border-2 border-gray-300 text-gray-700 hover:bg-gray-50 px-8 py-4 text-lg font-semibold rounded-full"
+                  className="bg-[#626E7C]/10 backdrop-blur-sm text-black rounded-full font-medium border-2 border-[#626E7C]/30 hover:bg-[#626E7C]/20 transition-colors px-8 py-4 text-lg"
                   asChild
                 >
                   <motion.a

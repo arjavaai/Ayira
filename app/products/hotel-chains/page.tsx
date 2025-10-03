@@ -35,7 +35,7 @@ export default function HotelChainsPage() {
     <div className="min-h-screen bg-white">
       <Header />
       {/* Hero Section */}
-      <section className="relative py-20 lg:py-32 bg-white overflow-hidden">
+      <section className="relative py-20 lg:py-32 bg-gradient-to-br from-[#EFF0F1] to-[#626E7C] overflow-hidden">
         {/* Background Pattern */}
         <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmZmZmYiIGZpbGwtb3BhY2l0eT0iMC4wNSI+PGNpcmNsZSBjeD0iMzAiIGN5PSIzMCIgcj0iMSIvPjwvZz48L2c+PC9zdmc+')] opacity-20" />
 
@@ -53,13 +53,13 @@ export default function HotelChainsPage() {
                   Hotel Chains & Groups
                 </Badge>
 
-                <h1 className="text-5xl lg:text-7xl font-bold tracking-tight text-gray-900">
+                <h1 className="text-5xl lg:text-7xl font-bold tracking-tight text-white">
                   Enterprise PMS for{" "}
-                  <span className="text-indigo-600">Hotel</span>{" "}
-                  <span className="text-purple-600">Chains</span>
+                  <span className="bg-gradient-to-r from-[#097abe] to-[#3B82F6] bg-clip-text text-transparent">Hotel</span>{" "}
+                  <span className="bg-gradient-to-r from-[#097abe] to-[#3B82F6] bg-clip-text text-transparent">Chains</span>
                 </h1>
 
-                <p className="text-xl text-gray-600 leading-relaxed max-w-2xl">
+                <p className="text-xl text-white leading-relaxed max-w-2xl">
                   More than just enterprise PMS - Aiyra combines multi-property management with built-in AI chatbot,
                   advanced business intelligence, and predictive analytics. Get three enterprise platforms in one
                   integrated solution designed specifically for hotel chains and groups.
@@ -69,7 +69,7 @@ export default function HotelChainsPage() {
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button
                   size="lg"
-                  className="bg-indigo-600 hover:bg-indigo-700 text-white shadow-lg hover:shadow-xl transition-all duration-300 group"
+                  className="bg-gradient-to-r from-[#3B82F6] to-[#097abe] hover:opacity-90 text-white shadow-lg hover:shadow-xl transition-all duration-300 group"
                 >
                   Schedule Enterprise Demo
                   <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
@@ -77,7 +77,7 @@ export default function HotelChainsPage() {
                 <Button
                   variant="outline"
                   size="lg"
-                  className="border-2 border-gray-300 text-gray-700 hover:bg-gray-50 hover:border-gray-400 transition-all duration-300"
+                  className="border-2 border-white/30 text-white hover:bg-white/10 hover:border-white/50 transition-all duration-300"
                 >
                   Contact Sales
                 </Button>
@@ -85,19 +85,19 @@ export default function HotelChainsPage() {
 
               {/* Feature highlights */}
               <div className="grid grid-cols-2 gap-4 pt-4">
-                <div className="flex items-center gap-2 text-sm text-gray-600">
+                <div className="flex items-center gap-2 text-sm text-white/90">
                   <CheckCircle2 className="w-4 h-4 text-green-500" />
                   Enterprise AI chatbot & automation included
                 </div>
-                <div className="flex items-center gap-2 text-sm text-gray-600">
+                <div className="flex items-center gap-2 text-sm text-white/90">
                   <CheckCircle2 className="w-4 h-4 text-green-500" />
                   Advanced BI & predictive analytics included
                 </div>
-                <div className="flex items-center gap-2 text-sm text-gray-600">
+                <div className="flex items-center gap-2 text-sm text-white/90">
                   <CheckCircle2 className="w-4 h-4 text-green-500" />
                   Multi-property intelligence dashboards
                 </div>
-                <div className="flex items-center gap-2 text-sm text-gray-600">
+                <div className="flex items-center gap-2 text-sm text-white/90">
                   <CheckCircle2 className="w-4 h-4 text-green-500" />
                   Dedicated enterprise account management
                 </div>
@@ -555,7 +555,7 @@ export default function HotelChainsPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 lg:py-32 bg-white relative">
+      <section className="py-20 lg:py-32 bg-gradient-to-br from-[#EFF0F1] to-[#626E7C] relative">
         <div className="container-custom text-center relative">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -566,15 +566,15 @@ export default function HotelChainsPage() {
           >
             {/* Main Content */}
             <div className="space-y-8 max-w-4xl mx-auto">
-              <h2 className="text-5xl lg:text-7xl font-bold text-black tracking-tight leading-tight">
+              <h2 className="text-5xl lg:text-7xl font-bold text-white tracking-tight leading-tight">
                 Ready for Enterprise-Grade{" "}
-                <span className="text-indigo-600">PMS?</span>
+                <span className="bg-gradient-to-r from-[#097abe] to-[#3B82F6] bg-clip-text text-transparent">PMS?</span>
               </h2>
 
-              <p className="text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
+              <p className="text-xl text-white max-w-2xl mx-auto leading-relaxed">
                 Scale Your Hotel Chain Operations
               </p>
-              <p className="text-lg text-gray-500 max-w-3xl mx-auto leading-relaxed">
+              <p className="text-lg text-white/80 max-w-3xl mx-auto leading-relaxed">
                 Join leading hotel chains who trust Aiyra to manage their multi-property operations. Get enterprise
                 features, dedicated support, and scalable infrastructure.
               </p>
@@ -600,7 +600,7 @@ export default function HotelChainsPage() {
 
             {/* Trust Indicators */}
             <div className="pt-8">
-              <p className="text-sm text-gray-500 mb-4">Custom deployment • Enterprise SLA • Dedicated support • Security compliance</p>
+              <p className="text-sm text-white/80 mb-4">Custom deployment • Enterprise SLA • Dedicated support • Security compliance</p>
             </div>
           </motion.div>
         </div>
