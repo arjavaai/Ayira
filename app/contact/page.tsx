@@ -17,14 +17,14 @@ const contactMethods = [
     icon: Mail,
     title: "Email Support",
     subtitle: "Get help via email",
-    detail: "support@aiyra.com",
+    detail: "support@ayiraone.com",
     info: "Response within 24 hours"
   },
   {
     icon: Phone,
     title: "Phone Support",
     subtitle: "Speak with our experts",
-    detail: "+1 (555) 123-4567",
+    detail: "+91 6699778436",
     info: "Mon-Fri, 9AM-6PM EST"
   },
   {
@@ -72,7 +72,7 @@ export default function ContactPage() {
       <Header />
 
       {/* Hero Section */}
-      <section className="pt-32 pb-20 bg-gradient-to-br from-[#EFF0F1] to-[#626E7C]">
+      <section className="pt-32 pb-20 bg-gradient-to-br from-neutral-light to-neutral-medium">
         <div className="container-custom">
           <Reveal>
             <div className="text-center max-w-4xl mx-auto">
@@ -83,7 +83,7 @@ export default function ContactPage() {
                 transition={{ duration: 0.6 }}
               >
                 <span className="text-black">Get in </span>
-                <span className="bg-gradient-to-r from-[#097abe] to-[#3B82F6] bg-clip-text text-transparent">Touch</span>
+                <span className="bg-gradient-to-r from-brand-primary to-brand-secondary bg-clip-text text-transparent">Touch</span>
               </motion.h1>
               <motion.p
                 className="text-xl text-white mb-6"
@@ -101,7 +101,7 @@ export default function ContactPage() {
               >
                 {benefits.map((benefit, index) => (
                   <div key={index} className="flex items-center gap-2">
-                    <CheckCircle2 className="w-5 h-5 text-[#3B82F6]" />
+                    <CheckCircle2 className="w-5 h-5 text-brand-secondary" />
                     <span className="text-black font-medium">{benefit}</span>
                   </div>
                 ))}
@@ -242,13 +242,13 @@ export default function ContactPage() {
       </section>
 
       {/* Global Offices */}
-      <section className="py-20 bg-gradient-to-br from-[#EFF0F1] to-[#626E7C]">
+      <section className="py-20 bg-gradient-to-br from-neutral-light to-neutral-medium">
         <div className="container-custom">
           <Reveal>
             <div className="text-center mb-12">
               <h2 className="text-4xl lg:text-5xl font-bold mb-4">
                 <span className="text-black">Our Global </span>
-                <span className="bg-gradient-to-r from-[#097abe] to-[#3B82F6] bg-clip-text text-transparent">Offices</span>
+                <span className="bg-gradient-to-r from-brand-primary to-brand-secondary bg-clip-text text-transparent">Offices</span>
               </h2>
               <p className="text-xl text-white">
                 Serving hotels worldwide with local expertise and support.
@@ -286,20 +286,20 @@ export default function ContactPage() {
       </section>
 
       {/* Bottom CTA */}
-      <section className="py-20 bg-gradient-to-br from-[#EFF0F1] to-[#626E7C]">
+      <section className="py-20 bg-gradient-to-br from-neutral-light to-neutral-medium">
         <div className="container-custom">
           <Reveal>
             <div className="text-center max-w-3xl mx-auto">
               <h2 className="text-4xl lg:text-5xl font-bold mb-6">
                 <span className="text-black">Ready to </span>
-                <span className="bg-gradient-to-r from-[#097abe] to-[#3B82F6] bg-clip-text text-transparent">Get Started?</span>
+                <span className="bg-gradient-to-r from-brand-primary to-brand-secondary bg-clip-text text-transparent">Get Started?</span>
               </h2>
               <p className="text-xl text-white mb-8">
                 Don't wait to transform your hotel operations. See Aiyra in action with a personalized demo.
               </p>
               <Button
                 size="lg"
-                className="bg-gradient-to-r from-[#3B82F6] to-[#097abe] text-white px-8 py-4 text-lg font-semibold rounded-full hover:from-[#097abe] hover:to-[#3B82F6] transition-all duration-300 shadow-lg"
+                className="bg-gradient-to-r from-brand-secondary to-brand-primary text-white px-8 py-4 text-lg font-semibold rounded-full hover:from-brand-primary hover:to-brand-secondary transition-all duration-300 shadow-lg"
                 asChild
               >
                 <motion.a

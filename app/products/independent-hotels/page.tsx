@@ -38,7 +38,7 @@ export default function IndependentHotelsPage() {
     <div className="min-h-screen bg-white">
       <Header />
       {/* Hero Section */}
-      <section className="relative py-20 lg:py-32 bg-gradient-to-br from-[#EFF0F1] to-[#626E7C] overflow-hidden">
+      <section className="relative py-20 lg:py-32 bg-gradient-to-br from-neutral-light to-neutral-medium overflow-hidden">
         {/* Background Pattern */}
         <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmZmZmYiIGZpbGwtb3BhY2l0eT0iMC4wNSI+PGNpcmNsZSBjeD0iMzAiIGN5PSIzMCIgcj0iMSIvPjwvZz48L2c+PC9zdmc+')] opacity-20" />
         
@@ -51,15 +51,15 @@ export default function IndependentHotelsPage() {
               className="space-y-8"
             >
               <div className="space-y-6">
-                <Badge variant="secondary" className="bg-blue-100 text-blue-700 border-blue-200 hover:bg-blue-200">
+                <Badge variant="secondary" className="bg-property-hotels/10 text-property-hotels border-property-hotels/20 hover:bg-property-hotels/20">
                   <Target className="w-3 h-3 mr-1" />
                   Independent Hotels
                 </Badge>
                 
                 <h1 className="text-5xl lg:text-7xl font-bold tracking-tight text-white">
                   Perfect PMS for{" "}
-                  <span className="bg-gradient-to-r from-[#097abe] to-[#3B82F6] bg-clip-text text-transparent">Independent</span>{" "}
-                  <span className="bg-gradient-to-r from-[#097abe] to-[#3B82F6] bg-clip-text text-transparent">Hotels</span>
+                  <span className="bg-gradient-to-r from-brand-primary to-property-hotels bg-clip-text text-transparent">Independent</span>{" "}
+                  <span className="bg-gradient-to-r from-brand-primary to-property-hotels bg-clip-text text-transparent">Hotels</span>
                 </h1>
 
                 <p className="text-xl text-white leading-relaxed max-w-2xl">
@@ -72,7 +72,7 @@ export default function IndependentHotelsPage() {
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button
                   size="lg"
-                  className="bg-gradient-to-r from-[#3B82F6] to-[#097abe] hover:opacity-90 text-white shadow-lg hover:shadow-xl transition-all duration-300 group"
+                  className="bg-gradient-to-r from-property-hotels to-brand-primary hover:opacity-90 text-white shadow-lg hover:shadow-xl transition-all duration-300 group"
                 >
                   Start Free Trial
                   <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
@@ -105,8 +105,8 @@ export default function IndependentHotelsPage() {
               </div>
               
               {/* Floating Elements */}
-              <div className="absolute -top-4 -right-4 w-16 h-16 bg-blue-500/20 rounded-full animate-pulse"></div>
-              <div className="absolute -bottom-4 -left-4 w-12 h-12 bg-purple-500/20 rounded-full animate-pulse delay-1000"></div>
+              <div className="absolute -top-4 -right-4 w-16 h-16 bg-property-hotels/20 rounded-full animate-pulse"></div>
+              <div className="absolute -bottom-4 -left-4 w-12 h-12 bg-brand-accent/20 rounded-full animate-pulse delay-1000"></div>
             </motion.div>
           </div>
         </div>
@@ -124,7 +124,7 @@ export default function IndependentHotelsPage() {
           >
             <h2 className="text-4xl lg:text-6xl font-bold tracking-tight mb-6">
               Everything Your{" "}
-              <span className="text-blue-600">
+              <span className="text-property-hotels">
                 Independent Hotel
               </span>{" "}
               Needs
@@ -157,8 +157,8 @@ export default function IndependentHotelsPage() {
                       />
                       <div className="flex flex-col gap-y-3 md:gap-y-4">
                         <div className="flex items-center gap-3">
-                          <div className="w-10 h-10 md:w-12 md:h-12 bg-blue-500/20 rounded-xl flex items-center justify-center">
-                            <BarChart3 className="w-5 h-5 md:w-6 md:h-6 text-blue-400" />
+                          <div className="w-10 h-10 md:w-12 md:h-12 bg-property-hotels/20 rounded-xl flex items-center justify-center">
+                            <BarChart3 className="w-5 h-5 md:w-6 md:h-6 text-property-hotels" />
                           </div>
                           <h2 className="text-lg md:text-2xl font-bold mb-0 text-white mt-0 !m-0">
                             Property Management Dashboard
@@ -168,19 +168,19 @@ export default function IndependentHotelsPage() {
                           Centralized control of all hotel operations with intuitive interface designed for independent operators.
                         </p>
                         <div className="space-y-2">
-                          <div className="flex items-center gap-2 text-blue-400 text-xs md:text-sm">
+                          <div className="flex items-center gap-2 text-property-hotels text-xs md:text-sm">
                             <CheckCircle2 className="w-3 h-3" />
                             Real-time occupancy tracking
                           </div>
-                          <div className="flex items-center gap-2 text-blue-400 text-xs md:text-sm">
+                          <div className="flex items-center gap-2 text-property-hotels text-xs md:text-sm">
                             <CheckCircle2 className="w-3 h-3" />
                             Guest check-in/out management
                           </div>
-                          <div className="flex items-center gap-2 text-blue-400 text-xs md:text-sm">
+                          <div className="flex items-center gap-2 text-property-hotels text-xs md:text-sm">
                             <CheckCircle2 className="w-3 h-3" />
                             Room status updates
                           </div>
-                          <div className="flex items-center gap-2 text-blue-400 text-xs md:text-sm">
+                          <div className="flex items-center gap-2 text-property-hotels text-xs md:text-sm">
                             <CheckCircle2 className="w-3 h-3" />
                             Housekeeping coordination
                           </div>
@@ -249,7 +249,7 @@ export default function IndependentHotelsPage() {
                       />
                       <div className="flex flex-col gap-y-3 md:gap-y-4">
                         <div className="flex items-center gap-3">
-                          <div className="w-10 h-10 md:w-12 md:h-12 bg-purple-500/20 rounded-xl flex items-center justify-center">
+                          <div className="w-10 h-10 md:w-12 md:h-12 bg-brand-accent/20 rounded-xl flex items-center justify-center">
                             <DollarSign className="w-5 h-5 md:w-6 md:h-6 text-purple-400" />
                           </div>
                           <h2 className="text-lg md:text-2xl font-bold mb-0 text-white mt-0 !m-0">
@@ -443,7 +443,7 @@ export default function IndependentHotelsPage() {
             </Badge>
             <h2 className="text-4xl lg:text-6xl font-bold text-black mb-6 tracking-tight">
               Trusted by Independent Hotels{" "}
-              <span className="text-blue-600">Worldwide</span>
+              <span className="text-property-hotels">Worldwide</span>
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
               Join thousands of independent hotel owners who trust Aiyra to manage their operations
@@ -485,7 +485,7 @@ export default function IndependentHotelsPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 lg:py-32 bg-gradient-to-br from-[#EFF0F1] to-[#626E7C] relative">
+      <section className="py-20 lg:py-32 bg-gradient-to-br from-neutral-light to-neutral-medium relative">
         <div className="container-custom text-center relative">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -510,8 +510,8 @@ export default function IndependentHotelsPage() {
             <div className="space-y-8 max-w-4xl mx-auto">
               <h2 className="text-5xl lg:text-7xl font-bold text-white tracking-tight leading-tight">
                 Ready to Transform Your{" "}
-                <span className="bg-gradient-to-r from-[#097abe] to-[#3B82F6] bg-clip-text text-transparent">Independent</span>{" "}
-                <span className="bg-gradient-to-r from-[#097abe] to-[#3B82F6] bg-clip-text text-transparent">Hotel?</span>
+                <span className="bg-gradient-to-r from-property-hotels to-brand-secondary bg-clip-text text-transparent">Independent</span>{" "}
+                <span className="bg-gradient-to-r from-property-hotels to-brand-secondary bg-clip-text text-transparent">Hotel?</span>
               </h2>
 
               <p className="text-xl text-white max-w-2xl mx-auto leading-relaxed">

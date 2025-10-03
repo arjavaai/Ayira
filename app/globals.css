@@ -4,46 +4,57 @@
 @import "tw-animate-css";
 
 :root {
-  /* Dark Blue Theme Color Palette */
-  --color-primary: #097abe;
-  --color-primary-dark: #076198;
-  --color-secondary: #054972;
-  --color-tertiary: #03304c;
-  --color-darkest: #011826;
+  /* Brand Core Colors */
+  --color-primary: #0B7FE6;
+  --color-secondary: #00D4FF;
+  --color-accent: #00C9FF;
+  
+  /* Neutral Colors */
+  --color-dark: #0A1628;
+  --color-medium: #64748b;
+  --color-light: #f8fafc;
+  --color-white: #ffffff;
+
+  /* Property-Specific Accent Colors */
+  --color-hotels: #0B7FE6;
+  --color-resorts: #00D4FF;
+  --color-hostels: #8B5CF6;
+  --color-rentals: #10B981;
+  --color-apartments: #F59E0B;
 
   /* Theme Colors */
-  --background: var(--color-darkest);
-  --foreground: #ffffff;
-  --card: var(--color-tertiary);
-  --card-foreground: #ffffff;
-  --popover: var(--color-tertiary);
-  --popover-foreground: #ffffff;
+  --background: #ffffff;
+  --foreground: var(--color-dark);
+  --card: #ffffff;
+  --card-foreground: var(--color-dark);
+  --popover: #ffffff;
+  --popover-foreground: var(--color-dark);
   --primary: var(--color-primary);
-  --primary-foreground: #ffffff;
+  --primary-foreground: var(--color-white);
   --secondary: var(--color-secondary);
-  --secondary-foreground: #ffffff;
-  --muted: var(--color-secondary);
-  --muted-foreground: #a0a0a0;
-  --accent: var(--color-primary-dark);
-  --accent-foreground: #ffffff;
+  --secondary-foreground: var(--color-white);
+  --muted: var(--color-light);
+  --muted-foreground: var(--color-medium);
+  --accent: var(--color-accent);
+  --accent-foreground: var(--color-white);
   --destructive: #ef4444;
-  --destructive-foreground: #ffffff;
-  --border: var(--color-secondary);
-  --input: var(--color-secondary);
+  --destructive-foreground: var(--color-white);
+  --border: #e5e5e5;
+  --input: #e5e5e5;
   --ring: var(--color-primary);
-  --chart-1: var(--color-primary);
-  --chart-2: var(--color-primary-dark);
-  --chart-3: var(--color-secondary);
-  --chart-4: var(--color-tertiary);
-  --chart-5: var(--color-darkest);
+  --chart-1: #0B7FE6;
+  --chart-2: #00D4FF;
+  --chart-3: #00C9FF;
+  --chart-4: #8B5CF6;
+  --chart-5: #10B981;
   --radius: 0.625rem;
-  --sidebar: var(--color-tertiary);
-  --sidebar-foreground: #ffffff;
+  --sidebar: var(--color-light);
+  --sidebar-foreground: var(--color-dark);
   --sidebar-primary: var(--color-primary);
-  --sidebar-primary-foreground: #ffffff;
-  --sidebar-accent: var(--color-secondary);
-  --sidebar-accent-foreground: #ffffff;
-  --sidebar-border: var(--color-secondary);
+  --sidebar-primary-foreground: var(--color-white);
+  --sidebar-accent: var(--color-light);
+  --sidebar-accent-foreground: var(--color-dark);
+  --sidebar-border: #e5e5e5;
   --sidebar-ring: var(--color-primary);
 
   /* Spacing Scale */
@@ -82,7 +93,7 @@
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-white text-[#0A1628];
     font-feature-settings: "kern" 1, "liga" 1, "calt" 1;
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
@@ -173,24 +184,24 @@
 
   /* Glassmorphism utilities for dark theme */
   .glass-card {
-    background: rgba(3, 48, 76, 0.8);
+    background: rgba(30, 41, 59, 0.8);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
-    border: 1px solid rgba(9, 122, 190, 0.3);
+    border: 1px solid rgba(14, 165, 233, 0.3);
   }
 
   .glass-card-dark {
-    background: rgba(1, 24, 38, 0.9);
+    background: rgba(15, 23, 42, 0.9);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
-    border: 1px solid rgba(9, 122, 190, 0.2);
+    border: 1px solid rgba(14, 165, 233, 0.2);
   }
 
   /* Enhanced shadows for dark theme */
   .shadow-glass {
     box-shadow: 
       0 8px 32px rgba(0, 0, 0, 0.3),
-      0 0 0 1px rgba(9, 122, 190, 0.2),
+      0 0 0 1px rgba(14, 165, 233, 0.2),
       inset 0 1px 0 rgba(255, 255, 255, 0.1);
   }
 

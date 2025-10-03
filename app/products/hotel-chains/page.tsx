@@ -35,7 +35,7 @@ export default function HotelChainsPage() {
     <div className="min-h-screen bg-white">
       <Header />
       {/* Hero Section */}
-      <section className="relative py-20 lg:py-32 bg-gradient-to-br from-[#EFF0F1] to-[#626E7C] overflow-hidden">
+      <section className="relative py-20 lg:py-32 bg-gradient-to-br from-neutral-light to-neutral-medium overflow-hidden">
         {/* Background Pattern */}
         <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmZmZmYiIGZpbGwtb3BhY2l0eT0iMC4wNSI+PGNpcmNsZSBjeD0iMzAiIGN5PSIzMCIgcj0iMSIvPjwvZz48L2c+PC9zdmc+')] opacity-20" />
 
@@ -55,8 +55,8 @@ export default function HotelChainsPage() {
 
                 <h1 className="text-5xl lg:text-7xl font-bold tracking-tight text-white">
                   Enterprise PMS for{" "}
-                  <span className="bg-gradient-to-r from-[#097abe] to-[#3B82F6] bg-clip-text text-transparent">Hotel</span>{" "}
-                  <span className="bg-gradient-to-r from-[#097abe] to-[#3B82F6] bg-clip-text text-transparent">Chains</span>
+                  <span className="bg-gradient-to-r from-property-hotels to-brand-secondary bg-clip-text text-transparent">Hotel</span>{" "}
+                  <span className="bg-gradient-to-r from-property-hotels to-brand-secondary bg-clip-text text-transparent">Chains</span>
                 </h1>
 
                 <p className="text-xl text-white leading-relaxed max-w-2xl">
@@ -69,7 +69,7 @@ export default function HotelChainsPage() {
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button
                   size="lg"
-                  className="bg-gradient-to-r from-[#3B82F6] to-[#097abe] hover:opacity-90 text-white shadow-lg hover:shadow-xl transition-all duration-300 group"
+                  className="bg-gradient-to-r from-property-hotels to-brand-primary hover:opacity-90 text-white shadow-lg hover:shadow-xl transition-all duration-300 group"
                 >
                   Schedule Enterprise Demo
                   <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
@@ -555,7 +555,7 @@ export default function HotelChainsPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 lg:py-32 bg-gradient-to-br from-[#EFF0F1] to-[#626E7C] relative">
+      <section className="py-20 lg:py-32 bg-gradient-to-br from-neutral-light to-neutral-medium relative">
         <div className="container-custom text-center relative">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -568,7 +568,7 @@ export default function HotelChainsPage() {
             <div className="space-y-8 max-w-4xl mx-auto">
               <h2 className="text-5xl lg:text-7xl font-bold text-white tracking-tight leading-tight">
                 Ready for Enterprise-Grade{" "}
-                <span className="bg-gradient-to-r from-[#097abe] to-[#3B82F6] bg-clip-text text-transparent">PMS?</span>
+                <span className="bg-gradient-to-r from-property-hotels to-brand-secondary bg-clip-text text-transparent">PMS?</span>
               </h2>
 
               <p className="text-xl text-white max-w-2xl mx-auto leading-relaxed">

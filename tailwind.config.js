@@ -51,12 +51,21 @@ module.exports = {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
-        // Custom dark blue theme colors
-        'theme-primary': '#097abe',
-        'theme-primary-dark': '#076198',
-        'theme-secondary': '#054972',
-        'theme-tertiary': '#03304c',
-        'theme-darkest': '#011826',
+        // Brand Core Colors
+        'brand-primary': '#0B7FE6', // Bright Blue
+        'brand-secondary': '#00D4FF', // Cyan/Turquoise
+        'brand-accent': '#00C9FF', // Light Cyan
+        // Neutral Colors
+        'neutral-dark': '#0A1628', // Dark Navy Blue
+        'neutral-medium': '#64748b', // Medium Gray
+        'neutral-light': '#f8fafc', // Very Light Gray
+        'neutral-white': '#ffffff',
+        // Property-Specific Accent Colors
+        'property-hotels': '#0B7FE6', // Blue
+        'property-resorts': '#00D4FF', // Cyan
+        'property-hostels': '#8B5CF6', // Purple
+        'property-rentals': '#10B981', // Green
+        'property-apartments': '#F59E0B', // Orange
       },
       borderRadius: {
         lg: "var(--radius)",

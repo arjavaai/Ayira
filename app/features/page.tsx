@@ -141,7 +141,7 @@ export default function FeaturesPage() {
       <Header />
 
       {/* Hero Section */}
-      <section className="pt-32 pb-20 bg-gradient-to-br from-[#EFF0F1] to-[#626E7C]">
+      <section className="pt-32 pb-20 bg-gradient-to-br from-neutral-light to-neutral-medium">
         <div className="container-custom">
           <Reveal>
             <div className="text-center max-w-4xl mx-auto">
@@ -152,7 +152,7 @@ export default function FeaturesPage() {
                 transition={{ duration: 0.6 }}
               >
                 <span className="text-black">Powerful Features for </span>
-                <span className="bg-gradient-to-r from-[#097abe] to-[#3B82F6] bg-clip-text text-transparent">Modern Hotels</span>
+                <span className="bg-gradient-to-r from-brand-primary to-brand-secondary bg-clip-text text-transparent">Modern Hotels</span>
               </motion.h1>
               <motion.p
                 className="text-xl text-white mb-8"
@@ -169,7 +169,7 @@ export default function FeaturesPage() {
               >
                 <Button
                   size="lg"
-                  className="bg-gradient-to-r from-[#3B82F6] to-[#097abe] text-white px-8 py-4 text-lg font-semibold rounded-full hover:from-[#097abe] hover:to-[#3B82F6] transition-all duration-300 shadow-lg"
+                  className="bg-gradient-to-r from-brand-secondary to-brand-primary text-white px-8 py-4 text-lg font-semibold rounded-full hover:from-brand-primary hover:to-brand-secondary transition-all duration-300 shadow-lg"
                   asChild
                 >
                   <a href="/experience">Book a Demo</a>
@@ -199,13 +199,13 @@ export default function FeaturesPage() {
       </section>
 
       {/* Bottom CTA */}
-      <section className="py-20 bg-gradient-to-br from-[#EFF0F1] to-[#626E7C]">
+      <section className="py-20 bg-gradient-to-br from-neutral-light to-neutral-medium">
         <div className="container-custom">
           <Reveal>
             <div className="text-center max-w-3xl mx-auto">
               <h2 className="text-4xl lg:text-5xl font-bold mb-6">
                 <span className="text-black">Ready to See These </span>
-                <span className="bg-gradient-to-r from-[#097abe] to-[#3B82F6] bg-clip-text text-transparent">Features in Action?</span>
+                <span className="bg-gradient-to-r from-brand-primary to-brand-secondary bg-clip-text text-transparent">Features in Action?</span>
               </h2>
               <p className="text-xl text-white mb-8">
                 Book a personalized demo and discover how Aiyra can transform your hotel operations.
@@ -213,7 +213,7 @@ export default function FeaturesPage() {
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                 <Button
                   size="lg"
-                  className="bg-gradient-to-r from-[#3B82F6] to-[#097abe] text-white px-8 py-4 text-lg font-semibold rounded-full hover:from-[#097abe] hover:to-[#3B82F6] transition-all duration-300 shadow-lg"
+                  className="bg-gradient-to-r from-brand-secondary to-brand-primary text-white px-8 py-4 text-lg font-semibold rounded-full hover:from-brand-primary hover:to-brand-secondary transition-all duration-300 shadow-lg"
                   asChild
                 >
                   <motion.a
@@ -229,7 +229,7 @@ export default function FeaturesPage() {
                 <Button
                   variant="outline"
                   size="lg"
-                  className="bg-[#626E7C]/10 backdrop-blur-sm text-black rounded-full font-medium border-2 border-[#626E7C]/30 hover:bg-[#626E7C]/20 transition-colors px-8 py-4 text-lg"
+                  className="bg-neutral-medium/10 backdrop-blur-sm text-black rounded-full font-medium border-2 border-neutral-medium/30 hover:bg-neutral-medium/20 transition-colors px-8 py-4 text-lg"
                   asChild
                 >
                   <motion.a

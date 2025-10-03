@@ -14,7 +14,7 @@ export interface CardProps {
 export const Card: React.FC<CardProps> = ({ children }) => {
   return (
     <div className="w-full h-full relative">
-      <div className="absolute inset-0 bg-[#626E7C] rounded-3xl shadow-2xl backdrop-blur-md border border-[#BDC3C8]/30">
+      <div className="absolute inset-0 bg-neutral-medium rounded-3xl shadow-2xl backdrop-blur-md border border-neutral-light/30">
         <div className="relative h-full">
           {children}
         </div>
@@ -130,7 +130,7 @@ const platformFeatures = [
     title: "Property Management System",
     subtitle: "Complete PMS with reservations, check-ins, housekeeping, and operations management for all property types.",
     icon: Building,
-    color: "from-[#097abe] to-[#076198]",
+    color: "from-brand-primary to-brand-secondary",
     features: [
       { icon: Calendar, label: "Reservations & Channel Management", description: "Seamless booking across all channels" },
       { icon: Settings, label: "Housekeeping & Maintenance", description: "Streamlined operations management" },
@@ -142,7 +142,7 @@ const platformFeatures = [
     title: "AI Chatbot & Automation",
     subtitle: "Built-in AI chatbot that handles guest inquiries, automates responses, and provides 24/7 customer support.",
     icon: Bot,
-    color: "from-[#076198] to-[#054972]",
+    color: "from-brand-secondary to-brand-accent",
     features: [
       { icon: Headphones, label: "24/7 Automated Guest Support", description: "Always available customer service" },
       { icon: Globe, label: "Multi-language Capabilities", description: "Support guests in their language" },
@@ -154,7 +154,7 @@ const platformFeatures = [
     title: "Analytics & Business Intelligence",
     subtitle: "Advanced BI platform with real-time dashboards, predictive analytics, and actionable insights for data-driven decisions.",
     icon: BarChart,
-    color: "from-[#054972] to-[#03304c]",
+    color: "from-brand-accent to-neutral-dark",
     features: [
       { icon: Monitor, label: "Real-time Performance Dashboards", description: "Live insights into your business" },
       { icon: TrendingUp, label: "Predictive Revenue Analytics", description: "Forecast and optimize revenue" },
@@ -189,7 +189,7 @@ export function CollectionStrip() {
   }
 
   return (
-    <section ref={containerRef} className="py-12 lg:py-20 bg-gradient-to-b from-[#EFF0F1] to-[#626E7C]" id="dashboard">
+    <section ref={containerRef} className="py-12 lg:py-20 bg-gradient-to-b from-neutral-light to-neutral-medium" id="dashboard">
       <div className="container-custom">
         {/* Main Content Section */}
         <div className="mb-12 lg:mb-16">
@@ -197,14 +197,20 @@ export function CollectionStrip() {
             <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
               {/* Left Side - Text Content */}
               <div className="text-left">
-                <div className="inline-flex items-center gap-2 px-3 py-1.5 lg:px-4 lg:py-2 bg-gradient-to-r from-[#3B82F6] to-[#097abe] text-white rounded-full text-xs lg:text-sm font-medium mb-4 lg:mb-6">
+                <div className="inline-flex items-center gap-2 px-3 py-1.5 lg:px-4 lg:py-2 bg-gradient-to-r from-brand-secondary to-brand-primary text-white rounded-full text-xs lg:text-sm font-medium mb-4 lg:mb-6">
                   <Zap className="w-3 h-3 lg:w-4 lg:h-4" />
                   All-In-One Platform
                 </div>
                 <h2 className="text-black text-2xl lg:text-4xl xl:text-5xl font-bold mb-4 lg:mb-6 leading-tight">
-                  <AnimatedText text="More Than Just PMS Software" delay={0.2} />
+                  <span className="whitespace-nowrap">
+                    <AnimatedText text="More Than Just PMS" delay={0.2} />
+                  </span>
+                  <br />
+                  <span className="whitespace-nowrap">
+                    <AnimatedText text="Software" delay={0.3} />
+                  </span>
                 </h2>
-                <p className="text-lg lg:text-xl font-semibold text-[#626E7C] mb-3 lg:mb-4">
+                <p className="text-lg lg:text-xl font-semibold text-neutral-medium mb-3 lg:mb-4">
                   Three Platforms in One Solution
                 </p>
                 <p className="text-base lg:text-lg text-black leading-relaxed">
@@ -234,7 +240,7 @@ export function CollectionStrip() {
                               <h3 className="text-lg font-bold text-white mb-2 leading-tight">
                                 {platform.title}
                               </h3>
-                              <p className="text-[#E0E3E5] text-xs leading-relaxed">
+                              <p className="text-neutral-light text-xs leading-relaxed">
                                 {platform.subtitle}
                               </p>
                             </div>
@@ -245,17 +251,17 @@ export function CollectionStrip() {
                             {platform.features.map((feature, featureIndex) => (
                             <motion.div
                                 key={featureIndex}
-                                className="flex items-start gap-3 p-3 rounded-xl hover:bg-[#3B82F6]/20 transition-all duration-300 group"
+                                className="flex items-start gap-3 p-3 rounded-xl hover:bg-brand-secondary/20 transition-all duration-300 group"
                                 whileHover={{ scale: 1.01 }}
                               >
-                                <div className="w-8 h-8 bg-[#3B82F6]/30 backdrop-blur-sm rounded-lg flex items-center justify-center flex-shrink-0 group-hover:bg-[#3B82F6]/50 transition-colors">
+                                <div className="w-8 h-8 bg-brand-secondary/30 backdrop-blur-sm rounded-lg flex items-center justify-center flex-shrink-0 group-hover:bg-brand-secondary/50 transition-colors">
                                   <feature.icon className="w-4 h-4 text-white" />
                                 </div>
                                 <div className="flex-1">
                                   <h4 className="font-semibold text-white text-xs mb-1">
                                     {feature.label}
                                   </h4>
-                                  <p className="text-xs text-[#E0E3E5] leading-relaxed">
+                                  <p className="text-xs text-neutral-light leading-relaxed">
                                     {feature.description}
                                   </p>
                                 </div>
@@ -264,10 +270,10 @@ export function CollectionStrip() {
                     </div>
 
                           {/* Learn More Button */}
-                          <div className="mt-auto pt-4 border-t border-[#3B82F6]/30">
+                          <div className="mt-auto pt-4 border-t border-brand-secondary/30">
                             <Button 
                               variant="outline" 
-                              className="w-full h-9 border-2 border-[#3B82F6]/50 text-white hover:bg-[#3B82F6]/20 hover:border-[#3B82F6] font-semibold text-xs rounded-xl backdrop-blur-sm transition-all duration-300"
+                              className="w-full h-9 border-2 border-brand-secondary/50 text-white hover:bg-brand-secondary/20 hover:border-brand-secondary font-semibold text-xs rounded-xl backdrop-blur-sm transition-all duration-300"
                         >
                             Learn More
                             </Button>
@@ -287,7 +293,7 @@ export function CollectionStrip() {
                       whileInView={{ opacity: 1, y: 0 }}
                       transition={{ duration: 0.6, delay: index * 0.2 }}
                       viewport={{ once: true }}
-                      className="bg-[#626E7C] rounded-2xl shadow-2xl backdrop-blur-md border border-[#BDC3C8]/30 p-6"
+                      className="bg-neutral-medium rounded-2xl shadow-2xl backdrop-blur-md border border-neutral-light/30 p-6"
                     >
                       {/* Header */}
                       <div className="flex items-start gap-4 mb-6">
@@ -298,7 +304,7 @@ export function CollectionStrip() {
                           <h3 className="text-xl font-bold text-white mb-2 leading-tight">
                             {platform.title}
                           </h3>
-                          <p className="text-[#E0E3E5] text-sm leading-relaxed">
+                          <p className="text-neutral-light text-sm leading-relaxed">
                             {platform.subtitle}
                           </p>
                         </div>
@@ -309,16 +315,16 @@ export function CollectionStrip() {
                         {platform.features.map((feature, featureIndex) => (
                           <div
                             key={featureIndex}
-                            className="flex items-start gap-4 p-4 rounded-xl hover:bg-[#3B82F6]/20 transition-all duration-300"
+                            className="flex items-start gap-4 p-4 rounded-xl hover:bg-brand-secondary/20 transition-all duration-300"
                           >
-                            <div className="w-10 h-10 bg-[#3B82F6]/30 backdrop-blur-sm rounded-xl flex items-center justify-center flex-shrink-0">
+                            <div className="w-10 h-10 bg-brand-secondary/30 backdrop-blur-sm rounded-xl flex items-center justify-center flex-shrink-0">
                               <feature.icon className="w-5 h-5 text-white" />
                             </div>
                             <div className="flex-1">
                               <h4 className="font-semibold text-white text-sm mb-1">
                                 {feature.label}
                               </h4>
-                              <p className="text-xs text-[#E0E3E5] leading-relaxed">
+                              <p className="text-xs text-neutral-light leading-relaxed">
                                 {feature.description}
                               </p>
                             </div>
@@ -327,10 +333,10 @@ export function CollectionStrip() {
                       </div>
 
                       {/* Learn More Button */}
-                      <div className="pt-4 border-t border-[#3B82F6]/30">
+                      <div className="pt-4 border-t border-brand-secondary/30">
                         <Button 
                           variant="outline" 
-                          className="w-full h-10 border-2 border-[#3B82F6]/50 text-white hover:bg-[#3B82F6]/20 hover:border-[#3B82F6] font-semibold text-sm rounded-xl backdrop-blur-sm transition-all duration-300"
+                          className="w-full h-10 border-2 border-brand-secondary/50 text-white hover:bg-brand-secondary/20 hover:border-brand-secondary font-semibold text-sm rounded-xl backdrop-blur-sm transition-all duration-300"
                         >
                           Learn More
                         </Button>
@@ -354,7 +360,7 @@ export function CollectionStrip() {
             >
               <Button
                 size="lg"
-                className="bg-gradient-to-r from-[#3B82F6] to-[#097abe] hover:from-[#097abe] hover:to-[#3B82F6] text-white px-6 lg:px-8 py-3 lg:py-4 text-base lg:text-lg font-semibold rounded-full shadow-lg hover:shadow-xl transition-all duration-300"
+                className="bg-gradient-to-r from-brand-secondary to-brand-primary hover:from-brand-primary hover:to-brand-secondary text-white px-6 lg:px-8 py-3 lg:py-4 text-base lg:text-lg font-semibold rounded-full shadow-lg hover:shadow-xl transition-all duration-300"
                 asChild
               >
                 <motion.a
@@ -370,7 +376,7 @@ export function CollectionStrip() {
               <Button
                 variant="outline"
                 size="lg"
-                className="border-2 border-[#626E7C] text-[#626E7C] hover:bg-[#626E7C] hover:text-white px-6 lg:px-8 py-3 lg:py-4 text-base lg:text-lg font-semibold rounded-full transition-colors"
+                className="border-2 border-neutral-medium text-neutral-medium hover:bg-neutral-medium hover:text-white px-6 lg:px-8 py-3 lg:py-4 text-base lg:text-lg font-semibold rounded-full transition-colors"
                 asChild
               >
                 <motion.a
@@ -388,11 +394,11 @@ export function CollectionStrip() {
         {/* Support Statement */}
         <Reveal delay={0.6}>
           <div className="text-center mt-12 lg:mt-16">
-            <div className="inline-flex items-center gap-2 lg:gap-3 px-4 lg:px-6 py-2 lg:py-3 bg-[#3B82F6]/20 backdrop-blur-sm rounded-full border border-[#3B82F6]/30">
-              <div className="w-6 h-6 lg:w-8 lg:h-8 bg-gradient-to-r from-[#3B82F6] to-[#097abe] rounded-full flex items-center justify-center">
+            <div className="inline-flex items-center gap-2 lg:gap-3 px-4 lg:px-6 py-2 lg:py-3 bg-brand-secondary/20 backdrop-blur-sm rounded-full border border-brand-secondary/30">
+              <div className="w-6 h-6 lg:w-8 lg:h-8 bg-gradient-to-r from-brand-secondary to-brand-primary rounded-full flex items-center justify-center">
                 <Star className="w-3 h-3 lg:w-4 lg:h-4 text-white" />
               </div>
-              <span className="text-black font-medium text-sm lg:text-base">
+              <span className="text-white font-medium text-sm lg:text-base">
                 All solutions include 24/7 support, training & implementation
               </span>
             </div>

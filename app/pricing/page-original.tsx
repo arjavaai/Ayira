@@ -116,17 +116,17 @@ export default function PricingPage() {
       <Header />
 
       {/* Hero Section */}
-      <section className="pt-32 pb-20 bg-gradient-to-br from-[#EFF0F1] to-[#626E7C]">
+      <section className="pt-32 pb-20 bg-gradient-to-br from-neutral-light to-neutral-medium">
         <div className="container-custom">
           <Reveal>
             <div className="text-center max-w-4xl mx-auto">
               <motion.div
-                className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#3B82F6]/20 backdrop-blur-sm border border-[#3B82F6]/30 mb-6 text-sm font-medium"
+                className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-brand-secondary/20 backdrop-blur-sm border border-brand-secondary/30 mb-6 text-sm font-medium"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6 }}
               >
-                <TrendingUp className="w-4 h-4 text-[#3B82F6]" />
+                <TrendingUp className="w-4 h-4 text-brand-secondary" />
                 <span className="text-black">Invest in Your Success</span>
               </motion.div>
               <motion.h1
@@ -136,7 +136,7 @@ export default function PricingPage() {
                 transition={{ duration: 0.6, delay: 0.1 }}
               >
                 <span className="text-black">ROI-Focused </span>
-                <span className="bg-gradient-to-r from-[#097abe] to-[#3B82F6] bg-clip-text text-transparent">Investment Plans</span>
+                <span className="bg-gradient-to-r from-brand-primary to-brand-secondary bg-clip-text text-transparent">Investment Plans</span>
               </motion.h1>
               <motion.p
                 className="text-xl text-white"
@@ -210,7 +210,7 @@ export default function PricingPage() {
       </section>
 
       {/* Why Choose */}
-      <section className="py-20 bg-gradient-to-br from-[#EFF0F1] to-[#626E7C]">
+      <section className="py-20 bg-gradient-to-br from-neutral-light to-neutral-medium">
         <div className="container-custom">
           <ScrollAnimatedWords
             text="Why Hotel Owners Choose Luvera Aiyra"
@@ -228,7 +228,7 @@ export default function PricingPage() {
             {whyChoose.map((item, index) => (
               <Reveal key={index} delay={index * 0.1}>
                 <div className="text-center p-6">
-                  <div className="w-16 h-16 bg-gradient-to-r from-[#097abe] to-[#3B82F6] rounded-full flex items-center justify-center mx-auto mb-4">
+                  <div className="w-16 h-16 bg-gradient-to-r from-brand-primary to-brand-secondary rounded-full flex items-center justify-center mx-auto mb-4">
                     <item.icon className="w-8 h-8 text-white" />
                   </div>
                   <h3 className="text-xl font-bold mb-2 text-black">{item.title}</h3>
@@ -242,7 +242,7 @@ export default function PricingPage() {
       </section>
 
       {/* FAQ Section */}
-      <section className="py-20 bg-gradient-to-br from-[#EFF0F1] to-[#626E7C]">
+      <section className="py-20 bg-gradient-to-br from-neutral-light to-neutral-medium">
         <div className="container-custom max-w-4xl">
           <ScrollAnimatedWords
             text="Investment Questions"
@@ -277,7 +277,7 @@ export default function PricingPage() {
       </section>
 
       {/* Final CTA */}
-      <section className="py-20 bg-gradient-to-br from-[#EFF0F1] to-[#626E7C]">
+      <section className="py-20 bg-gradient-to-br from-neutral-light to-neutral-medium">
         <div className="container-custom">
           <ScrollAnimatedWords
             text="Ready to Transform Your Hotel Business?"
@@ -294,7 +294,7 @@ export default function PricingPage() {
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                 <Button
                   size="lg"
-                  className="bg-gradient-to-r from-[#3B82F6] to-[#097abe] text-white px-8 py-4 text-lg font-semibold rounded-full hover:from-[#097abe] hover:to-[#3B82F6] transition-all duration-300 shadow-lg"
+                  className="bg-gradient-to-r from-brand-secondary to-brand-primary text-white px-8 py-4 text-lg font-semibold rounded-full hover:from-brand-primary hover:to-brand-secondary transition-all duration-300 shadow-lg"
                   asChild
                 >
                   <motion.a
@@ -308,7 +308,7 @@ export default function PricingPage() {
                 <Button
                   variant="outline"
                   size="lg"
-                  className="bg-[#626E7C]/10 backdrop-blur-sm text-black rounded-full font-medium border-2 border-[#626E7C]/30 hover:bg-[#626E7C]/20 transition-colors px-8 py-4 text-lg"
+                  className="bg-neutral-medium/10 backdrop-blur-sm text-black rounded-full font-medium border-2 border-neutral-medium/30 hover:bg-neutral-medium/20 transition-colors px-8 py-4 text-lg"
                   asChild
                 >
                   <motion.a

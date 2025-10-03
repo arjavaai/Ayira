@@ -71,19 +71,19 @@ export function Header() {
               <a href="/" className="flex items-center gap-2 lg:gap-3" aria-label="Luvera Aiyra Home">
                 {/* Circular Logo with LA initials */}
                 <motion.div
-                  className="relative w-8 h-8 lg:w-10 lg:h-10 rounded-full border-2 border-transparent bg-gradient-to-r from-[#097abe] via-[#076198] to-[#054972] p-0.5 flex items-center justify-center"
+                  className="relative w-8 h-8 lg:w-10 lg:h-10 rounded-full border-2 border-transparent bg-gradient-to-r from-brand-primary via-brand-secondary to-brand-accent p-0.5 flex items-center justify-center"
                   whileHover={{ rotate: 5 }}
                   transition={{ type: "spring", stiffness: 300, damping: 20 }}
                 >
                   {/* Inner circle with gradient border */}
                   <div className="w-full h-full rounded-full bg-white flex items-center justify-center relative overflow-hidden">
                     {/* Gradient background for the letters */}
-                    <div className="absolute inset-0 bg-gradient-to-br from-[#097abe]/10 to-[#054972]/10 rounded-full" />
+                    <div className="absolute inset-0 bg-gradient-to-br from-brand-primary/10 to-brand-accent/10 rounded-full" />
 
                     {/* LA Letters */}
                     <div className="relative z-10 flex items-center justify-center">
-                      <span className="text-sm lg:text-base font-bold text-[#097abe] leading-none">L</span>
-                      <span className="text-sm lg:text-base font-bold bg-gradient-to-r from-[#097abe] to-[#054972] bg-clip-text text-transparent leading-none">A</span>
+                      <span className="text-sm lg:text-base font-bold text-brand-primary leading-none">L</span>
+                      <span className="text-sm lg:text-base font-bold bg-gradient-to-r from-brand-primary to-brand-accent bg-clip-text text-transparent leading-none">A</span>
                     </div>
 
                     {/* Subtle shine effect */}
@@ -96,7 +96,7 @@ export function Header() {
                   <span className="text-xs uppercase tracking-wider font-medium text-white/70 leading-none">
                     LUVERA
                   </span>
-                  <span className="text-lg lg:text-xl font-bold tracking-tight text-transparent bg-gradient-to-r from-[#097abe] to-[#054972] bg-clip-text leading-none">
+                  <span className="text-lg lg:text-xl font-bold tracking-tight text-transparent bg-gradient-to-r from-brand-primary to-brand-accent bg-clip-text leading-none">
                     Aiyra
                   </span>
                 </div>
@@ -280,7 +280,7 @@ export function Header() {
             {/* CTA Button */}
             <motion.a
               href="/experience"
-              className="hidden md:block bg-gradient-to-r from-[#097abe] to-[#076198] text-white px-4 lg:px-6 py-2 lg:py-2.5 rounded-full text-sm font-semibold hover:from-[#076198] hover:to-[#054972] transition-all duration-300 shadow-lg shadow-[#097abe]/20"
+              className="hidden md:block bg-gradient-to-r from-brand-primary to-brand-secondary text-white px-4 lg:px-6 py-2 lg:py-2.5 rounded-full text-sm font-semibold hover:from-brand-secondary hover:to-brand-accent transition-all duration-300 shadow-lg shadow-brand-primary/20"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >

@@ -20,7 +20,7 @@ interface CardData {
 
 const cardData: CardData[] = [
   {
-    color: '#060010',
+    color: 'var(--neutral-dark)',
     title: 'Multi-Property Management',
     subtitle: 'Centralized Control for All Your Hotels',
     description: 'Manage all your hotels from a single, cloud-based dashboard. Assign tasks, monitor performance, and scale easily across unlimited properties.',
@@ -33,7 +33,7 @@ const cardData: CardData[] = [
     ]
   },
   {
-    color: '#060010',
+    color: 'var(--neutral-dark)',
     title: 'Live Analytics Dashboard',
     subtitle: 'Data-Driven Decisions in Real-Time',
     description: 'Track occupancy, RevPAR, bookings, cancellations, and revenue in real-time with visual, exportable KPIs.',
@@ -46,7 +46,7 @@ const cardData: CardData[] = [
     ]
   },
   {
-    color: '#060010',
+    color: 'var(--neutral-dark)',
     title: 'Dynamic Pricing Engine',
     subtitle: 'Maximize Revenue with Smart Pricing',
     description: 'Automatically adjust rates based on demand, seasonality, competition, and local events — maximize every booking.',
@@ -59,7 +59,7 @@ const cardData: CardData[] = [
     ]
   },
   {
-    color: '#060010',
+    color: 'var(--neutral-dark)',
     title: 'OTA Channel Manager',
     subtitle: 'Connect with 50+ Booking Platforms',
     description: 'Synchronize availability and pricing across Booking.com, Airbnb, Expedia, and 50+ OTAs. Eliminate double bookings.',
@@ -72,7 +72,7 @@ const cardData: CardData[] = [
     ]
   },
   {
-    color: '#060010',
+    color: 'var(--neutral-dark)',
     title: 'Revenue Management',
     subtitle: 'Advanced Analytics for Profit Growth',
     description: 'Forecast trends, monitor performance, and increase profitability with advanced revenue tools.',
@@ -85,7 +85,7 @@ const cardData: CardData[] = [
     ]
   },
   {
-    color: '#060010',
+    color: 'var(--neutral-dark)',
     title: 'AI Assistant (Chatbot)',
     subtitle: 'Intelligent Support for Staff and Guests',
     description: 'Let AI answer FAQs, recommend actions, and assist hotel staff with automated insights.',
@@ -98,7 +98,7 @@ const cardData: CardData[] = [
     ]
   },
   {
-    color: '#060010',
+    color: 'var(--neutral-dark)',
     title: 'Mobile App',
     subtitle: 'Manage Your Hotel from Anywhere',
     description: 'Manage bookings, monitor performance, and communicate with staff — right from your phone.',
@@ -111,7 +111,7 @@ const cardData: CardData[] = [
     ]
   },
   {
-    color: '#060010',
+    color: 'var(--neutral-dark)',
     title: '24/7 Support',
     subtitle: 'Expert Help When You Need It Most',
     description: 'Live chat, email, and phone support — always available when you need it most.',

@@ -14,7 +14,7 @@ function Menubar({
     <MenubarPrimitive.Root
       data-slot="menubar"
       className={cn(
-        'bg-gradient-to-r from-[#EFF0F1] to-[#626E7C] flex h-9 items-center gap-1 rounded-md border border-[#BDC3C8] p-1 shadow-xs',
+        'bg-gradient-to-r from-neutral-light to-neutral-medium flex h-9 items-center gap-1 rounded-md border border-neutral-medium/30 p-1 shadow-xs',
         className,
       )}
       {...props}
@@ -56,7 +56,7 @@ function MenubarTrigger({
     <MenubarPrimitive.Trigger
       data-slot="menubar-trigger"
       className={cn(
-        'focus:bg-[#C3C9CD] focus:text-black data-[state=open]:bg-[#C3C9CD] data-[state=open]:text-black flex items-center rounded-sm px-2 py-1 text-sm font-medium outline-hidden select-none text-black hover:bg-[#E0E3E5] transition-colors',
+        'focus:bg-neutral-medium/20 focus:text-neutral-dark data-[state=open]:bg-neutral-medium/20 data-[state=open]:text-neutral-dark flex items-center rounded-sm px-2 py-1 text-sm font-medium outline-hidden select-none text-neutral-dark hover:bg-neutral-medium/10 transition-colors',
         className,
       )}
       {...props}
@@ -79,7 +79,7 @@ function MenubarContent({
         alignOffset={alignOffset}
         sideOffset={sideOffset}
         className={cn(
-          'bg-[#626E7C] text-white data-[state=open]:animate-in data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2 z-50 min-w-[12rem] origin-(--radix-menubar-content-transform-origin) overflow-hidden rounded-md border border-[#BDC3C8] p-1 shadow-md',
+          'bg-neutral-medium text-white data-[state=open]:animate-in data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2 z-50 min-w-[12rem] origin-(--radix-menubar-content-transform-origin) overflow-hidden rounded-md border border-neutral-medium/30 p-1 shadow-md',
           className,
         )}
         {...props}
@@ -103,7 +103,7 @@ function MenubarItem({
       data-inset={inset}
       data-variant={variant}
       className={cn(
-        "focus:bg-[#C3C9CD] focus:text-black data-[variant=destructive]:text-red-500 data-[variant=destructive]:focus:bg-red-500/10 data-[variant=destructive]:focus:text-red-500 data-[variant=destructive]:*:[svg]:!text-red-500 [&_svg:not([class*='text-'])]:text-white/70 relative flex cursor-default items-center gap-2 rounded-sm px-2 py-1.5 text-sm outline-hidden select-none data-[disabled]:pointer-events-none data-[disabled]:opacity-50 data-[inset]:pl-8 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 hover:bg-[#C3C9CD]/20 transition-colors",
+        "focus:bg-neutral-medium/20 focus:text-neutral-dark data-[variant=destructive]:text-red-500 data-[variant=destructive]:focus:bg-red-500/10 data-[variant=destructive]:focus:text-red-500 data-[variant=destructive]:*:[svg]:!text-red-500 [&_svg:not([class*='text-'])]:text-white/70 relative flex cursor-default items-center gap-2 rounded-sm px-2 py-1.5 text-sm outline-hidden select-none data-[disabled]:pointer-events-none data-[disabled]:opacity-50 data-[inset]:pl-8 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 hover:bg-neutral-medium/20 transition-colors",
         className,
       )}
       {...props}
@@ -121,7 +121,7 @@ function MenubarCheckboxItem({
     <MenubarPrimitive.CheckboxItem
       data-slot="menubar-checkbox-item"
       className={cn(
-        "focus:bg-[#C3C9CD] focus:text-black relative flex cursor-default items-center gap-2 rounded-xs py-1.5 pr-2 pl-8 text-sm outline-hidden select-none data-[disabled]:pointer-events-none data-[disabled]:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 hover:bg-[#C3C9CD]/20 transition-colors",
+        "focus:bg-neutral-medium/20 focus:text-black relative flex cursor-default items-center gap-2 rounded-xs py-1.5 pr-2 pl-8 text-sm outline-hidden select-none data-[disabled]:pointer-events-none data-[disabled]:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 hover:bg-neutral-medium/20/20 transition-colors",
         className,
       )}
       checked={checked}
@@ -146,7 +146,7 @@ function MenubarRadioItem({
     <MenubarPrimitive.RadioItem
       data-slot="menubar-radio-item"
       className={cn(
-        "focus:bg-[#C3C9CD] focus:text-black relative flex cursor-default items-center gap-2 rounded-xs py-1.5 pr-2 pl-8 text-sm outline-hidden select-none data-[disabled]:pointer-events-none data-[disabled]:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 hover:bg-[#C3C9CD]/20 transition-colors",
+        "focus:bg-neutral-medium/20 focus:text-black relative flex cursor-default items-center gap-2 rounded-xs py-1.5 pr-2 pl-8 text-sm outline-hidden select-none data-[disabled]:pointer-events-none data-[disabled]:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 hover:bg-neutral-medium/20/20 transition-colors",
         className,
       )}
       {...props}
@@ -188,7 +188,7 @@ function MenubarSeparator({
   return (
     <MenubarPrimitive.Separator
       data-slot="menubar-separator"
-      className={cn('bg-[#BDC3C8] -mx-1 my-1 h-px', className)}
+      className={cn('bg-neutral-medium/30 -mx-1 my-1 h-px', className)}
       {...props}
     />
   )
@@ -229,7 +229,7 @@ function MenubarSubTrigger({
       data-slot="menubar-sub-trigger"
       data-inset={inset}
       className={cn(
-        'focus:bg-[#C3C9CD] focus:text-black data-[state=open]:bg-[#C3C9CD] data-[state=open]:text-black flex cursor-default items-center rounded-sm px-2 py-1.5 text-sm outline-none select-none data-[inset]:pl-8 hover:bg-[#C3C9CD]/20 transition-colors',
+        'focus:bg-neutral-medium/20 focus:text-black data-[state=open]:bg-neutral-medium/20 data-[state=open]:text-black flex cursor-default items-center rounded-sm px-2 py-1.5 text-sm outline-none select-none data-[inset]:pl-8 hover:bg-neutral-medium/20/20 transition-colors',
         className,
       )}
       {...props}
@@ -248,7 +248,7 @@ function MenubarSubContent({
     <MenubarPrimitive.SubContent
       data-slot="menubar-sub-content"
       className={cn(
-        'bg-[#626E7C] text-white data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2 z-50 min-w-[8rem] origin-(--radix-menubar-content-transform-origin) overflow-hidden rounded-md border border-[#BDC3C8] p-1 shadow-lg',
+        'bg-neutral-medium text-white data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2 z-50 min-w-[8rem] origin-(--radix-menubar-content-transform-origin) overflow-hidden rounded-md border border-neutral-medium/30 p-1 shadow-lg',
         className,
       )}
       {...props}

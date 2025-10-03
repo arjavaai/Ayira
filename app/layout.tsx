@@ -54,7 +54,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${inter.variable} antialiased`}>
-      <body className="font-sans bg-[#011826] text-white overflow-x-hidden">{children}</body>
+      <body className="font-sans bg-white text-neutral-dark overflow-x-hidden">{children}</body>
     </html>
   )
 }

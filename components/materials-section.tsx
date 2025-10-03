@@ -14,7 +14,7 @@ const dashboardHubs = [
     title: "Independent Hotels",
     subtitle: "Professional management tools to compete with major hotel chains",       
     icon: Building,
-    color: "from-blue-500 to-blue-600",
+    color: "from-property-hotels to-brand-secondary",
     features: [
       { icon: Monitor, label: "Property Management", description: "Complete PMS for independent properties" },
       { icon: Calendar, label: "Booking Management", description: "Direct booking optimization" },
@@ -27,7 +27,7 @@ const dashboardHubs = [
     title: "Resorts & Luxury Properties",
     subtitle: "Sophisticated tools for delivering exceptional luxury guest experiences",
     icon: Star,
-    color: "from-purple-500 to-purple-600",
+    color: "from-property-resorts to-emerald-600",
     features: [
       { icon: Star, label: "Luxury Services", description: "Premium guest experience management" },
       { icon: Activity, label: "Spa & Wellness", description: "Spa booking and management" },
@@ -40,7 +40,7 @@ const dashboardHubs = [
     title: "Airbnb & Vacation Rentals",
     subtitle: "Streamlined management for vacation rental property owners", 
     icon: Home,
-    color: "from-green-500 to-green-600",
+    color: "from-property-rentals to-orange-600",
     features: [
       { icon: Calendar, label: "Multi-Platform Sync", description: "Sync across booking platforms" },
       { icon: Bot, label: "Automated Messaging", description: "Guest communication automation" },
@@ -53,7 +53,7 @@ const dashboardHubs = [
     title: "Hotel Chains",
     subtitle: "Centralized management solutions for multi-property hospitality groups",
     icon: Building,
-    color: "from-indigo-500 to-indigo-600",
+    color: "from-property-hotels to-brand-primary",
     features: [
       { icon: Building, label: "Multi-Property", description: "Centralized chain management" },
       { icon: DollarSign, label: "Corporate Billing", description: "Centralized billing system" },
@@ -66,7 +66,7 @@ const dashboardHubs = [
     title: "Hostels",
     subtitle: "Community-focused solutions for hostels and budget accommodations",
     icon: Users2,
-    color: "from-orange-500 to-orange-600",
+    color: "from-property-hostels to-purple-600",
     features: [
       { icon: Users2, label: "Community Management", description: "Social space coordination" },
       { icon: Calendar, label: "Bed Management", description: "Bunk and bed allocation" },
@@ -79,7 +79,7 @@ const dashboardHubs = [
     title: "Apartment Communities",
     subtitle: "Modern solutions for residential property and community management",
     icon: MapPin,
-    color: "from-teal-500 to-teal-600",
+    color: "from-property-apartments to-cyan-600",
     features: [
       { icon: MapPin, label: "Property Management", description: "Residential property oversight" },
       { icon: DollarSign, label: "Rent Collection", description: "Automated rent management" },
@@ -113,20 +113,20 @@ export function MaterialsSection() {
   }
 
   return (
-    <section className="py-20 lg:py-32 bg-gradient-to-b from-[#EFF0F1] to-[#626E7C]" id="dashboard">
+    <section className="py-20 lg:py-32 bg-gradient-to-b from-neutral-light to-neutral-medium" id="dashboard">
       <div className="container-custom">
         {/* Header Section */}
         <div className="mb-20">
           <Reveal>
             <div className="text-center">
-              <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-[#3B82F6] to-[#097abe] text-white rounded-full text-sm font-medium mb-6">
+              <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-brand-secondary to-brand-primary text-white rounded-full text-sm font-medium mb-6">
                 <Zap className="w-4 h-4" />
                 All-In-One Platform
               </div>
               <h2 className="text-black text-5xl lg:text-7xl font-bold mb-6">      
                 <AnimatedText text="Intelligent Dashboard" delay={0.2} />       
               </h2>
-              <p className="text-xl text-[#626E7C] mb-4 max-w-3xl mx-auto">      
+              <p className="text-xl text-neutral-medium mb-4 max-w-3xl mx-auto">      
                 The Operating System for hospitality
               </p>
               <p className="text-lg text-black max-w-4xl mx-auto">
@@ -140,10 +140,10 @@ export function MaterialsSection() {
         <div className="mb-20">
           <div className="grid lg:grid-cols-2 lg:gap-8 xl:gap-12">
             <div className="left-0 top-0 lg:sticky lg:h-svh lg:py-12 mb-8 lg:mb-0">
-              <h5 className="text-xs uppercase tracking-wide text-[#BDC3C8]">Our Platform</h5>
-              <h2 className="mb-6 mt-4 text-3xl sm:text-4xl font-bold tracking-tight text-black">
+              <h5 className="text-xs uppercase tracking-wide text-neutral-light">Our Platform</h5>
+              <h2 className="mb-6 mt-4 text-3xl sm:text-4xl font-bold tracking-tight text-black break-words">
                 Complete{" "}
-                <span className="text-[#3B82F6]">Hospitality Management</span> Solution
+                <span className="text-brand-secondary">Hospitality Management</span> Solution
               </h2>
               <p className="max-w-prose text-sm text-black">
                 Aiyra's intelligent platform revolutionizes hotel operations with cutting-edge technology.
@@ -156,7 +156,7 @@ export function MaterialsSection() {
                 <CardSticky
                   key={hub.id}
                   index={index + 1}
-                  className="rounded-2xl border border-[#BDC3C8] p-4 sm:p-6 lg:p-8 shadow-md backdrop-blur-md bg-[#626E7C]"
+                  className="rounded-2xl border border-neutral-light p-4 sm:p-6 lg:p-8 shadow-md backdrop-blur-md bg-neutral-medium"
                 >
                   <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-6">
                     <div className="flex items-center gap-3 sm:gap-4">
@@ -167,10 +167,10 @@ export function MaterialsSection() {
                         <h2 className="text-xl sm:text-2xl font-bold tracking-tighter text-white">
                           {hub.title}
                         </h2>
-                        <p className="text-[#E0E3E5] text-xs sm:text-sm">{hub.subtitle}</p>
+                        <p className="text-neutral-light text-xs sm:text-sm">{hub.subtitle}</p>
                       </div>
                     </div>
-                    <h3 className="text-xl sm:text-2xl font-bold text-[#3B82F6] self-start sm:self-auto">
+                    <h3 className="text-xl sm:text-2xl font-bold text-brand-secondary self-start sm:self-auto">
                       {String(index + 1).padStart(2, "0")}
                     </h3>
                   </div>
@@ -179,15 +179,15 @@ export function MaterialsSection() {
                     {hub.features.map((feature, featureIndex) => (
                       <motion.div
                         key={featureIndex}
-                        className="flex items-center gap-3 p-3 rounded-xl hover:bg-[#3B82F6]/20 transition-colors"
+                        className="flex items-center gap-3 p-3 rounded-xl hover:bg-brand-secondary/20 transition-colors"
                         whileHover={{ scale: 1.02 }}
                       >
-                        <div className="w-8 h-8 sm:w-10 sm:h-10 bg-[#3B82F6]/30 rounded-lg flex items-center justify-center flex-shrink-0">
+                        <div className="w-8 h-8 sm:w-10 sm:h-10 bg-brand-secondary/30 rounded-lg flex items-center justify-center flex-shrink-0">
                           <feature.icon className="w-4 h-4 sm:w-5 sm:h-5 text-white" />
                         </div>
                         <div>
                           <h4 className="font-semibold text-white text-xs sm:text-sm">{feature.label}</h4>
-                          <p className="text-xs text-[#E0E3E5]">{feature.description}</p>
+                          <p className="text-xs text-neutral-light">{feature.description}</p>
                         </div>
                       </motion.div>
                     ))}
@@ -210,7 +210,7 @@ export function MaterialsSection() {
             >
               <Button
                 size="lg"
-                className="bg-gradient-to-r from-[#3B82F6] to-[#097abe] hover:from-[#097abe] hover:to-[#3B82F6] text-white px-8 py-4 text-lg font-semibold rounded-full shadow-lg hover:shadow-xl transition-all duration-300"
+                className="bg-gradient-to-r from-brand-secondary to-brand-primary hover:from-brand-primary hover:to-brand-secondary text-white px-8 py-4 text-lg font-semibold rounded-full shadow-lg hover:shadow-xl transition-all duration-300"
                 asChild
               >
                 <motion.a
@@ -226,7 +226,7 @@ export function MaterialsSection() {
               <Button
                 variant="outline"
                 size="lg"
-                className="border-2 border-[#626E7C] text-[#626E7C] hover:bg-[#626E7C] hover:text-white px-8 py-4 text-lg font-semibold rounded-full transition-colors"
+                className="border-2 border-neutral-medium text-neutral-medium hover:bg-neutral-medium hover:text-white px-8 py-4 text-lg font-semibold rounded-full transition-colors"
                 asChild
               >
                 <motion.a
@@ -244,11 +244,11 @@ export function MaterialsSection() {
         {/* Support Statement */}
         <Reveal delay={0.6}>
           <div className="text-center mt-16">
-            <div className="inline-flex items-center gap-3 px-6 py-3 bg-[#3B82F6]/20 backdrop-blur-sm rounded-full border border-[#3B82F6]/30">
-              <div className="w-8 h-8 bg-gradient-to-r from-[#3B82F6] to-[#097abe] rounded-full flex items-center justify-center">
+            <div className="inline-flex items-center gap-3 px-6 py-3 bg-brand-secondary/20 backdrop-blur-sm rounded-full border border-brand-secondary/30">
+              <div className="w-8 h-8 bg-gradient-to-r from-brand-secondary to-brand-primary rounded-full flex items-center justify-center">
                 <CheckCircle2 className="w-4 h-4 text-white" />
               </div>
-              <span className="text-black font-medium">
+              <span className="text-white font-medium">
                 All solutions include 24/7 support, training & implementation
               </span>
             </div>

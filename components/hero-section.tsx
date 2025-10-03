@@ -42,7 +42,7 @@ export function HeroSection() {
   }
 
   return (
-    <section ref={containerRef} className="relative h-screen overflow-hidden bg-gradient-to-br from-[#EFF0F1] to-[#626E7C]">
+    <section ref={containerRef} className="relative h-screen overflow-hidden bg-gradient-to-br from-neutral-light to-neutral-medium">
       <motion.div
         className="absolute inset-0"
         style={{ scale: imageScale, y: imageY }}
@@ -71,22 +71,22 @@ export function HeroSection() {
         <div className="container-custom text-center">
           <Reveal>
             <motion.div
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#3B82F6]/20 backdrop-blur-sm border border-[#3B82F6]/30 mb-8"
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-brand-secondary/20 backdrop-blur-sm border border-brand-secondary/30 mb-8"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.3 }}
             >
-              <Zap className="w-4 h-4 text-[#3B82F6]" />
-              <span className="text-sm font-medium text-black">The Future of Hotel Management</span>
+              <Zap className="w-4 h-4 text-brand-secondary" />
+              <span className="text-sm font-medium text-white">The Future of Hotel Management</span>
             </motion.div>
           </Reveal>
 
           <Reveal>
             <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-9xl font-bold leading-none tracking-tight mb-6">
-              <span className="text-black">
+              <span className="text-white">
                 <AnimatedText text="Meet " delay={0.5} />
               </span>
-              <span className="bg-gradient-to-r from-[#097abe] to-[#3B82F6] bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-brand-primary to-brand-secondary bg-clip-text text-transparent">
                 <AnimatedText text="Aiyra" delay={0.7} />
               </span>
             </h1>
@@ -113,7 +113,7 @@ export function HeroSection() {
             >
               <motion.a
                 href="#experience"
-                className="w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-[#3B82F6] to-[#097abe] text-white rounded-full font-medium hover:from-[#097abe] hover:to-[#3B82F6] transition-all duration-300 text-center shadow-lg"
+                className="w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-brand-secondary to-brand-primary text-white rounded-full font-medium hover:from-brand-primary hover:to-brand-secondary transition-all duration-300 text-center shadow-lg"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
@@ -121,7 +121,7 @@ export function HeroSection() {
               </motion.a>
               <motion.a
                 href="#features"
-                className="w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-4 bg-[#626E7C]/10 backdrop-blur-sm text-black rounded-full font-medium border-2 border-[#626E7C]/30 hover:bg-[#626E7C]/20 transition-colors text-center"
+                className="w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-4 bg-neutral-medium/10 backdrop-blur-sm text-white rounded-full font-medium border-2 border-neutral-medium/30 hover:bg-neutral-medium/20 transition-colors text-center"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
@@ -138,18 +138,18 @@ export function HeroSection() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 1.3, ease: [0.21, 0.47, 0.32, 0.98] }}
       >
-        <BlurPanel className="mx-4 sm:mx-6 mb-4 sm:mb-6 px-4 sm:px-6 py-3 sm:py-4 bg-[#626E7C]/80 backdrop-blur-md border-[#BDC3C8]/30">
+        <BlurPanel className="mx-4 sm:mx-6 mb-4 sm:mb-6 px-4 sm:px-6 py-3 sm:py-4 bg-neutral-medium/80 backdrop-blur-md border-neutral-light/30">
           <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-6 text-white">
             <div className="flex items-center gap-2">
-              <Shield className="w-4 h-4 text-[#3B82F6]" />
+              <Shield className="w-4 h-4 text-brand-secondary" />
               <span className="text-xs sm:text-sm">Enterprise Security</span>
             </div>
             <div className="flex items-center gap-2">
-              <Zap className="w-4 h-4 text-[#3B82F6]" />
+              <Zap className="w-4 h-4 text-brand-secondary" />
               <span className="text-xs sm:text-sm">Real-time Intelligence</span>
             </div>
             <div className="flex items-center gap-2">
-              <Globe className="w-4 h-4 text-[#3B82F6]" />
+              <Globe className="w-4 h-4 text-brand-secondary" />
               <span className="text-xs sm:text-sm">Global Support</span>
             </div>
           </div>
