@@ -36,9 +36,7 @@ export default function VacationRentalsPage() {
     <div className="min-h-screen bg-white">
       <Header />
       {/* Hero Section */}
-      <section className="relative py-20 lg:py-32 bg-gradient-to-br from-neutral-light to-neutral-medium overflow-hidden">
-        {/* Background Pattern */}
-        <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmZmZmYiIGZpbGwtb3BhY2l0eT0iMC4wNSI+PGNpcmNsZSBjeD0iMzAiIGN5PSIzMCIgcj0iMSIvPjwvZz48L2c+PC9zdmc+')] opacity-20" />
+      <section className="relative py-20 lg:py-32 bg-white overflow-hidden">
 
         <div className="container-custom relative">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
@@ -54,13 +52,13 @@ export default function VacationRentalsPage() {
                   Airbnb & Vacation Rentals
                 </Badge>
 
-                <h1 className="text-5xl lg:text-7xl font-bold tracking-tight text-white">
+                <h1 className="text-5xl lg:text-7xl font-bold tracking-tight text-gray-900">
                   Smart Management for{" "}
-                  <span className="bg-gradient-to-r from-brand-primary to-brand-secondary bg-clip-text text-transparent">Vacation</span>{" "}
-                  <span className="bg-gradient-to-r from-brand-primary to-brand-secondary bg-clip-text text-transparent">Rentals</span>
+                  <span className="text-green-500">Vacation</span>{" "}
+                  <span className="text-green-500">Rentals</span>
                 </h1>
 
-                <p className="text-xl text-white leading-relaxed max-w-2xl">
+                <p className="text-xl text-gray-600 leading-relaxed max-w-2xl">
                   Perfect for individual property owners and vacation rental managers. Automate guest communication,
                   synchronize across all platforms, and maximize your rental income with smart pricing and seamless operations.
                 </p>
@@ -69,7 +67,7 @@ export default function VacationRentalsPage() {
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button
                   size="lg"
-                  className="bg-gradient-to-r from-brand-secondary to-brand-primary hover:opacity-90 text-white shadow-lg hover:shadow-xl transition-all duration-300 group"
+                  className="bg-green-600 hover:bg-green-700 text-white shadow-lg hover:shadow-xl transition-all duration-300 group rounded-lg"
                 >
                   Start Free Trial
                   <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
@@ -77,7 +75,7 @@ export default function VacationRentalsPage() {
                 <Button
                   variant="outline"
                   size="lg"
-                  className="border-2 border-white/30 text-white hover:bg-white/10 hover:border-white/50 transition-all duration-300"
+                  className="border-2 border-gray-300 text-gray-700 hover:bg-gray-50 hover:border-gray-400 transition-all duration-300 rounded-lg"
                 >
                   See Demo
                 </Button>
@@ -564,7 +562,7 @@ export default function VacationRentalsPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 lg:py-32 bg-gradient-to-br from-neutral-light to-neutral-medium relative">
+      <section className="py-20 lg:py-32 bg-gradient-to-b from-green-600 to-green-400 relative">
         <div className="container-custom text-center relative">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -576,8 +574,7 @@ export default function VacationRentalsPage() {
             {/* Main Content */}
             <div className="space-y-8 max-w-4xl mx-auto">
               <h2 className="text-5xl lg:text-7xl font-bold text-white tracking-tight leading-tight">
-                Ready to Automate Your{" "}
-                <span className="bg-gradient-to-r from-brand-primary to-brand-secondary bg-clip-text text-transparent">Rental?</span>
+                Ready to Automate Your Rental?
               </h2>
 
               <p className="text-xl text-white max-w-2xl mx-auto leading-relaxed">
@@ -593,7 +590,7 @@ export default function VacationRentalsPage() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button
                 size="lg"
-                className="bg-black text-white hover:bg-gray-800 rounded-lg px-8 py-4 text-lg font-normal"
+                className="bg-white text-green-600 hover:bg-green-50 rounded-lg px-8 py-4 text-lg font-normal border-2 border-white"
               >
                 Start Free Trial
                 <ArrowRight className="w-4 h-4 ml-2" />
@@ -601,7 +598,7 @@ export default function VacationRentalsPage() {
               <Button
                 variant="outline"
                 size="lg"
-                className="bg-white text-black border-2 border-gray-300 hover:bg-gray-50 hover:border-gray-400 rounded-lg px-8 py-4 text-lg font-normal"
+                className="border-2 border-white text-white hover:bg-white hover:text-green-600 rounded-lg px-8 py-4 text-lg font-normal"
               >
                 Talk to Specialist
               </Button>

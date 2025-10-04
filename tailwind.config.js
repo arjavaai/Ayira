@@ -51,14 +51,14 @@ module.exports = {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
-        // Brand Core Colors
-        'brand-primary': '#0B7FE6', // Bright Blue
-        'brand-secondary': '#00D4FF', // Cyan/Turquoise
-        'brand-accent': '#00C9FF', // Light Cyan
-        // Neutral Colors
-        'neutral-dark': '#0A1628', // Dark Navy Blue
-        'neutral-medium': '#64748b', // Medium Gray
-        'neutral-light': '#f8fafc', // Very Light Gray
+        // Brand Core Colors - Updated to match design
+        'brand-primary': '#007BFF', // Vibrant Blue
+        'brand-secondary': '#00BFFF', // Light Blue
+        'brand-accent': '#007BFF', // Vibrant Blue
+        // Neutral Colors - Updated to match design
+        'neutral-dark': '#333333', // Dark Gray
+        'neutral-medium': '#666666', // Medium Gray
+        'neutral-light': '#ffffff', // White
         'neutral-white': '#ffffff',
         // Property-Specific Accent Colors
         'property-hotels': '#0B7FE6', // Blue

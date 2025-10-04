@@ -57,9 +57,9 @@ const footerLinks: FooterSection[] = [
 
 export function Footer() {
 	return (
-		<footer className="relative w-full bg-gradient-to-b from-neutral-light to-neutral-medium text-black">
-			<div className="md:rounded-t-6xl relative w-full max-w-6xl mx-auto flex flex-col items-center justify-center rounded-t-4xl border-t border-neutral-medium/30 px-4 sm:px-6 py-8 sm:py-12 lg:py-16">
-				<div className="bg-neutral-medium/30 absolute top-0 right-1/2 left-1/2 h-px w-1/3 -translate-x-1/2 -translate-y-1/2 rounded-full blur" />
+		<footer className="relative w-full bg-gradient-to-b from-gray-100 to-gray-200 text-gray-900">
+			<div className="md:rounded-t-6xl relative w-full max-w-6xl mx-auto flex flex-col items-center justify-center rounded-t-4xl border-t border-gray-300 px-4 sm:px-6 py-8 sm:py-12 lg:py-16">
+				<div className="bg-gray-300 absolute top-0 right-1/2 left-1/2 h-px w-1/3 -translate-x-1/2 -translate-y-1/2 rounded-full blur" />
 
 				<div className="grid w-full gap-6 sm:gap-8 xl:grid-cols-3 xl:gap-8">
 					<AnimatedContainer className="space-y-4 text-center xl:text-left">
@@ -98,13 +98,13 @@ export function Footer() {
 						{footerLinks.map((section, index) => (
 							<AnimatedContainer key={section.label} delay={0.1 + index * 0.1}>
 								<div className="mb-6 sm:mb-10 md:mb-0">
-									<h3 className="text-xs font-semibold text-black">{section.label}</h3>
-									<ul className="text-black mt-3 sm:mt-4 space-y-2 text-xs sm:text-sm">
+									<h3 className="text-xs font-semibold text-gray-900">{section.label}</h3>
+									<ul className="text-gray-700 mt-3 sm:mt-4 space-y-2 text-xs sm:text-sm">
 										{section.links.map((link) => (
 											<li key={link.title}>
 												<a
 													href={link.href}
-													className="hover:text-brand-secondary hover:font-medium inline-flex items-center transition-all duration-300"
+													className="hover:text-blue-600 hover:font-medium inline-flex items-center transition-all duration-300"
 												>
 													{link.icon && <link.icon className="me-1 size-3 sm:size-4" />}
 													{link.title}
@@ -119,14 +119,14 @@ export function Footer() {
 				</div>
 
 				{/* ThreeAtoms Credit */}
-				<div className="mt-8 pt-6 border-t border-neutral-medium/30 text-center">
-					<p className="text-black text-xs sm:text-sm font-medium">
+				<div className="mt-8 pt-6 border-t border-gray-300 text-center">
+					<p className="text-gray-700 text-xs sm:text-sm font-medium">
 						Designed & Developed by{' '}
 						<a 
 							href="https://www.threeatoms.com" 
 							target="_blank" 
 							rel="dofollow" 
-							className="text-[var(--property-rentals)] hover:text-[var(--property-rentals)] transition-colors duration-300 font-semibold"
+							className="text-green-600 hover:text-green-700 transition-colors duration-300 font-semibold"
 						>
 							ThreeAtoms
 						</a>
@@ -134,7 +134,7 @@ export function Footer() {
 						<a 
 							href="https://wa.me/918179247099?text=Hello%20ThreeAtoms%2C%20I%20have%20seen%20one%20of%20your%20developed%20websites%20and%20I%20am%20contacting%20you%20because%20I%20am%20looking%20for%20a%20website%20for%20my%20business." 
 							target="_blank" 
-							className="text-[var(--property-rentals)] hover:text-[var(--property-rentals)] transition-colors duration-300 font-semibold"
+							className="text-green-600 hover:text-green-700 transition-colors duration-300 font-semibold"
 						>
 							+91 8179247099
 						</a>
@@ -143,7 +143,7 @@ export function Footer() {
 
 				{/* Copyright */}
 				<div className="mt-4 text-center">
-					<p className="text-black text-xs sm:text-sm font-medium">
+					<p className="text-gray-700 text-xs sm:text-sm font-medium">
 						© {new Date().getFullYear()} Luvera Aiyra. All rights reserved.
 					</p>
 				</div>

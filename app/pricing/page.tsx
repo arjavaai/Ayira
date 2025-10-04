@@ -115,18 +115,18 @@ export default function PricingPage() {
       <Header />
 
       {/* Hero Section */}
-      <section className="pt-32 pb-20 bg-gradient-to-br from-neutral-light to-neutral-medium">
+      <section className="pt-32 pb-20 bg-white">
         <div className="container-custom">
           <Reveal>
             <div className="text-center max-w-4xl mx-auto">
               <motion.div
-                className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-brand-secondary/20 backdrop-blur-sm border border-brand-secondary/30 mb-6 text-sm font-medium"
+                className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-50 border border-blue-200 mb-6 text-sm font-medium"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6 }}
               >
-                <TrendingUp className="w-4 h-4 text-brand-secondary" />
-                <span className="text-black">Invest in Your Success</span>
+                <TrendingUp className="w-4 h-4 text-blue-600" />
+                <span className="text-blue-600">Invest in Your Success</span>
               </motion.div>
               <motion.h1
                 className="text-5xl lg:text-7xl font-bold mb-6"
@@ -134,11 +134,11 @@ export default function PricingPage() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.1 }}
               >
-                <span className="text-black">ROI-Focused </span>
-                <span className="bg-gradient-to-r from-brand-primary to-brand-secondary bg-clip-text text-transparent">Investment Plans</span>
+                <span className="text-gray-900">ROI-Focused </span>
+                <span className="text-blue-500">Investment Plans</span>
               </motion.h1>
               <motion.p
-                className="text-xl text-white"
+                className="text-xl text-gray-600"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.2 }}
@@ -197,15 +197,15 @@ export default function PricingPage() {
       </section>
 
       {/* Why Choose */}
-      <section className="py-20 bg-gradient-to-br from-neutral-light to-neutral-medium">
+      <section className="py-20 bg-white">
         <div className="container-custom">
           <Reveal>
             <div className="text-center mb-12">
               <h2 className="text-4xl lg:text-5xl font-bold mb-4">
-                <span className="text-black">Why Hotel Owners Choose </span>
-                <span className="bg-gradient-to-r from-brand-primary to-brand-secondary bg-clip-text text-transparent">Luvera Aiyra</span>
+                <span className="text-gray-900">Why Hotel Owners Choose </span>
+                <span className="text-blue-500">Luvera Aiyra</span>
               </h2>
-              <p className="text-xl text-white">
+              <p className="text-xl text-gray-600">
                 Every plan includes our complete hospitality platform with measurable business results
               </p>
             </div>
@@ -214,11 +214,11 @@ export default function PricingPage() {
             {whyChoose.map((item, index) => (
               <Reveal key={index} delay={index * 0.1}>
                 <div className="text-center p-6">
-                  <div className="w-16 h-16 bg-gradient-to-r from-brand-primary to-brand-secondary rounded-full flex items-center justify-center mx-auto mb-4">
+                  <div className="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-4">
                     <item.icon className="w-8 h-8 text-white" />
                   </div>
-                  <h3 className="text-xl font-bold mb-2 text-black">{item.title}</h3>
-                  <p className="text-white">{item.description}</p>
+                  <h3 className="text-xl font-bold mb-2 text-gray-900">{item.title}</h3>
+                  <p className="text-gray-600">{item.description}</p>
                 </div>
               </Reveal>
             ))}
@@ -227,15 +227,15 @@ export default function PricingPage() {
       </section>
 
       {/* FAQ Section */}
-      <section className="py-20 bg-gradient-to-br from-neutral-light to-neutral-medium">
+      <section className="py-20 bg-white">
         <div className="container-custom max-w-4xl">
           <Reveal>
             <div className="text-center mb-12">
               <h2 className="text-4xl lg:text-5xl font-bold mb-4">
-                <span className="text-black">Investment </span>
-                <span className="bg-gradient-to-r from-brand-primary to-brand-secondary bg-clip-text text-transparent">Questions</span>
+                <span className="text-gray-900">Investment </span>
+                <span className="text-blue-500">Questions</span>
               </h2>
-              <p className="text-xl text-white">
+              <p className="text-xl text-gray-600">
                 Everything you need to know about investing in Luvera Aiyra
               </p>
             </div>
@@ -262,13 +262,12 @@ export default function PricingPage() {
       </section>
 
       {/* Final CTA */}
-      <section className="py-20 bg-gradient-to-br from-neutral-light to-neutral-medium">
+      <section className="py-20 bg-gradient-to-b from-blue-600 to-blue-400">
         <div className="container-custom">
           <Reveal>
             <div className="text-center max-w-3xl mx-auto">
-              <h2 className="text-4xl lg:text-5xl font-bold mb-6">
-                <span className="text-black">Ready to Transform Your </span>
-                <span className="bg-gradient-to-r from-brand-primary to-brand-secondary bg-clip-text text-transparent">Hotel Business?</span>
+              <h2 className="text-4xl lg:text-5xl font-bold mb-6 text-white">
+                Ready to Transform Your Hotel Business?
               </h2>
               <p className="text-xl text-white mb-8">
                 Join hundreds of successful hotels that trust Luvera Aiyra to maximize revenue and deliver exceptional guest experiences.
@@ -276,7 +275,7 @@ export default function PricingPage() {
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                 <Button
                   size="lg"
-                  className="bg-gradient-to-r from-brand-secondary to-brand-primary text-white px-8 py-4 text-lg font-semibold rounded-full hover:from-brand-primary hover:to-brand-secondary transition-all duration-300 shadow-lg"
+                  className="bg-white text-blue-600 border-2 border-white px-8 py-4 text-lg font-semibold rounded-lg hover:bg-blue-50 transition-all duration-300 shadow-lg"
                   asChild
                 >
                   <motion.a
@@ -290,7 +289,7 @@ export default function PricingPage() {
                 <Button
                   variant="outline"
                   size="lg"
-                  className="bg-neutral-medium/10 backdrop-blur-sm text-black rounded-full font-medium border-2 border-neutral-medium/30 hover:bg-neutral-medium/20 transition-colors px-8 py-4 text-lg"
+                  className="border-2 border-white text-white hover:bg-white hover:text-blue-600 rounded-lg font-medium transition-colors px-8 py-4 text-lg"
                   asChild
                 >
                   <motion.a

@@ -72,7 +72,7 @@ export default function ContactPage() {
       <Header />
 
       {/* Hero Section */}
-      <section className="pt-32 pb-20 bg-gradient-to-br from-neutral-light to-neutral-medium">
+      <section className="pt-32 pb-20 bg-white">
         <div className="container-custom">
           <Reveal>
             <div className="text-center max-w-4xl mx-auto">
@@ -82,11 +82,11 @@ export default function ContactPage() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6 }}
               >
-                <span className="text-black">Get in </span>
-                <span className="bg-gradient-to-r from-brand-primary to-brand-secondary bg-clip-text text-transparent">Touch</span>
+                <span className="text-gray-900">Get in </span>
+                <span className="text-blue-500">Touch</span>
               </motion.h1>
               <motion.p
-                className="text-xl text-white mb-6"
+                className="text-xl text-gray-600 mb-6"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.2 }}
@@ -101,8 +101,8 @@ export default function ContactPage() {
               >
                 {benefits.map((benefit, index) => (
                   <div key={index} className="flex items-center gap-2">
-                    <CheckCircle2 className="w-5 h-5 text-brand-secondary" />
-                    <span className="text-black font-medium">{benefit}</span>
+                    <CheckCircle2 className="w-5 h-5 text-green-500" />
+                    <span className="text-gray-700 font-medium">{benefit}</span>
                   </div>
                 ))}
               </motion.div>
@@ -176,7 +176,7 @@ export default function ContactPage() {
                   <Button
                     type="submit"
                     size="lg"
-                    className="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white rounded-full py-6 font-semibold"
+                    className="w-full bg-blue-600 hover:bg-blue-700 text-white rounded-lg py-6 font-semibold"
                   >
                     Send Message
                     <ArrowRight className="w-5 h-5 ml-2" />
@@ -195,10 +195,10 @@ export default function ContactPage() {
                 <h2 className="text-3xl font-bold mb-6 text-gray-900">Other Ways to Reach Us</h2>
                 <div className="space-y-6">
                   {contactMethods.map((method, index) => (
-                    <Card key={index} className="border-2 hover:border-blue-200 transition-all duration-300">
+                    <Card key={index} className="border border-gray-200 hover:border-blue-200 hover:shadow-lg transition-all duration-300 rounded-lg bg-white">
                       <CardContent className="p-6">
                         <div className="flex items-start gap-4">
-                          <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-purple-600 rounded-xl flex items-center justify-center flex-shrink-0">
+                          <div className="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center flex-shrink-0">
                             <method.icon className="w-6 h-6 text-white" />
                           </div>
                           <div>
@@ -217,18 +217,18 @@ export default function ContactPage() {
                 </div>
 
                 {/* Quick Links */}
-                <div className="mt-8 p-6 bg-blue-50 rounded-2xl">
+                <div className="mt-8 p-6 bg-white border border-gray-200 rounded-lg shadow-sm">
                   <h3 className="text-xl font-bold mb-4 text-gray-900">Need Immediate Help?</h3>
                   <div className="flex flex-col sm:flex-row gap-4">
                     <Button
-                      className="bg-blue-600 hover:bg-blue-700 text-white rounded-full flex-1"
+                      className="bg-blue-600 hover:bg-blue-700 text-white rounded-lg flex-1"
                       asChild
                     >
                       <a href="/experience">Book a Demo</a>
                     </Button>
                     <Button
                       variant="outline"
-                      className="border-2 border-blue-600 text-blue-600 hover:bg-blue-50 rounded-full flex-1"
+                      className="border-2 border-blue-600 text-blue-600 hover:bg-blue-50 rounded-lg flex-1"
                       asChild
                     >
                       <a href="/resources">Browse FAQ</a>
@@ -242,15 +242,15 @@ export default function ContactPage() {
       </section>
 
       {/* Global Offices */}
-      <section className="py-20 bg-gradient-to-br from-neutral-light to-neutral-medium">
+      <section className="py-20 bg-white">
         <div className="container-custom">
           <Reveal>
             <div className="text-center mb-12">
               <h2 className="text-4xl lg:text-5xl font-bold mb-4">
-                <span className="text-black">Our Global </span>
-                <span className="bg-gradient-to-r from-brand-primary to-brand-secondary bg-clip-text text-transparent">Offices</span>
+                <span className="text-gray-900">Our Global </span>
+                <span className="text-blue-500">Offices</span>
               </h2>
-              <p className="text-xl text-white">
+              <p className="text-xl text-gray-600">
                 Serving hotels worldwide with local expertise and support.
               </p>
             </div>
@@ -259,9 +259,9 @@ export default function ContactPage() {
           <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
             {offices.map((office, index) => (
               <Reveal key={index} delay={index * 0.1}>
-                <Card className="border-2 hover:border-blue-200 hover:shadow-xl transition-all duration-300">
+                <Card className="border border-gray-200 hover:border-blue-200 hover:shadow-lg transition-all duration-300 rounded-lg bg-white">
                   <CardContent className="p-8">
-                    <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-purple-600 rounded-xl flex items-center justify-center mb-4">
+                    <div className="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center mb-4">
                       <MapPin className="w-6 h-6 text-white" />
                     </div>
                     <h3 className="text-2xl font-bold text-gray-900 mb-4">{office.city}</h3>
@@ -286,20 +286,19 @@ export default function ContactPage() {
       </section>
 
       {/* Bottom CTA */}
-      <section className="py-20 bg-gradient-to-br from-neutral-light to-neutral-medium">
+      <section className="py-20 bg-gradient-to-b from-blue-600 to-blue-400">
         <div className="container-custom">
           <Reveal>
             <div className="text-center max-w-3xl mx-auto">
-              <h2 className="text-4xl lg:text-5xl font-bold mb-6">
-                <span className="text-black">Ready to </span>
-                <span className="bg-gradient-to-r from-brand-primary to-brand-secondary bg-clip-text text-transparent">Get Started?</span>
+              <h2 className="text-4xl lg:text-5xl font-bold mb-6 text-white">
+                Ready to Get Started?
               </h2>
               <p className="text-xl text-white mb-8">
                 Don't wait to transform your hotel operations. See Aiyra in action with a personalized demo.
               </p>
               <Button
                 size="lg"
-                className="bg-gradient-to-r from-brand-secondary to-brand-primary text-white px-8 py-4 text-lg font-semibold rounded-full hover:from-brand-primary hover:to-brand-secondary transition-all duration-300 shadow-lg"
+                className="bg-white text-blue-600 border-2 border-white px-8 py-4 text-lg font-semibold rounded-lg hover:bg-blue-50 transition-all duration-300 shadow-lg"
                 asChild
               >
                 <motion.a

@@ -38,10 +38,7 @@ export default function IndependentHotelsPage() {
     <div className="min-h-screen bg-white">
       <Header />
       {/* Hero Section */}
-      <section className="relative py-20 lg:py-32 bg-gradient-to-br from-neutral-light to-neutral-medium overflow-hidden">
-        {/* Background Pattern */}
-        <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmZmZmYiIGZpbGwtb3BhY2l0eT0iMC4wNSI+PGNpcmNsZSBjeD0iMzAiIGN5PSIzMCIgcj0iMSIvPjwvZz48L2c+PC9zdmc+')] opacity-20" />
-        
+      <section className="relative py-20 lg:py-32 bg-white overflow-hidden">
         <div className="container-custom relative">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <motion.div
@@ -51,18 +48,18 @@ export default function IndependentHotelsPage() {
               className="space-y-8"
             >
               <div className="space-y-6">
-                <Badge variant="secondary" className="bg-property-hotels/10 text-property-hotels border-property-hotels/20 hover:bg-property-hotels/20">
+                <Badge variant="secondary" className="bg-blue-100 text-blue-700 border-blue-200 hover:bg-blue-200">
                   <Target className="w-3 h-3 mr-1" />
                   Independent Hotels
                 </Badge>
                 
-                <h1 className="text-5xl lg:text-7xl font-bold tracking-tight text-white">
+                <h1 className="text-5xl lg:text-7xl font-bold tracking-tight text-gray-900">
                   Perfect PMS for{" "}
-                  <span className="bg-gradient-to-r from-brand-primary to-property-hotels bg-clip-text text-transparent">Independent</span>{" "}
-                  <span className="bg-gradient-to-r from-brand-primary to-property-hotels bg-clip-text text-transparent">Hotels</span>
+                  <span className="text-blue-500">Independent</span>{" "}
+                  <span className="text-blue-500">Hotels</span>
                 </h1>
 
-                <p className="text-xl text-white leading-relaxed max-w-2xl">
+                <p className="text-xl text-gray-600 leading-relaxed max-w-2xl">
                   More than just PMS software - Aiyra combines property management with built-in AI chatbot,
                   advanced analytics, and business intelligence. Designed specifically for independent hotels
                   who need enterprise-grade tools without the complexity or cost.
@@ -72,7 +69,7 @@ export default function IndependentHotelsPage() {
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button
                   size="lg"
-                  className="bg-gradient-to-r from-property-hotels to-brand-primary hover:opacity-90 text-white shadow-lg hover:shadow-xl transition-all duration-300 group"
+                  className="bg-blue-600 hover:bg-blue-700 text-white shadow-lg hover:shadow-xl transition-all duration-300 group rounded-lg"
                 >
                   Start Free Trial
                   <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
@@ -80,7 +77,7 @@ export default function IndependentHotelsPage() {
                 <Button
                   variant="outline"
                   size="lg"
-                  className="border-2 border-white/30 text-white hover:bg-white/10 hover:border-white/50 transition-all duration-300"
+                  className="border-2 border-gray-300 text-gray-700 hover:bg-gray-50 hover:border-gray-400 transition-all duration-300 rounded-lg"
                 >
                   Book Demo
                 </Button>
@@ -485,7 +482,7 @@ export default function IndependentHotelsPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 lg:py-32 bg-gradient-to-br from-neutral-light to-neutral-medium relative">
+      <section className="py-20 lg:py-32 bg-gradient-to-b from-blue-600 to-blue-400 relative">
         <div className="container-custom text-center relative">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -499,7 +496,7 @@ export default function IndependentHotelsPage() {
               <Button 
                 variant="outline" 
                 size="sm"
-                className="bg-gray-100 text-gray-700 border-gray-200 hover:bg-gray-200 rounded-lg px-4 py-2 text-sm font-normal"
+                className="bg-white/20 text-white border-white/30 hover:bg-white/30 rounded-lg px-4 py-2 text-sm font-normal"
               >
                 Read our launch article
                 <ArrowRight className="w-3 h-3 ml-1" />
@@ -509,9 +506,7 @@ export default function IndependentHotelsPage() {
             {/* Main Content */}
             <div className="space-y-8 max-w-4xl mx-auto">
               <h2 className="text-5xl lg:text-7xl font-bold text-white tracking-tight leading-tight">
-                Ready to Transform Your{" "}
-                <span className="bg-gradient-to-r from-property-hotels to-brand-secondary bg-clip-text text-transparent">Independent</span>{" "}
-                <span className="bg-gradient-to-r from-property-hotels to-brand-secondary bg-clip-text text-transparent">Hotel?</span>
+                Ready to Transform Your Independent Hotel?
               </h2>
 
               <p className="text-xl text-white max-w-2xl mx-auto leading-relaxed">
@@ -524,14 +519,14 @@ export default function IndependentHotelsPage() {
               <Button 
                 variant="outline" 
                 size="lg"
-                className="bg-white text-black border-2 border-gray-300 hover:bg-gray-50 hover:border-gray-400 rounded-lg px-8 py-4 text-lg font-normal"
+                className="border-2 border-white text-white hover:bg-white hover:text-blue-600 rounded-lg px-8 py-4 text-lg font-normal"
               >
                 Jump on a call
                 <span className="ml-2">📞</span>
               </Button>
               <Button 
                 size="lg" 
-                className="bg-black text-white hover:bg-gray-800 rounded-lg px-8 py-4 text-lg font-normal"
+                className="bg-white text-blue-600 hover:bg-blue-50 rounded-lg px-8 py-4 text-lg font-normal border-2 border-white"
               >
                 Sign up here
                 <ArrowRight className="w-4 h-4 ml-2" />
@@ -540,8 +535,8 @@ export default function IndependentHotelsPage() {
 
             {/* Trust Indicators */}
             <div className="pt-8">
-              <p className="text-sm text-white/80 mb-4">Trusted by independent hotels worldwide</p>
-              <div className="flex items-center justify-center gap-8 text-sm text-white/80">
+              <p className="text-sm text-white/90 mb-4">Trusted by independent hotels worldwide</p>
+              <div className="flex items-center justify-center gap-8 text-sm text-white/90">
                 <div>✓ 30-day free trial</div>
                 <div>✓ No setup fees</div>
                 <div>✓ 24/7 support</div>

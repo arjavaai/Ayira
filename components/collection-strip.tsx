@@ -189,7 +189,7 @@ export function CollectionStrip() {
   }
 
   return (
-    <section ref={containerRef} className="py-12 lg:py-20 bg-gradient-to-b from-neutral-light to-neutral-medium" id="dashboard">
+    <section ref={containerRef} className="py-12 lg:py-20 bg-white" id="dashboard">
       <div className="container-custom">
         {/* Main Content Section */}
         <div className="mb-12 lg:mb-16">
@@ -201,7 +201,7 @@ export function CollectionStrip() {
                   <Zap className="w-3 h-3 lg:w-4 lg:h-4" />
                   All-In-One Platform
                 </div>
-                <h2 className="text-black text-2xl lg:text-4xl xl:text-5xl font-bold mb-4 lg:mb-6 leading-tight">
+                <h2 className="text-gray-900 text-2xl lg:text-4xl xl:text-5xl font-bold mb-4 lg:mb-6 leading-tight">
                   <span className="whitespace-nowrap">
                     <AnimatedText text="More Than Just PMS" delay={0.2} />
                   </span>
@@ -210,10 +210,10 @@ export function CollectionStrip() {
                     <AnimatedText text="Software" delay={0.3} />
                   </span>
                 </h2>
-                <p className="text-lg lg:text-xl font-semibold text-neutral-medium mb-3 lg:mb-4">
+                <p className="text-lg lg:text-xl font-semibold text-gray-600 mb-3 lg:mb-4">
                   Three Platforms in One Solution
                 </p>
-                <p className="text-base lg:text-lg text-black leading-relaxed">
+                <p className="text-base lg:text-lg text-gray-700 leading-relaxed">
                   Unlike traditional PMS systems, Aiyra combines property management, AI intelligence, and business analytics in one integrated platform.
                 </p>
               </div>

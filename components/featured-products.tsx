@@ -190,14 +190,14 @@ const hotelTabs = [
 
 export function FeaturedProducts() {
   return (
-    <section className="py-20 lg:py-32 bg-gradient-to-b from-white to-neutral-light/30" id="features">
+    <section className="py-20 lg:py-32 bg-white" id="features">
       <div className="container-custom">
         <Reveal>
           <div className="text-center mb-16">
-            <h2 className="text-4xl text-neutral-dark mb-4 lg:text-6xl font-bold break-words">
-              Why Hotels Choose <span className="italic font-light bg-gradient-to-r from-brand-primary to-brand-secondary bg-clip-text text-transparent">Aiyra</span>
+            <h2 className="text-4xl text-gray-900 mb-4 lg:text-6xl font-bold break-words">
+              Why Hotels Choose <span className="italic font-light text-blue-500">Aiyra</span>
             </h2>
-            <p className="text-lg text-neutral-medium max-w-3xl mx-auto">
+            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
               Discover how Aiyra revolutionizes hospitality management with cutting-edge technology and unparalleled
               intelligence that transforms your operations into a luxury experience
             </p>

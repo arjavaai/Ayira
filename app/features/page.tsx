@@ -6,7 +6,6 @@ import { motion } from "framer-motion"
 import { Reveal } from "@/components/reveal"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
-import MagicBento from "@/components/MagicBento"
 import {
   Building2,
   BarChart3,
@@ -141,7 +140,7 @@ export default function FeaturesPage() {
       <Header />
 
       {/* Hero Section */}
-      <section className="pt-32 pb-20 bg-gradient-to-br from-neutral-light to-neutral-medium">
+      <section className="pt-32 pb-20 bg-white">
         <div className="container-custom">
           <Reveal>
             <div className="text-center max-w-4xl mx-auto">
@@ -151,11 +150,11 @@ export default function FeaturesPage() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6 }}
               >
-                <span className="text-black">Powerful Features for </span>
-                <span className="bg-gradient-to-r from-brand-primary to-brand-secondary bg-clip-text text-transparent">Modern Hotels</span>
+                <span className="text-gray-900">Powerful Features for </span>
+                <span className="text-blue-500">Modern Hotels</span>
               </motion.h1>
               <motion.p
-                className="text-xl text-white mb-8"
+                className="text-xl text-gray-600 mb-8"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.2 }}
@@ -169,7 +168,7 @@ export default function FeaturesPage() {
               >
                 <Button
                   size="lg"
-                  className="bg-gradient-to-r from-brand-secondary to-brand-primary text-white px-8 py-4 text-lg font-semibold rounded-full hover:from-brand-primary hover:to-brand-secondary transition-all duration-300 shadow-lg"
+                  className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 text-lg font-semibold rounded-lg transition-all duration-300 shadow-lg"
                   asChild
                 >
                   <a href="/experience">Book a Demo</a>
@@ -180,32 +179,75 @@ export default function FeaturesPage() {
         </div>
       </section>
 
-      {/* Magic Bento Grid */}
+      {/* Features Grid */}
       <section className="py-20 bg-white">
-        <div className="container-custom flex justify-center">
-          <MagicBento
-            textAutoHide={true}
-            enableStars={true}
-            enableSpotlight={true}
-            enableBorderGlow={true}
-            enableTilt={true}
-            enableMagnetism={true}
-            clickEffect={true}
-            spotlightRadius={300}
-            particleCount={12}
-            glowColor="59, 130, 246"
-          />
+        <div className="container-custom">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+            {features.map((feature, index) => (
+              <motion.div
+                key={feature.id}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                viewport={{ once: true }}
+                className="flex gap-8 items-start"
+              >
+                {/* Feature Content */}
+                <div className="flex-1 space-y-4">
+                  <div className="flex items-center gap-4 mb-4">
+                    <div className="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center flex-shrink-0">
+                      <feature.icon className="w-6 h-6 text-white" />
+                    </div>
+                    <div>
+                      <h3 className="text-xl font-bold text-gray-900 mb-1">
+                        {feature.title}
+                      </h3>
+                      <p className="text-sm text-gray-600">
+                        {feature.subtitle}
+                      </p>
+                    </div>
+                  </div>
+                  
+                  <p className="text-gray-700 leading-relaxed">
+                    {feature.description}
+                  </p>
+                  
+                  <ul className="space-y-2">
+                    {feature.benefits.map((benefit, benefitIndex) => (
+                      <li key={benefitIndex} className="flex items-center gap-2 text-gray-700">
+                        <CheckCircle2 className="w-4 h-4 text-blue-600 flex-shrink-0" />
+                        <span className="text-sm">{benefit}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+                
+                {/* Feature Image */}
+                <div className="w-80 h-64 rounded-xl overflow-hidden shadow-lg bg-white border border-gray-100 flex-shrink-0">
+                  <div className="w-full h-full bg-gradient-to-br from-blue-50 to-blue-100 flex items-center justify-center">
+                    <div className="text-center">
+                      <div className="w-16 h-16 bg-blue-600 rounded-lg mx-auto mb-4 flex items-center justify-center">
+                        <feature.icon className="w-8 h-8 text-white" />
+                      </div>
+                      <p className="text-sm text-gray-600 font-medium">
+                        {feature.title}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
         </div>
       </section>
 
       {/* Bottom CTA */}
-      <section className="py-20 bg-gradient-to-br from-neutral-light to-neutral-medium">
+      <section className="py-20 bg-gradient-to-b from-blue-600 to-blue-400">
         <div className="container-custom">
           <Reveal>
             <div className="text-center max-w-3xl mx-auto">
-              <h2 className="text-4xl lg:text-5xl font-bold mb-6">
-                <span className="text-black">Ready to See These </span>
-                <span className="bg-gradient-to-r from-brand-primary to-brand-secondary bg-clip-text text-transparent">Features in Action?</span>
+              <h2 className="text-4xl lg:text-5xl font-bold mb-6 text-white">
+                Ready to See These Features in Action?
               </h2>
               <p className="text-xl text-white mb-8">
                 Book a personalized demo and discover how Aiyra can transform your hotel operations.
@@ -213,7 +255,7 @@ export default function FeaturesPage() {
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                 <Button
                   size="lg"
-                  className="bg-gradient-to-r from-brand-secondary to-brand-primary text-white px-8 py-4 text-lg font-semibold rounded-full hover:from-brand-primary hover:to-brand-secondary transition-all duration-300 shadow-lg"
+                  className="bg-white text-blue-600 border-2 border-white px-8 py-4 text-lg font-semibold rounded-lg hover:bg-blue-50 transition-all duration-300 shadow-lg"
                   asChild
                 >
                   <motion.a
@@ -229,7 +271,7 @@ export default function FeaturesPage() {
                 <Button
                   variant="outline"
                   size="lg"
-                  className="bg-neutral-medium/10 backdrop-blur-sm text-black rounded-full font-medium border-2 border-neutral-medium/30 hover:bg-neutral-medium/20 transition-colors px-8 py-4 text-lg"
+                  className="border-2 border-white text-white hover:bg-white hover:text-blue-600 rounded-lg font-medium transition-colors px-8 py-4 text-lg"
                   asChild
                 >
                   <motion.a

@@ -113,7 +113,7 @@ export function MaterialsSection() {
   }
 
   return (
-    <section className="py-20 lg:py-32 bg-gradient-to-b from-neutral-light to-neutral-medium" id="dashboard">
+    <section className="py-20 lg:py-32 bg-white" id="dashboard">
       <div className="container-custom">
         {/* Header Section */}
         <div className="mb-20">
@@ -123,13 +123,13 @@ export function MaterialsSection() {
                 <Zap className="w-4 h-4" />
                 All-In-One Platform
               </div>
-              <h2 className="text-black text-5xl lg:text-7xl font-bold mb-6">      
+              <h2 className="text-gray-900 text-5xl lg:text-7xl font-bold mb-6">      
                 <AnimatedText text="Intelligent Dashboard" delay={0.2} />       
               </h2>
-              <p className="text-xl text-neutral-medium mb-4 max-w-3xl mx-auto">      
+              <p className="text-xl text-gray-600 mb-4 max-w-3xl mx-auto">      
                 The Operating System for hospitality
               </p>
-              <p className="text-lg text-black max-w-4xl mx-auto">
+              <p className="text-lg text-gray-700 max-w-4xl mx-auto">
                 Magically simplify hotel operations, channel distribution, payments and guest experience with Aiyra's intelligent platform
               </p>
             </div>
@@ -140,12 +140,12 @@ export function MaterialsSection() {
         <div className="mb-20">
           <div className="grid lg:grid-cols-2 lg:gap-8 xl:gap-12">
             <div className="left-0 top-0 lg:sticky lg:h-svh lg:py-12 mb-8 lg:mb-0">
-              <h5 className="text-xs uppercase tracking-wide text-neutral-light">Our Platform</h5>
-              <h2 className="mb-6 mt-4 text-3xl sm:text-4xl font-bold tracking-tight text-black break-words">
+              <h5 className="text-xs uppercase tracking-wide text-gray-500">Our Platform</h5>
+              <h2 className="mb-6 mt-4 text-3xl sm:text-4xl font-bold tracking-tight text-gray-900 break-words">
                 Complete{" "}
-                <span className="text-brand-secondary">Hospitality Management</span> Solution
+                <span className="text-blue-500">Hospitality Management</span> Solution
               </h2>
-              <p className="max-w-prose text-sm text-black">
+              <p className="max-w-prose text-sm text-gray-700">
                 Aiyra's intelligent platform revolutionizes hotel operations with cutting-edge technology.
                 From automated front desk operations to AI-powered guest services, our comprehensive suite
                 of tools empowers hospitality professionals to deliver exceptional experiences while maximizing revenue.
