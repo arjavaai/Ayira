@@ -9,6 +9,7 @@ import { Progress } from "@/components/ui/progress"
 import { AnimatedTabs } from "@/components/ui/animated-tabs"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
+import { AnimatedCounter } from "@/components/animated-counter"
 import { 
   BarChart3, 
   Calendar, 
@@ -57,15 +58,15 @@ export default function ResortsLuxuryPage() {
               className="space-y-8"
             >
               <div className="space-y-6">
-                <Badge variant="secondary" className="bg-purple-100 text-purple-700 border-purple-200 hover:bg-purple-200">
+                <Badge variant="secondary" className="bg-gradient-to-r from-sky-100 to-blue-100 text-sky-700 border-sky-200 hover:from-sky-200 hover:to-blue-200">
                   <Crown className="w-3 h-3 mr-1" />
                   Resorts & Luxury Properties
                 </Badge>
                 
                 <h1 className="text-5xl lg:text-7xl font-bold tracking-tight text-gray-900">
                   Luxury Resort{" "}
-                  <span className="text-purple-500">Management</span>{" "}
-                  <span className="text-purple-500">System</span>
+                  <span className="bg-gradient-to-r from-sky-400 to-blue-600 bg-clip-text text-transparent">Management</span>{" "}
+                  <span className="bg-gradient-to-r from-sky-400 to-blue-600 bg-clip-text text-transparent">System</span>
                 </h1>
 
                 <p className="text-xl text-gray-600 leading-relaxed max-w-2xl">
@@ -78,7 +79,7 @@ export default function ResortsLuxuryPage() {
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button
                   size="lg"
-                  className="bg-purple-600 hover:bg-purple-700 text-white shadow-lg hover:shadow-xl transition-all duration-300 group rounded-lg"
+                  className="bg-gradient-to-r from-sky-400 to-blue-600 hover:from-sky-500 hover:to-blue-700 text-white shadow-lg hover:shadow-xl transition-all duration-300 group rounded-lg"
                 >
                   Experience Luxury PMS
                   <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
@@ -131,7 +132,7 @@ export default function ResortsLuxuryPage() {
               </div>
               
               {/* Floating Elements */}
-              <div className="absolute -top-4 -right-4 w-16 h-16 bg-purple-500/20 rounded-full animate-pulse"></div>
+              <div className="absolute -top-4 -right-4 w-16 h-16 bg-sky-500/20 rounded-full animate-pulse"></div>
               <div className="absolute -bottom-4 -left-4 w-12 h-12 bg-gold-500/20 rounded-full animate-pulse delay-1000"></div>
             </motion.div>
           </div>
@@ -150,7 +151,7 @@ export default function ResortsLuxuryPage() {
           >
             <h2 className="text-4xl lg:text-6xl font-bold tracking-tight mb-6">
               Complete Resort{" "}
-              <span className="text-purple-600">
+              <span className="bg-gradient-to-r from-sky-400 to-blue-600 bg-clip-text text-transparent">
                 Experience Management
               </span>
             </h2>
@@ -320,8 +321,8 @@ export default function ResortsLuxuryPage() {
                       />
                       <div className="flex flex-col gap-y-3 md:gap-y-4">
                         <div className="flex items-center gap-3">
-                          <div className="w-10 h-10 md:w-12 md:h-12 bg-purple-500/20 rounded-xl flex items-center justify-center">
-                            <Heart className="w-5 h-5 md:w-6 md:h-6 text-purple-400" />
+                          <div className="w-10 h-10 md:w-12 md:h-12 bg-sky-500/20 rounded-xl flex items-center justify-center">
+                            <Heart className="w-5 h-5 md:w-6 md:h-6 text-sky-400" />
                           </div>
                           <h2 className="text-lg md:text-2xl font-bold mb-0 text-white mt-0 !m-0">
                             Guest Experience Platform
@@ -331,19 +332,19 @@ export default function ResortsLuxuryPage() {
                           Personalized guest experience management with preference tracking and luxury service coordination.
                         </p>
                         <div className="space-y-2">
-                          <div className="flex items-center gap-2 text-purple-400 text-xs md:text-sm">
+                          <div className="flex items-center gap-2 text-sky-400 text-xs md:text-sm">
                             <CheckCircle2 className="w-3 h-3" />
                             Guest preference profiles
                           </div>
-                          <div className="flex items-center gap-2 text-purple-400 text-xs md:text-sm">
+                          <div className="flex items-center gap-2 text-sky-400 text-xs md:text-sm">
                             <CheckCircle2 className="w-3 h-3" />
                             Concierge service management
                           </div>
-                          <div className="flex items-center gap-2 text-purple-400 text-xs md:text-sm">
+                          <div className="flex items-center gap-2 text-sky-400 text-xs md:text-sm">
                             <CheckCircle2 className="w-3 h-3" />
                             VIP guest tracking
                           </div>
-                          <div className="flex items-center gap-2 text-purple-400 text-xs md:text-sm">
+                          <div className="flex items-center gap-2 text-sky-400 text-xs md:text-sm">
                             <CheckCircle2 className="w-3 h-3" />
                             Special occasion planning
                           </div>
@@ -464,7 +465,7 @@ export default function ResortsLuxuryPage() {
           >
             <h2 className="text-4xl lg:text-6xl font-bold tracking-tight mb-6">
               Luxury Resort{" "}
-              <span className="text-purple-600">Services</span>
+              <span className="bg-gradient-to-r from-sky-400 to-blue-600 bg-clip-text text-transparent">Services</span>
             </h2>
             <p className="text-xl text-slate-600 max-w-4xl mx-auto leading-relaxed">
               Specialized features for high-end resort operations and guest experiences
@@ -489,7 +490,7 @@ export default function ResortsLuxuryPage() {
                 title: "Exclusive Experiences",
                 description: "Curated experiences, private excursions, and bespoke services for discerning guests.",
                 icon: Sparkles,
-                color: "bg-purple-100 text-purple-600"
+                color: "bg-sky-100 text-sky-600"
               }
             ].map((service, index) => (
               <motion.div
@@ -528,13 +529,13 @@ export default function ResortsLuxuryPage() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <Badge variant="secondary" className="mb-6 bg-purple-100 text-purple-700 border-purple-200">
+            <Badge variant="secondary" className="mb-6 bg-gradient-to-r from-sky-100 to-blue-100 text-sky-700 border-sky-200">
               <Crown className="w-3 h-3 mr-1" />
               Luxury Excellence
             </Badge>
             <h2 className="text-4xl lg:text-6xl font-bold text-black mb-6 tracking-tight">
               Trusted by Luxury Resorts{" "}
-              <span className="text-purple-600">Worldwide</span>
+              <span className="bg-gradient-to-r from-sky-400 to-blue-600 bg-clip-text text-transparent">Worldwide</span>
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
               Leading luxury resorts choose Aiyra for exceptional guest experience management
@@ -555,15 +556,28 @@ export default function ResortsLuxuryPage() {
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 viewport={{ once: true }}
                 className="text-center"
+                whileHover={{ 
+                  scale: 1.05,
+                  transition: { duration: 0.2 }
+                }}
               >
-                <Card className="bg-white border border-gray-200 hover:shadow-lg transition-all duration-300">
+                <Card className="bg-white border border-gray-200 hover:shadow-xl hover:border-sky-200 transition-all duration-300 cursor-pointer">
                   <CardContent className="p-8">
-                    <div className="w-12 h-12 bg-gray-100 rounded-lg flex items-center justify-center mx-auto mb-4">
-                      <stat.icon className="w-6 h-6 text-gray-600" />
-                    </div>
-                    <div className="text-3xl lg:text-4xl font-bold text-black mb-2">
-                      {stat.number}
-                    </div>
+                    <motion.div 
+                      className="w-12 h-12 bg-gradient-to-r from-sky-100 to-blue-100 rounded-lg flex items-center justify-center mx-auto mb-4"
+                      whileHover={{ 
+                        scale: 1.1,
+                        rotate: 5,
+                        transition: { duration: 0.2 }
+                      }}
+                    >
+                      <stat.icon className="w-6 h-6 text-sky-600" />
+                    </motion.div>
+                    <AnimatedCounter 
+                      value={stat.number}
+                      duration={2500}
+                      className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold bg-gradient-to-r from-sky-400 to-blue-600 bg-clip-text text-transparent mb-2"
+                    />
                     <div className="text-gray-600 font-medium text-sm">
                       {stat.label}
                     </div>
@@ -576,7 +590,7 @@ export default function ResortsLuxuryPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 lg:py-32 bg-gradient-to-b from-purple-600 to-purple-400 relative">
+      <section className="py-20 lg:py-32 bg-gradient-to-b from-sky-400 to-blue-600 relative">
         <div className="container-custom text-center relative">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -613,14 +627,14 @@ export default function ResortsLuxuryPage() {
               <Button 
                 variant="outline" 
                 size="lg"
-                className="border-2 border-white text-white hover:bg-white hover:text-purple-600 rounded-lg px-8 py-4 text-lg font-normal"
+                className="border-2 border-white text-white hover:bg-white hover:text-sky-600 rounded-lg px-8 py-4 text-lg font-normal"
               >
                 Experience Luxury PMS
                 <span className="ml-2">👑</span>
               </Button>
               <Button 
                 size="lg" 
-                className="bg-white text-purple-600 hover:bg-purple-50 rounded-lg px-8 py-4 text-lg font-normal border-2 border-white"
+                className="bg-white text-sky-600 hover:bg-sky-50 rounded-lg px-8 py-4 text-lg font-normal border-2 border-white"
               >
                 Speak with Specialist
                 <ArrowRight className="w-4 h-4 ml-2" />

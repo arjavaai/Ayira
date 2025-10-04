@@ -7,6 +7,7 @@ import { Badge } from "@/components/ui/badge"
 import { AnimatedTabs } from "@/components/ui/animated-tabs"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
+import { AnimatedCounter } from "@/components/animated-counter"
 import {
   CheckCircle2,
   ArrowRight,
@@ -45,15 +46,15 @@ export default function HotelChainsPage() {
               className="space-y-8"
             >
               <div className="space-y-6">
-                <Badge variant="secondary" className="bg-indigo-100 text-indigo-700 border-indigo-200 hover:bg-indigo-200">
+                <Badge variant="secondary" className="bg-gradient-to-r from-sky-100 to-blue-100 text-sky-700 border-sky-200 hover:from-sky-200 hover:to-blue-200">
                   <Building2 className="w-3 h-3 mr-1" />
                   Hotel Chains & Groups
                 </Badge>
 
                 <h1 className="text-5xl lg:text-7xl font-bold tracking-tight text-gray-900">
                   Enterprise PMS for{" "}
-                  <span className="text-indigo-500">Hotel</span>{" "}
-                  <span className="text-indigo-500">Chains</span>
+                  <span className="bg-gradient-to-r from-sky-400 to-blue-600 bg-clip-text text-transparent">Hotel</span>{" "}
+                  <span className="bg-gradient-to-r from-sky-400 to-blue-600 bg-clip-text text-transparent">Chains</span>
                 </h1>
 
                 <p className="text-xl text-gray-600 leading-relaxed max-w-2xl">
@@ -66,7 +67,7 @@ export default function HotelChainsPage() {
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button
                   size="lg"
-                  className="bg-indigo-600 hover:bg-indigo-700 text-white shadow-lg hover:shadow-xl transition-all duration-300 group rounded-lg"
+                  className="bg-gradient-to-r from-sky-400 to-blue-600 hover:from-sky-500 hover:to-blue-700 text-white shadow-lg hover:shadow-xl transition-all duration-300 group rounded-lg"
                 >
                   Schedule Enterprise Demo
                   <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
@@ -119,8 +120,8 @@ export default function HotelChainsPage() {
               </div>
 
               {/* Floating Elements */}
-              <div className="absolute -top-4 -right-4 w-16 h-16 bg-indigo-500/20 rounded-full animate-pulse"></div>
-              <div className="absolute -bottom-4 -left-4 w-12 h-12 bg-purple-500/20 rounded-full animate-pulse delay-1000"></div>
+              <div className="absolute -top-4 -right-4 w-16 h-16 bg-sky-500/20 rounded-full animate-pulse"></div>
+              <div className="absolute -bottom-4 -left-4 w-12 h-12 bg-blue-500/20 rounded-full animate-pulse delay-1000"></div>
             </motion.div>
           </div>
         </div>
@@ -138,7 +139,7 @@ export default function HotelChainsPage() {
           >
             <h2 className="text-4xl lg:text-6xl font-bold tracking-tight mb-6">
               Enterprise-Grade{" "}
-              <span className="text-indigo-600">
+              <span className="bg-gradient-to-r from-sky-400 to-blue-600 bg-clip-text text-transparent">
                 Multi-Property Management
               </span>
             </h2>
@@ -262,8 +263,8 @@ export default function HotelChainsPage() {
                       />
                       <div className="flex flex-col gap-y-3 md:gap-y-4">
                         <div className="flex items-center gap-3">
-                          <div className="w-10 h-10 md:w-12 md:h-12 bg-purple-500/20 rounded-xl flex items-center justify-center">
-                            <LineChart className="w-5 h-5 md:w-6 md:h-6 text-purple-400" />
+                          <div className="w-10 h-10 md:w-12 md:h-12 bg-sky-500/20 rounded-xl flex items-center justify-center">
+                            <LineChart className="w-5 h-5 md:w-6 md:h-6 text-sky-400" />
                           </div>
                           <h2 className="text-lg md:text-2xl font-bold mb-0 text-white mt-0 !m-0">
                             Enterprise Business Intelligence
@@ -273,19 +274,19 @@ export default function HotelChainsPage() {
                           Built-in BI platform with predictive analytics, cross-property comparisons, and executive dashboards - no additional software needed.
                         </p>
                         <div className="space-y-2">
-                          <div className="flex items-center gap-2 text-purple-400 text-xs md:text-sm">
+                          <div className="flex items-center gap-2 text-sky-400 text-xs md:text-sm">
                             <CheckCircle2 className="w-3 h-3" />
                             Portfolio benchmarking
                           </div>
-                          <div className="flex items-center gap-2 text-purple-400 text-xs md:text-sm">
+                          <div className="flex items-center gap-2 text-sky-400 text-xs md:text-sm">
                             <CheckCircle2 className="w-3 h-3" />
                             Predictive revenue analytics
                           </div>
-                          <div className="flex items-center gap-2 text-purple-400 text-xs md:text-sm">
+                          <div className="flex items-center gap-2 text-sky-400 text-xs md:text-sm">
                             <CheckCircle2 className="w-3 h-3" />
                             Custom executive dashboards
                           </div>
-                          <div className="flex items-center gap-2 text-purple-400 text-xs md:text-sm">
+                          <div className="flex items-center gap-2 text-sky-400 text-xs md:text-sm">
                             <CheckCircle2 className="w-3 h-3" />
                             Multi-property intelligence
                           </div>
@@ -308,8 +309,8 @@ export default function HotelChainsPage() {
                       />
                       <div className="flex flex-col gap-y-3 md:gap-y-4">
                         <div className="flex items-center gap-3">
-                          <div className="w-10 h-10 md:w-12 md:h-12 bg-orange-500/20 rounded-xl flex items-center justify-center">
-                            <Bot className="w-5 h-5 md:w-6 md:h-6 text-orange-400" />
+                          <div className="w-10 h-10 md:w-12 md:h-12 bg-sky-500/20 rounded-xl flex items-center justify-center">
+                            <Bot className="w-5 h-5 md:w-6 md:h-6 text-sky-400" />
                           </div>
                           <h2 className="text-lg md:text-2xl font-bold mb-0 text-white mt-0 !m-0">
                             Enterprise AI Chatbot
@@ -319,19 +320,19 @@ export default function HotelChainsPage() {
                           Scalable AI chatbot system that handles guest inquiries across all properties with brand-consistent responses and multi-language support.
                         </p>
                         <div className="space-y-2">
-                          <div className="flex items-center gap-2 text-orange-400 text-xs md:text-sm">
+                          <div className="flex items-center gap-2 text-sky-400 text-xs md:text-sm">
                             <CheckCircle2 className="w-3 h-3" />
                             Multi-property AI support
                           </div>
-                          <div className="flex items-center gap-2 text-orange-400 text-xs md:text-sm">
+                          <div className="flex items-center gap-2 text-sky-400 text-xs md:text-sm">
                             <CheckCircle2 className="w-3 h-3" />
                             Brand-consistent responses
                           </div>
-                          <div className="flex items-center gap-2 text-orange-400 text-xs md:text-sm">
+                          <div className="flex items-center gap-2 text-sky-400 text-xs md:text-sm">
                             <CheckCircle2 className="w-3 h-3" />
                             Multi-language capabilities
                           </div>
-                          <div className="flex items-center gap-2 text-orange-400 text-xs md:text-sm">
+                          <div className="flex items-center gap-2 text-sky-400 text-xs md:text-sm">
                             <CheckCircle2 className="w-3 h-3" />
                             Enterprise-grade automation
                           </div>
@@ -452,7 +453,7 @@ export default function HotelChainsPage() {
           >
             <h2 className="text-4xl lg:text-6xl font-bold tracking-tight mb-6">
               Built for{" "}
-              <span className="text-indigo-600">Enterprise Scale</span>
+              <span className="bg-gradient-to-r from-sky-400 to-blue-600 bg-clip-text text-transparent">Enterprise Scale</span>
             </h2>
             <p className="text-xl text-slate-600 max-w-4xl mx-auto leading-relaxed">
               Trusted by leading hotel chains worldwide for managing hundreds of properties
@@ -489,7 +490,7 @@ export default function HotelChainsPage() {
               >
                 <Card className="bg-white border border-gray-200 hover:shadow-lg transition-all duration-300 h-full">
                   <CardContent className="p-8">
-                    <div className="w-16 h-16 bg-indigo-100 text-indigo-600 rounded-2xl flex items-center justify-center mb-6">
+                    <div className="w-16 h-16 bg-sky-100 text-sky-600 rounded-2xl flex items-center justify-center mb-6">
                       <feature.icon className="w-8 h-8" />
                     </div>
                     <h3 className="text-xl font-bold text-gray-900 mb-4">
@@ -531,15 +532,28 @@ export default function HotelChainsPage() {
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 viewport={{ once: true }}
                 className="text-center"
+                whileHover={{ 
+                  scale: 1.05,
+                  transition: { duration: 0.2 }
+                }}
               >
-                <Card className="bg-white border border-gray-200 hover:shadow-lg transition-all duration-300">
+                <Card className="bg-white border border-gray-200 hover:shadow-xl hover:border-sky-200 transition-all duration-300 cursor-pointer">
                   <CardContent className="p-8">
-                    <div className="w-12 h-12 bg-gray-100 rounded-lg flex items-center justify-center mx-auto mb-4">
-                      <stat.icon className="w-6 h-6 text-gray-600" />
-                    </div>
-                    <div className="text-3xl lg:text-4xl font-bold text-black mb-2">
-                      {stat.number}
-                    </div>
+                    <motion.div 
+                      className="w-12 h-12 bg-gradient-to-r from-sky-100 to-blue-100 rounded-lg flex items-center justify-center mx-auto mb-4"
+                      whileHover={{ 
+                        scale: 1.1,
+                        rotate: 5,
+                        transition: { duration: 0.2 }
+                      }}
+                    >
+                      <stat.icon className="w-6 h-6 text-sky-600" />
+                    </motion.div>
+                    <AnimatedCounter 
+                      value={stat.number}
+                      duration={2500}
+                      className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold bg-gradient-to-r from-sky-400 to-blue-600 bg-clip-text text-transparent mb-2"
+                    />
                     <div className="text-gray-600 font-medium text-sm">
                       {stat.label}
                     </div>
@@ -552,7 +566,7 @@ export default function HotelChainsPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 lg:py-32 bg-gradient-to-b from-indigo-600 to-indigo-400 relative">
+      <section className="py-20 lg:py-32 bg-gradient-to-b from-sky-400 to-blue-600 relative">
         <div className="container-custom text-center relative">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -580,7 +594,7 @@ export default function HotelChainsPage() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button
                 size="lg"
-                className="bg-white text-indigo-600 hover:bg-indigo-50 rounded-lg px-8 py-4 text-lg font-normal border-2 border-white"
+                className="bg-white text-sky-600 hover:bg-sky-50 rounded-lg px-8 py-4 text-lg font-normal border-2 border-white"
               >
                 Schedule Enterprise Demo
                 <ArrowRight className="w-4 h-4 ml-2" />
@@ -588,7 +602,7 @@ export default function HotelChainsPage() {
               <Button
                 variant="outline"
                 size="lg"
-                className="border-2 border-white text-white hover:bg-white hover:text-indigo-600 rounded-lg px-8 py-4 text-lg font-normal"
+                className="border-2 border-white text-white hover:bg-white hover:text-sky-600 rounded-lg px-8 py-4 text-lg font-normal"
               >
                 Contact Sales Team
               </Button>

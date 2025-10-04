@@ -9,6 +9,7 @@ import { Progress } from "@/components/ui/progress"
 import { AnimatedTabs } from "@/components/ui/animated-tabs"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
+import { AnimatedCounter } from "@/components/animated-counter"
 import { 
   BarChart3, 
   Calendar, 
@@ -461,15 +462,28 @@ export default function IndependentHotelsPage() {
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 viewport={{ once: true }}
                 className="text-center"
+                whileHover={{ 
+                  scale: 1.05,
+                  transition: { duration: 0.2 }
+                }}
               >
-                <Card className="bg-white border border-gray-200 hover:shadow-lg transition-all duration-300">
+                <Card className="bg-white border border-gray-200 hover:shadow-xl hover:border-blue-200 transition-all duration-300 cursor-pointer">
                   <CardContent className="p-8">
-                    <div className="w-12 h-12 bg-gray-100 rounded-lg flex items-center justify-center mx-auto mb-4">
-                      <stat.icon className="w-6 h-6 text-gray-600" />
-                    </div>
-                    <div className="text-3xl lg:text-4xl font-bold text-black mb-2">
-                      {stat.number}
-                    </div>
+                    <motion.div 
+                      className="w-12 h-12 bg-gradient-to-r from-sky-100 to-blue-100 rounded-lg flex items-center justify-center mx-auto mb-4"
+                      whileHover={{ 
+                        scale: 1.1,
+                        rotate: 5,
+                        transition: { duration: 0.2 }
+                      }}
+                    >
+                      <stat.icon className="w-6 h-6 text-blue-600" />
+                    </motion.div>
+                    <AnimatedCounter 
+                      value={stat.number}
+                      duration={2500}
+                      className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold bg-gradient-to-r from-sky-400 to-blue-600 bg-clip-text text-transparent mb-2"
+                    />
                     <div className="text-gray-600 font-medium text-sm">
                       {stat.label}
                     </div>
