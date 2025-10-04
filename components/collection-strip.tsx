@@ -293,7 +293,7 @@ export function CollectionStrip() {
                       whileInView={{ opacity: 1, y: 0 }}
                       transition={{ duration: 0.6, delay: index * 0.2 }}
                       viewport={{ once: true }}
-                      className="bg-neutral-medium rounded-2xl shadow-2xl backdrop-blur-md border border-neutral-light/30 p-6"
+                      className="bg-gradient-to-r from-sky-400 to-blue-600 rounded-2xl shadow-2xl backdrop-blur-md border border-blue-300/30 p-6"
                     >
                       {/* Header */}
                       <div className="flex items-start gap-4 mb-6">
@@ -315,9 +315,9 @@ export function CollectionStrip() {
                         {platform.features.map((feature, featureIndex) => (
                           <div
                             key={featureIndex}
-                            className="flex items-start gap-4 p-4 rounded-xl hover:bg-brand-secondary/20 transition-all duration-300"
+                            className="flex items-start gap-4 p-4 rounded-xl hover:bg-brand-secondary/20 transition-all duration-300 group"
                           >
-                            <div className="w-10 h-10 bg-gradient-to-r from-cyan-200 to-blue-200 backdrop-blur-sm rounded-xl flex items-center justify-center flex-shrink-0">
+                            <div className="w-10 h-10 bg-gradient-to-r from-cyan-200 to-blue-200 backdrop-blur-sm rounded-xl flex items-center justify-center flex-shrink-0 group-hover:from-cyan-300 group-hover:to-blue-300 transition-colors">
                               <feature.icon className="w-5 h-5 text-cyan-700" />
                             </div>
                             <div className="flex-1">
