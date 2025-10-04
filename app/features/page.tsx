@@ -150,16 +150,16 @@ export default function FeaturesPage() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6 }}
               >
-                <span className="text-gray-900">Powerful Features for </span>
-                <span className="text-blue-500">Modern Hotels</span>
+                <span className="text-slate-900">Powerful Features for </span>
+                <span className="bg-gradient-to-r from-sky-400 to-blue-600 bg-clip-text text-transparent">Modern Hotels</span>
               </motion.h1>
               <motion.p
-                className="text-xl text-gray-600 mb-8"
+                className="text-xl text-slate-600 mb-8"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.2 }}
               >
-                Everything you need to streamline operations, maximize revenue, and deliver exceptional guest experiences.
+                Everything your hotel needs to streamline operations, maximize revenue, and deliver exceptional guest experiences.
               </motion.p>
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
@@ -168,7 +168,7 @@ export default function FeaturesPage() {
               >
                 <Button
                   size="lg"
-                  className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 text-lg font-semibold rounded-lg transition-all duration-300 shadow-lg"
+                  className="bg-gradient-to-r from-sky-400 to-blue-600 hover:from-sky-500 hover:to-blue-700 text-white px-8 py-4 text-lg font-semibold rounded-lg transition-all duration-300 shadow-lg"
                   asChild
                 >
                   <a href="/experience">Book a Demo</a>
@@ -182,7 +182,7 @@ export default function FeaturesPage() {
       {/* Features Grid */}
       <section className="py-20 bg-white">
         <div className="container-custom">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+          <div className="space-y-20">
             {features.map((feature, index) => (
               <motion.div
                 key={feature.id}
@@ -190,50 +190,98 @@ export default function FeaturesPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className="flex gap-8 items-start"
+                className={`flex flex-col lg:flex-row gap-12 items-center ${
+                  index % 2 === 1 ? 'lg:flex-row-reverse' : ''
+                }`}
               >
                 {/* Feature Content */}
-                <div className="flex-1 space-y-4">
-                  <div className="flex items-center gap-4 mb-4">
-                    <div className="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center flex-shrink-0">
-                      <feature.icon className="w-6 h-6 text-white" />
+                <div className="flex-1 space-y-6">
+                  <div className="flex items-center gap-4 mb-6">
+                    <div className="w-14 h-14 bg-gradient-to-r from-sky-400 to-blue-600 rounded-lg flex items-center justify-center flex-shrink-0 shadow-lg">
+                      <feature.icon className="w-7 h-7 text-white" />
                     </div>
                     <div>
-                      <h3 className="text-xl font-bold text-gray-900 mb-1">
+                      <h3 className="text-2xl font-bold text-slate-900 mb-2">
                         {feature.title}
                       </h3>
-                      <p className="text-sm text-gray-600">
+                      <p className="text-lg text-slate-600">
                         {feature.subtitle}
                       </p>
                     </div>
                   </div>
                   
-                  <p className="text-gray-700 leading-relaxed">
+                  <p className="text-slate-700 leading-relaxed text-lg">
                     {feature.description}
                   </p>
                   
-                  <ul className="space-y-2">
+                  <ul className="space-y-3">
                     {feature.benefits.map((benefit, benefitIndex) => (
-                      <li key={benefitIndex} className="flex items-center gap-2 text-gray-700">
-                        <CheckCircle2 className="w-4 h-4 text-blue-600 flex-shrink-0" />
-                        <span className="text-sm">{benefit}</span>
+                      <li key={benefitIndex} className="flex items-center gap-3 text-slate-700">
+                        <CheckCircle2 className="w-5 h-5 text-green-500 flex-shrink-0" />
+                        <span className="text-base">{benefit}</span>
                       </li>
                     ))}
                   </ul>
                 </div>
                 
                 {/* Feature Image */}
-                <div className="w-80 h-64 rounded-xl overflow-hidden shadow-lg bg-white border border-gray-100 flex-shrink-0">
-                  <div className="w-full h-full bg-gradient-to-br from-blue-50 to-blue-100 flex items-center justify-center">
-                    <div className="text-center">
-                      <div className="w-16 h-16 bg-blue-600 rounded-lg mx-auto mb-4 flex items-center justify-center">
-                        <feature.icon className="w-8 h-8 text-white" />
-                      </div>
-                      <p className="text-sm text-gray-600 font-medium">
-                        {feature.title}
-                      </p>
-                    </div>
-                  </div>
+                <div className="w-full lg:w-96 h-80 rounded-xl overflow-hidden shadow-lg bg-white border border-slate-200 flex-shrink-0">
+                  {feature.id === 1 && (
+                    <img
+                      src="https://images.unsplash.com/photo-1566073771259-6a8506099945?q=80&w=2070&auto=format&fit=crop"
+                      alt="Multi-Property Management"
+                      className="w-full h-full object-cover"
+                    />
+                  )}
+                  {feature.id === 2 && (
+                    <img
+                      src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop"
+                      alt="Live Analytics Dashboard"
+                      className="w-full h-full object-cover"
+                    />
+                  )}
+                  {feature.id === 3 && (
+                    <img
+                      src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2015&auto=format&fit=crop"
+                      alt="Dynamic Pricing Engine"
+                      className="w-full h-full object-cover"
+                    />
+                  )}
+                  {feature.id === 4 && (
+                    <img
+                      src="https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=2069&auto=format&fit=crop"
+                      alt="OTA Channel Manager"
+                      className="w-full h-full object-cover"
+                    />
+                  )}
+                  {feature.id === 5 && (
+                    <img
+                      src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?q=80&w=2011&auto=format&fit=crop"
+                      alt="Revenue Management"
+                      className="w-full h-full object-cover"
+                    />
+                  )}
+                  {feature.id === 6 && (
+                    <img
+                      src="https://images.unsplash.com/photo-1531482615713-2afd69097998?q=80&w=2070&auto=format&fit=crop"
+                      alt="AI Assistant Chatbot"
+                      className="w-full h-full object-cover"
+                    />
+                  )}
+                  {feature.id === 7 && (
+                    <img
+                      src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?q=80&w=2070&auto=format&fit=crop"
+                      alt="Mobile App"
+                      className="w-full h-full object-cover"
+                    />
+                  )}
+                  {feature.id === 8 && (
+                    <img
+                      src="https://images.unsplash.com/photo-1556761175-b413da4baf72?q=80&w=2074&auto=format&fit=crop"
+                      alt="24/7 Support"
+                      className="w-full h-full object-cover"
+                    />
+                  )}
                 </div>
               </motion.div>
             ))}
@@ -242,7 +290,7 @@ export default function FeaturesPage() {
       </section>
 
       {/* Bottom CTA */}
-      <section className="py-20 bg-gradient-to-b from-blue-600 to-blue-400">
+      <section className="py-20 bg-gradient-to-b from-blue-600 to-sky-400">
         <div className="container-custom">
           <Reveal>
             <div className="text-center max-w-3xl mx-auto">

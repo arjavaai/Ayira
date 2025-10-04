@@ -51,21 +51,30 @@ module.exports = {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
-        // Brand Core Colors - Updated to match design
-        'brand-primary': '#007BFF', // Vibrant Blue
-        'brand-secondary': '#00BFFF', // Light Blue
-        'brand-accent': '#007BFF', // Vibrant Blue
-        // Neutral Colors - Updated to match design
-        'neutral-dark': '#333333', // Dark Gray
-        'neutral-medium': '#666666', // Medium Gray
-        'neutral-light': '#ffffff', // White
-        'neutral-white': '#ffffff',
+        // Core Brand Colors - Sky Blue Family
+        'brand-primary': '#0ea5e9',      // Sky 500 - Primary sky blue
+        'brand-secondary': '#3b82f6',    // Blue 500
+        'brand-accent': '#6366f1',       // Indigo 500
+        
+        // Legacy compatibility - mapping to new colors
+        'neutral-dark': '#1e293b',       // Slate 800
+        'neutral-medium': '#64748b',     // Slate 500
+        'neutral-light': '#f1f5f9',      // Slate 100
+        'neutral-white': '#ffffff',      // White
+        
         // Property-Specific Accent Colors
-        'property-hotels': '#0B7FE6', // Blue
-        'property-resorts': '#00D4FF', // Cyan
-        'property-hostels': '#8B5CF6', // Purple
-        'property-rentals': '#10B981', // Green
-        'property-apartments': '#F59E0B', // Orange
+        'property-hotels': '#3b82f6',    // Blue 500
+        'property-resorts': '#10b981',   // Emerald 500
+        'property-hostels': '#8b5cf6',   // Violet 500
+        'property-rentals': '#f97316',   // Orange 500
+        'property-apartments': '#06b6d4', // Cyan 500
+        
+        // Additional chart colors
+        'chart-1': '#0ea5e9',           // Sky 500
+        'chart-2': '#3b82f6',           // Blue 500
+        'chart-3': '#06b6d4',           // Cyan 500
+        'chart-4': '#8b5cf6',           // Violet 500
+        'chart-5': '#6366f1',           // Indigo 500
       },
       borderRadius: {
         lg: "var(--radius)",

@@ -119,7 +119,7 @@ export function MaterialsSection() {
         <div className="mb-20">
           <Reveal>
             <div className="text-center">
-              <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-brand-secondary to-brand-primary text-white rounded-full text-sm font-medium mb-6">
+              <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-sky-400 to-blue-600 text-white rounded-full text-sm font-medium mb-6 shadow-lg">
                 <Zap className="w-4 h-4" />
                 All-In-One Platform
               </div>
@@ -156,21 +156,21 @@ export function MaterialsSection() {
                 <CardSticky
                   key={hub.id}
                   index={index + 1}
-                  className="rounded-2xl border border-neutral-light p-4 sm:p-6 lg:p-8 shadow-md backdrop-blur-md bg-neutral-medium"
+                  className="rounded-2xl border border-blue-300/30 p-4 sm:p-6 lg:p-8 shadow-lg bg-gradient-to-r from-sky-400 to-blue-600"
                 >
                   <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-6">
                     <div className="flex items-center gap-3 sm:gap-4">
-                      <div className={`w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 bg-gradient-to-r ${hub.color} rounded-2xl flex items-center justify-center shadow-lg`}>
+                      <div className="w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 bg-gradient-to-r from-sky-400 to-blue-600 rounded-2xl flex items-center justify-center shadow-lg">
                         <hub.icon className="w-6 h-6 sm:w-7 sm:h-7 lg:w-8 lg:h-8 text-white" />
                       </div>
                       <div>
                         <h2 className="text-xl sm:text-2xl font-bold tracking-tighter text-white">
                           {hub.title}
                         </h2>
-                        <p className="text-neutral-light text-xs sm:text-sm">{hub.subtitle}</p>
+                        <p className="text-white/90 text-xs sm:text-sm">{hub.subtitle}</p>
                       </div>
                     </div>
-                    <h3 className="text-xl sm:text-2xl font-bold text-brand-secondary self-start sm:self-auto">
+                    <h3 className="text-xl sm:text-2xl font-bold text-white self-start sm:self-auto">
                       {String(index + 1).padStart(2, "0")}
                     </h3>
                   </div>
@@ -179,15 +179,15 @@ export function MaterialsSection() {
                     {hub.features.map((feature, featureIndex) => (
                       <motion.div
                         key={featureIndex}
-                        className="flex items-center gap-3 p-3 rounded-xl hover:bg-brand-secondary/20 transition-colors"
+                        className="flex items-center gap-3 p-3 rounded-xl hover:bg-white/10 transition-colors"
                         whileHover={{ scale: 1.02 }}
                       >
-                        <div className="w-8 h-8 sm:w-10 sm:h-10 bg-brand-secondary/30 rounded-lg flex items-center justify-center flex-shrink-0">
+                        <div className="w-8 h-8 sm:w-10 sm:h-10 bg-gradient-to-r from-sky-400 to-blue-600 rounded-lg flex items-center justify-center flex-shrink-0 shadow-lg">
                           <feature.icon className="w-4 h-4 sm:w-5 sm:h-5 text-white" />
                         </div>
                         <div>
                           <h4 className="font-semibold text-white text-xs sm:text-sm">{feature.label}</h4>
-                          <p className="text-xs text-neutral-light">{feature.description}</p>
+                          <p className="text-xs text-white/90">{feature.description}</p>
                         </div>
                       </motion.div>
                     ))}
@@ -210,7 +210,7 @@ export function MaterialsSection() {
             >
               <Button
                 size="lg"
-                className="bg-gradient-to-r from-brand-secondary to-brand-primary hover:from-brand-primary hover:to-brand-secondary text-white px-8 py-4 text-lg font-semibold rounded-full shadow-lg hover:shadow-xl transition-all duration-300"
+                className="bg-gradient-to-r from-sky-400 to-blue-600 hover:from-sky-500 hover:to-blue-700 text-white px-8 py-4 text-lg font-semibold rounded-full shadow-lg hover:shadow-xl transition-all duration-300"
                 asChild
               >
                 <motion.a
@@ -241,19 +241,6 @@ export function MaterialsSection() {
           </div>
         </Reveal>
 
-        {/* Support Statement */}
-        <Reveal delay={0.6}>
-          <div className="text-center mt-16">
-            <div className="inline-flex items-center gap-3 px-6 py-3 bg-brand-secondary/20 backdrop-blur-sm rounded-full border border-brand-secondary/30">
-              <div className="w-8 h-8 bg-gradient-to-r from-brand-secondary to-brand-primary rounded-full flex items-center justify-center">
-                <CheckCircle2 className="w-4 h-4 text-white" />
-              </div>
-              <span className="text-white font-medium">
-                All solutions include 24/7 support, training & implementation
-              </span>
-            </div>
-          </div>
-        </Reveal>
 
       </div>
     </section>

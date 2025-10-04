@@ -60,11 +60,11 @@ export function Header() {
       transition={{ duration: 0.6, ease: [0.21, 0.47, 0.32, 0.98] }}
     >
       <div className="flex justify-center px-4 py-3">
-        <div className={cn(
-          "flex items-center justify-between w-full max-w-7xl",
-          "bg-black/50 border border-white/10 backdrop-blur-lg",
-          "py-3 px-4 lg:px-6 rounded-full shadow-lg transition-all duration-300"
-        )}>
+         <div className={cn(
+           "flex items-center justify-between w-full max-w-7xl",
+           "bg-black/50 border border-white/10 backdrop-blur-lg",
+           "py-3 px-4 lg:px-6 rounded-full shadow-lg transition-all duration-300"
+         )}>
           <div className="flex items-center flex-1">
             {/* Logo */}
             <motion.div className="flex items-center gap-3" whileHover={{ scale: 1.02 }} transition={{ duration: 0.2 }}>
@@ -112,9 +112,7 @@ export function Header() {
               onMouseLeave={() => setIsProductsOpen(false)}
             >
               <motion.button
-                className="flex items-center gap-1 text-sm font-semibold px-4 lg:px-6 py-2 lg:py-3 rounded-full transition-all duration-300 text-white/70 hover:text-white relative"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
+                 className="flex items-center gap-1 text-sm font-semibold px-4 lg:px-6 py-2 lg:py-3 rounded-full transition-all duration-300 text-white/70 hover:text-white relative"
               >
                 <AnimatePresence>
                   {isProductsOpen && (
@@ -122,7 +120,7 @@ export function Header() {
                       initial={{ opacity: 0, scale: 0.8 }}
                       animate={{ opacity: 1, scale: 1 }}
                       exit={{ opacity: 0, scale: 0.8 }}
-                      className="absolute inset-0 bg-white/10 rounded-full -z-10"
+                       className="absolute inset-0 bg-white/10 rounded-full -z-10"
                     />
                   )}
                 </AnimatePresence>
@@ -229,47 +227,39 @@ export function Header() {
                 )}
               </AnimatePresence>
             </div>
-            <motion.a
-              href="/features"
-              className="text-sm font-semibold px-4 lg:px-6 py-2 lg:py-3 rounded-full transition-all duration-300 text-white/70 hover:text-white relative"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
+              <motion.a
+                href="/features"
+                className="text-sm font-semibold px-4 lg:px-6 py-2 lg:py-3 rounded-full transition-all duration-300 text-white/70 hover:text-white relative"
+              >
               <motion.div
-                className="absolute inset-0 bg-white/10 rounded-full -z-10 opacity-0 hover:opacity-100 transition-opacity"
+                 className="absolute inset-0 bg-white/10 rounded-full -z-10 opacity-0 hover:opacity-100 transition-opacity"
               />
               Features
             </motion.a>
-            <motion.a
-              href="/pricing"
-              className="text-sm font-semibold px-4 lg:px-6 py-2 lg:py-3 rounded-full transition-all duration-300 text-white/70 hover:text-white relative"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
+              <motion.a
+                href="/pricing"
+                className="text-sm font-semibold px-4 lg:px-6 py-2 lg:py-3 rounded-full transition-all duration-300 text-white/70 hover:text-white relative"
+              >
               <motion.div
-                className="absolute inset-0 bg-white/10 rounded-full -z-10 opacity-0 hover:opacity-100 transition-opacity"
+                 className="absolute inset-0 bg-white/10 rounded-full -z-10 opacity-0 hover:opacity-100 transition-opacity"
               />
               Pricing
             </motion.a>
-            <motion.a
-              href="/resources"
-              className="text-sm font-semibold px-4 lg:px-6 py-2 lg:py-3 rounded-full transition-all duration-300 text-white/70 hover:text-white relative"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
+              <motion.a
+                href="/resources"
+                className="text-sm font-semibold px-4 lg:px-6 py-2 lg:py-3 rounded-full transition-all duration-300 text-white/70 hover:text-white relative"
+              >
               <motion.div
-                className="absolute inset-0 bg-white/10 rounded-full -z-10 opacity-0 hover:opacity-100 transition-opacity"
+                 className="absolute inset-0 bg-white/10 rounded-full -z-10 opacity-0 hover:opacity-100 transition-opacity"
               />
               Resources
             </motion.a>
-            <motion.a
-              href="/contact"
-              className="text-sm font-semibold px-4 lg:px-6 py-2 lg:py-3 rounded-full transition-all duration-300 text-white/70 hover:text-white relative"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
+              <motion.a
+                href="/contact"
+                className="text-sm font-semibold px-4 lg:px-6 py-2 lg:py-3 rounded-full transition-all duration-300 text-white/70 hover:text-white relative"
+              >
               <motion.div
-                className="absolute inset-0 bg-white/10 rounded-full -z-10 opacity-0 hover:opacity-100 transition-opacity"
+                 className="absolute inset-0 bg-white/10 rounded-full -z-10 opacity-0 hover:opacity-100 transition-opacity"
               />
               Contact
             </motion.a>
@@ -289,7 +279,7 @@ export function Header() {
 
             {/* Mobile Menu Button */}
             <motion.button
-              className="md:hidden p-2 rounded-full hover:bg-white/10 transition-colors"
+               className="md:hidden p-2 rounded-full hover:bg-white/10 transition-colors"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               aria-label="Toggle mobile menu"
               whileHover={{ scale: 1.1 }}

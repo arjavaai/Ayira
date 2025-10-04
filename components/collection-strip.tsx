@@ -14,7 +14,7 @@ export interface CardProps {
 export const Card: React.FC<CardProps> = ({ children }) => {
   return (
     <div className="w-full h-full relative">
-      <div className="absolute inset-0 bg-neutral-medium rounded-3xl shadow-2xl backdrop-blur-md border border-neutral-light/30">
+      <div className="absolute inset-0 bg-gradient-to-r from-sky-400 to-blue-600 rounded-3xl shadow-2xl backdrop-blur-md border border-blue-300/30">
         <div className="relative h-full">
           {children}
         </div>
@@ -197,7 +197,7 @@ export function CollectionStrip() {
             <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
               {/* Left Side - Text Content */}
               <div className="text-left">
-                <div className="inline-flex items-center gap-2 px-3 py-1.5 lg:px-4 lg:py-2 bg-gradient-to-r from-brand-secondary to-brand-primary text-white rounded-full text-xs lg:text-sm font-medium mb-4 lg:mb-6">
+                <div className="inline-flex items-center gap-2 px-3 py-1.5 lg:px-4 lg:py-2 bg-gradient-to-r from-sky-400 to-blue-600 text-white rounded-full text-xs lg:text-sm font-medium mb-4 lg:mb-6 shadow-lg">
                   <Zap className="w-3 h-3 lg:w-4 lg:h-4" />
                   All-In-One Platform
                 </div>
@@ -233,7 +233,7 @@ export function CollectionStrip() {
                         <div className="h-full flex flex-col p-6">
                           {/* Header */}
                           <div className="flex items-start gap-4 mb-5">
-                            <div className={`w-14 h-14 bg-gradient-to-br ${platform.color} rounded-2xl flex items-center justify-center shadow-xl flex-shrink-0`}>
+                            <div className="w-14 h-14 bg-gradient-to-r from-cyan-400 to-blue-600 rounded-2xl flex items-center justify-center shadow-xl flex-shrink-0">
                               <platform.icon className="w-7 h-7 text-white" />
                             </div>
                             <div className="flex-1">
@@ -254,8 +254,8 @@ export function CollectionStrip() {
                                 className="flex items-start gap-3 p-3 rounded-xl hover:bg-brand-secondary/20 transition-all duration-300 group"
                                 whileHover={{ scale: 1.01 }}
                               >
-                                <div className="w-8 h-8 bg-brand-secondary/30 backdrop-blur-sm rounded-lg flex items-center justify-center flex-shrink-0 group-hover:bg-brand-secondary/50 transition-colors">
-                                  <feature.icon className="w-4 h-4 text-white" />
+                                <div className="w-8 h-8 bg-gradient-to-r from-cyan-200 to-blue-200 backdrop-blur-sm rounded-lg flex items-center justify-center flex-shrink-0 group-hover:from-cyan-300 group-hover:to-blue-300 transition-colors">
+                                  <feature.icon className="w-4 h-4 text-cyan-700" />
                                 </div>
                                 <div className="flex-1">
                                   <h4 className="font-semibold text-white text-xs mb-1">
@@ -297,7 +297,7 @@ export function CollectionStrip() {
                     >
                       {/* Header */}
                       <div className="flex items-start gap-4 mb-6">
-                        <div className={`w-16 h-16 bg-gradient-to-br ${platform.color} rounded-2xl flex items-center justify-center shadow-xl flex-shrink-0`}>
+                        <div className="w-16 h-16 bg-gradient-to-r from-cyan-400 to-blue-600 rounded-2xl flex items-center justify-center shadow-xl flex-shrink-0">
                           <platform.icon className="w-8 h-8 text-white" />
                         </div>
                         <div className="flex-1">
@@ -317,8 +317,8 @@ export function CollectionStrip() {
                             key={featureIndex}
                             className="flex items-start gap-4 p-4 rounded-xl hover:bg-brand-secondary/20 transition-all duration-300"
                           >
-                            <div className="w-10 h-10 bg-brand-secondary/30 backdrop-blur-sm rounded-xl flex items-center justify-center flex-shrink-0">
-                              <feature.icon className="w-5 h-5 text-white" />
+                            <div className="w-10 h-10 bg-gradient-to-r from-cyan-200 to-blue-200 backdrop-blur-sm rounded-xl flex items-center justify-center flex-shrink-0">
+                              <feature.icon className="w-5 h-5 text-cyan-700" />
                             </div>
                             <div className="flex-1">
                               <h4 className="font-semibold text-white text-sm mb-1">
@@ -360,7 +360,7 @@ export function CollectionStrip() {
             >
               <Button
                 size="lg"
-                className="bg-gradient-to-r from-brand-secondary to-brand-primary hover:from-brand-primary hover:to-brand-secondary text-white px-6 lg:px-8 py-3 lg:py-4 text-base lg:text-lg font-semibold rounded-full shadow-lg hover:shadow-xl transition-all duration-300"
+                className="bg-gradient-to-r from-sky-400 to-blue-600 hover:from-sky-500 hover:to-blue-700 text-white px-6 lg:px-8 py-3 lg:py-4 text-base lg:text-lg font-semibold rounded-full shadow-lg hover:shadow-xl transition-all duration-300"
                 asChild
               >
                 <motion.a
@@ -398,7 +398,7 @@ export function CollectionStrip() {
               <div className="w-6 h-6 lg:w-8 lg:h-8 bg-gradient-to-r from-brand-secondary to-brand-primary rounded-full flex items-center justify-center">
                 <Star className="w-3 h-3 lg:w-4 lg:h-4 text-white" />
               </div>
-              <span className="text-white font-medium text-sm lg:text-base">
+              <span className="text-black font-medium text-sm lg:text-base">
                 All solutions include 24/7 support, training & implementation
               </span>
             </div>
